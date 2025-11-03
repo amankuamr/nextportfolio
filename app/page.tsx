@@ -6,6 +6,7 @@ import Link from "next/link"
 import ProjectCard from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/hero-section"
+import StarfieldAnimation from "@/components/starfield-animation"
 import TechMarquee from "@/components/tech-marquee"
 
 const featuredProjects = [
@@ -135,8 +136,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 text-white relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)' }}>
+        <StarfieldAnimation />
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -145,16 +147,16 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg mb-6">
                 I'm a passionate creative developer and designer with over 5 years of experience
                 in crafting digital experiences. I love combining technical expertise with artistic
                 vision to create solutions that not only work beautifully but also tell a story.
               </p>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg mb-8">
                 When I'm not coding or designing, you can find me exploring new technologies,
                 contributing to open-source projects, or sketching ideas for my next big project.
               </p>
-              <Button asChild>
+              <Button asChild className="bg-white text-black hover:bg-gray-200">
                 <Link href="#contact">Let's Work Together</Link>
               </Button>
             </motion.div>
@@ -166,7 +168,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center overflow-hidden">
+              <div className="aspect-square rounded-2xl flex items-center justify-center overflow-hidden">
                 <img
                   src="/profile/profile.jpeg"
                   alt="Aman Kumar - Creative Developer"
