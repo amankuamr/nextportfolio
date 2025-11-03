@@ -32,73 +32,60 @@ export default function Navbar() {
         </motion.div>
       </div>
 
-      {/* Desktop Navigation - Pill shaped with hover effects */}
+      {/* Desktop Navigation - Clean pill-shaped navigation */}
       <nav className="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-4 py-3">
-          <div className="flex items-center space-x-2">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="relative">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-2 py-2 relative overflow-hidden min-w-[600px]">
+          {/* Navigation items container */}
+          <div className="flex items-center justify-between relative z-10 px-3">
+            {navItems.map((item, index) => {
+              const isActive = pathname === item.href;
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative"
+                >
+                  {/* Active highlight for this item */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full shadow-lg"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                        mass: 0.8
+                      }}
+                      style={{
+                        boxShadow: "0 4px 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(251, 146, 60, 0.2)"
+                      }}
+                    />
+                  )}
+
                   <Link
                     href={item.href}
-                    className={`flex items-center transition-colors duration-300 px-3 py-2 rounded-full hover:bg-white/20 group relative ${
-                      pathname === item.href ? 'bg-gradient-to-r from-pink-400 to-orange-500 text-white' : 'text-black hover:text-gray-600'
+                    className={`flex items-center transition-all duration-300 px-3 py-2 rounded-full hover:bg-white/10 group relative min-w-[80px] justify-center ${
+                      isActive ? 'text-white' : 'text-black hover:text-gray-600'
                     }`}
                   >
-                    <item.icon className="w-4 h-4 transition-transform duration-200 group-hover:scale-110 relative z-10" />
+                    <item.icon className="w-4 h-4 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12 relative z-10" />
+
                     <motion.span
                       className="text-sm font-medium ml-2 whitespace-nowrap relative z-10"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{
-                        opacity: pathname === item.href ? 1 : 0,
-                        x: pathname === item.href ? 0 : -10
-                      }}
                       whileHover={{
-                        opacity: 1,
-                        x: 0,
+                        scale: 1.05,
                         transition: { duration: 0.2, ease: "easeOut" }
                       }}
-                      exit={{
-                        opacity: 0,
-                        x: -10,
-                        transition: { duration: 0.2, ease: "easeIn" }
-                      }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                       {item.name}
                     </motion.span>
-                    {pathname === item.href && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
                   </Link>
-                  {/* Horizontal line - visible when not hovered */}
-                  <motion.div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-0.5 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full"
-                    initial={{ opacity: pathname === item.href ? 0 : 1, scaleX: pathname === item.href ? 0 : 1 }}
-                    animate={{
-                      opacity: pathname === item.href ? 0 : 1,
-                      scaleX: pathname === item.href ? 0 : 1
-                    }}
-                    whileHover={{
-                      opacity: 0,
-                      scaleX: 0,
-                      transition: { duration: 0.2 }
-                    }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </nav>

@@ -162,8 +162,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-                <div className="text-6xl">👨‍💻</div>
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img
+                  src="/profile/profile.jpeg"
+                  alt="Aman Kumar - Creative Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
