@@ -8,26 +8,28 @@ import { Button } from "@/components/ui/button"
 
 const featuredProjects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution with advanced features and seamless user experience.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Imagi",
+    description: "A game gallery platform where I upload my gameplay screenshots.",
+    image: "/projectss/imagi.png",
+    liveUrl: "https://iimagii.vercel.app",
     githubUrl: "https://github.com/example",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"]
+    technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"]
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates and team features.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Darla Browser",
+    description: "A gambling site UI/UX for demonstration purposes.",
+    image: "/projectss/darla browser.png",
+    liveUrl: "https://darla-browser.vercel.app/",
     githubUrl: "https://github.com/example",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"]
+    technologies: ["Framer", "Next.js", "Shadcn", "Figma"]
   },
   {
-    title: "Brand Identity Design",
-    description: "Complete brand identity package including logo, typography, and brand guidelines.",
-    image: "/api/placeholder/400/300",
-    technologies: ["Adobe Illustrator", "Photoshop", "InDesign"]
+    title: "Reboot",
+    description: "An ecommerce website for shoes and footwear.",
+    image: "/projectss/reboot.png",
+    liveUrl: "https://rebooot.vercel.app/",
+    githubUrl: "https://github.com/example",
+    technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"]
   }
 ]
 
