@@ -118,9 +118,9 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Let's Work Together</h4>
+              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Let&apos;s Work Together</h4>
               <p className="text-gray-300 mb-6">
-                Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can create something amazing together.
+                Ready to bring your ideas to life? I&apos;d love to hear about your project and discuss how we can create something amazing together.
               </p>
 
               <div className="space-y-3 mb-6">

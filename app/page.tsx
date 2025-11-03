@@ -1,11 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { ArrowRight, Code, Palette, Zap } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import ProjectCard from "@/components/project-card"
-import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/hero-section"
 import TechMarquee from "@/components/tech-marquee"
 import ServicesSection from "@/components/services-section"
