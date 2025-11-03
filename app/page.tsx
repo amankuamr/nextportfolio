@@ -6,6 +6,7 @@ import Link from "next/link"
 import ProjectCard from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/hero-section"
+import TechMarquee from "@/components/tech-marquee"
 
 const featuredProjects = [
   {
@@ -55,6 +56,9 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Tech Marquee */}
+      <TechMarquee />
 
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">

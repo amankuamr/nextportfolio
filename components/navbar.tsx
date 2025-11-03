@@ -4,12 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Home, Palette, Code, ImageIcon, User } from "lucide-react"
+import { Menu, X, Home, Palette, Code, ImageIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
   { name: "Home", href: "/", icon: Home },
-  { name: "About", href: "/#about", icon: User },
   { name: "UI/UX", href: "/ui-ux", icon: Palette },
   { name: "Web Dev", href: "/web-dev", icon: Code },
   { name: "Graphics", href: "/graphics", icon: ImageIcon },

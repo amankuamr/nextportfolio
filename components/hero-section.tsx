@@ -5,11 +5,77 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import TechMarquee from "@/components/tech-marquee"
 
 export default function HeroSection() {
   return (
     <section className="relative py-12 px-4 sm:px-6 lg:px-8 lg:py-20 min-h-screen flex items-start justify-center pt-16 lg:pt-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full">
+      {/* Animated gradient circles */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: [0, 1, 1.2, 1],
+          opacity: [0, 0.3, 0.6, 0.3],
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeOut",
+          times: [0, 0.5, 0.75, 1],
+          repeat: Infinity,
+          repeatDelay: 6
+        }}
+        className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full blur-xl"
+      />
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: [0, 1, 1.2, 1],
+          opacity: [0, 0.4, 0.7, 0.4],
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeOut",
+          delay: 0.3,
+          times: [0, 0.5, 0.75, 1],
+          repeat: Infinity,
+          repeatDelay: 4
+        }}
+        className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-xl"
+      />
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: [0, 1, 1.3, 1],
+          opacity: [0, 0.2, 0.5, 0.2],
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeOut",
+          delay: 0.6,
+          times: [0, 0.5, 0.75, 1],
+          repeat: Infinity,
+          repeatDelay: 8
+        }}
+        className="absolute bottom-40 left-1/4 w-40 h-40 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-xl"
+      />
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: [0, 1, 1.1, 1],
+          opacity: [0, 0.35, 0.6, 0.35],
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeOut",
+          delay: 0.9,
+          times: [0, 0.5, 0.75, 1],
+          repeat: Infinity,
+          repeatDelay: 5
+        }}
+        className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-r from-green-400 to-teal-500 rounded-full blur-xl"
+      />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-full">
           {/* Left side - Profile Image */}
           <motion.div
