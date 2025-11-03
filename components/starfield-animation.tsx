@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 // Function to generate multiple box shadows for stars
 const generateBoxShadows = (n: number) => {
-  let shadows = []
+  const shadows = []
   for (let i = 0; i < n; i++) {
     const x = Math.floor(Math.random() * 2000)
     const y = Math.floor(Math.random() * 2000)
@@ -15,17 +15,12 @@ const generateBoxShadows = (n: number) => {
 }
 
 export default function StarfieldAnimation() {
-  const [shadowsSmall, setShadowsSmall] = useState('')
-  const [shadowsMedium, setShadowsMedium] = useState('')
-  const [shadowsBig, setShadowsBig] = useState('')
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const bgRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    setShadowsSmall(generateBoxShadows(700))
-    setShadowsMedium(generateBoxShadows(200))
-    setShadowsBig(generateBoxShadows(100))
-  }, [])
+  const shadowsSmall = generateBoxShadows(700)
+  const shadowsMedium = generateBoxShadows(200)
+  const shadowsBig = generateBoxShadows(100)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

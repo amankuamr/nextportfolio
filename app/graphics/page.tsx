@@ -146,7 +146,7 @@ export default function GraphicsPage() {
           className="text-center mt-16"
         >
           <p className="text-lg text-muted-foreground">
-            Need custom graphics or branding? Let's create something amazing together.
+            Need custom graphics or branding? Let&apos;s create something amazing together.
           </p>
         </motion.div>
       </div>

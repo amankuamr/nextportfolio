@@ -14,7 +14,7 @@ export default function RainbowAnimation() {
       ['rgb(96 165 250)', 'rgb(94 234 212)', 'rgb(232 121 249)'],
       ['rgb(96 165 250)', 'rgb(232 121 249)', 'rgb(94 234 212)']
     ]
-    return colorSets[Math.floor(Math.random() * colorSets.length)]
+    return colorSets[0] // Use first set to avoid Math.random during render
   }
 
   return (

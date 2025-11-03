@@ -126,7 +126,7 @@ export default function UiUxPage() {
           className="text-center mt-16"
         >
           <p className="text-lg text-muted-foreground">
-            Have a project in mind? Let's discuss how I can help bring your vision to life.
+            Have a project in mind? Let&apos;s discuss how I can help bring your vision to life.
           </p>
         </motion.div>
       </div>

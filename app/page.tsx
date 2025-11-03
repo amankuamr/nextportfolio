@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Code, Palette, Zap } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import ProjectCard from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/hero-section"
@@ -148,16 +149,16 @@ export default function Home() {
             >
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
               <p className="text-lg mb-6">
-                I'm a passionate creative developer and designer with over 5 years of experience
+                I&apos;m a passionate creative developer and designer with over 5 years of experience
                 in crafting digital experiences. I love combining technical expertise with artistic
                 vision to create solutions that not only work beautifully but also tell a story.
               </p>
               <p className="text-lg mb-8">
-                When I'm not coding or designing, you can find me exploring new technologies,
+                When I&apos;m not coding or designing, you can find me exploring new technologies,
                 contributing to open-source projects, or sketching ideas for my next big project.
               </p>
               <Button asChild className="bg-white text-black hover:bg-gray-200">
-                <Link href="#contact">Let's Work Together</Link>
+                <Link href="#contact">Let&apos;s Work Together</Link>
               </Button>
             </motion.div>
 
@@ -169,9 +170,11 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square rounded-2xl flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src="/profile/profile.jpeg"
                   alt="Aman Kumar - Creative Developer"
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -191,7 +194,7 @@ export default function Home() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can bring your ideas to life with creative solutions
+              Let&apos;s discuss how we can bring your ideas to life with creative solutions
               and cutting-edge technology.
             </p>
             <Button asChild size="lg">

@@ -45,7 +45,7 @@ export default function TechMarquee() {
       >
         <div className="flex space-x-8 animate-marquee">
           {/* First set of icons */}
-          {techStack.map((tech, index) => (
+          {techStack.map((tech) => (
             <motion.div
               key={`${tech.name}-1`}
               className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
@@ -56,7 +56,7 @@ export default function TechMarquee() {
             </motion.div>
           ))}
           {/* Duplicate set for seamless loop */}
-          {techStack.map((tech, index) => (
+          {techStack.map((tech) => (
             <motion.div
               key={`${tech.name}-2`}
               className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"

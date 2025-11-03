@@ -66,7 +66,7 @@ export default function WebDevPage() {
         >
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Web Development Projects</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A collection of web applications and websites I've built using modern technologies
+            A collection of web applications and websites I&apos;ve built using modern technologies
             and best practices. Each project showcases different aspects of full-stack development.
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export default function WebDevPage() {
           className="text-center mt-16"
         >
           <p className="text-lg text-muted-foreground">
-            Interested in working together? Let's discuss your project requirements.
+            Interested in working together? Let&apos;s discuss your project requirements.
           </p>
         </motion.div>
       </div>

@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import TechMarquee from "@/components/tech-marquee"
 
 export default function HeroSection() {
   return (
