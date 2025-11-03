@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Github, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import { Github, Instagram, Mail, MapPin, Phone, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StarfieldAnimation from "@/components/starfield-animation"
 
@@ -20,10 +20,10 @@ const footerLinks = {
     { name: "Contact", href: "/#contact" }
   ],
   social: [
-    { name: "GitHub", href: "https://github.com", icon: Github },
-    { name: "Instagram", href: "https://instagram.com", icon: Instagram },
-    { name: "Twitter", href: "https://twitter.com", icon: Twitter },
-    { name: "Email", href: "mailto:hello@example.com", icon: Mail }
+    { name: "GitHub", href: "https://github.com/amankuamr", icon: Github },
+    { name: "Instagram", href: "https://instagram.com/aman.k_sah", icon: Instagram },
+    { name: "Portfolio", href: "https://iimagii.vercel.app", icon: Globe },
+    { name: "Email", href: "mailto:amankumar1948sahu@gmail.com", icon: Mail }
   ]
 }
 
@@ -126,20 +126,20 @@ export default function Footer() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-gray-300">
                   <Mail className="w-4 h-4 mr-3 text-blue-400" />
-                  <span className="text-sm">hello@example.com</span>
+                  <span className="text-sm">amankumar1948sahu@gmail.com</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Phone className="w-4 h-4 mr-3 text-green-400" />
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  <span className="text-sm">9572112176</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <MapPin className="w-4 h-4 mr-3 text-red-400" />
-                  <span className="text-sm">San Francisco, CA</span>
+                  <span className="text-sm">India, Jharkhand, Ranchi, Tatisilwai</span>
                 </div>
               </div>
 
               <Button asChild className="bg-white text-black hover:bg-gray-200 border-0">
-                <a href="mailto:hello@example.com">
+                <a href="mailto:amankumar1948sahu@gmail.com">
                   Get In Touch
                 </a>
               </Button>

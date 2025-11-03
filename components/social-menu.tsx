@@ -6,25 +6,25 @@ import { Instagram, Github, MessageCircle, Globe } from "lucide-react"
 const socialItems = [
   {
     name: "Instagram",
-    href: "https://instagram.com/aman_kumar",
+    href: "https://instagram.com/aman.k_sah",
     icon: Instagram,
     color: "hover:text-pink-500"
   },
   {
     name: "Imagii",
-    href: "https://imagii.com",
+    href: "https://iimagii.vercel.app",
     icon: Globe,
     color: "hover:text-blue-500"
   },
   {
     name: "GitHub",
-    href: "https://github.com/aman-kumar",
+    href: "https://github.com/amankuamr",
     icon: Github,
     color: "hover:text-gray-800"
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/1234567890",
+    href: "https://wa.me/9572112176",
     icon: MessageCircle,
     color: "hover:text-green-500"
   }
