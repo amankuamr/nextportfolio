@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 
 // Function to generate multiple box shadows for stars
@@ -15,41 +14,12 @@ const generateBoxShadows = (n: number) => {
 }
 
 export default function StarfieldAnimation() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const bgRef = useRef<HTMLDivElement>(null)
-
   const shadowsSmall = generateBoxShadows(700)
   const shadowsMedium = generateBoxShadows(200)
   const shadowsBig = generateBoxShadows(100)
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (bgRef.current) {
-        const rect = bgRef.current.getBoundingClientRect()
-        const centerX = rect.left + rect.width / 2
-        const centerY = rect.top + rect.height / 2
-        const mouseX = ((e.clientX - centerX) / (rect.width / 2)) * 5
-        const mouseY = ((e.clientY - centerY) / (rect.height / 2)) * 5
-        setMousePosition({ x: mouseX, y: mouseY })
-      }
-    }
-
-    const bgElement = bgRef.current
-    if (bgElement) {
-      bgElement.addEventListener('mousemove', handleMouseMove)
-      return () => bgElement.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
-
   return (
-    <div
-      ref={bgRef}
-      className="absolute inset-0 overflow-hidden"
-      style={{
-        transform: `translate3d(-${mousePosition.x}%, -${mousePosition.y}%, 0)`,
-        transition: 'transform 0.1s ease-out'
-      }}
-    >
+    <div className="absolute inset-0 overflow-hidden">
       {/* Stars layer 1 - small */}
       <motion.div
         className="absolute w-px h-px bg-transparent"

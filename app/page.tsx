@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/hero-section"
 import StarfieldAnimation from "@/components/starfield-animation"
 import TechMarquee from "@/components/tech-marquee"
+import ExperienceSection from "@/components/experience-section"
 
 const featuredProjects = [
   {
@@ -182,6 +183,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Experience Section */}
+      <ExperienceSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
