@@ -137,6 +137,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight"
+              style={{ fontFamily: 'font1' }}
             >
               Creative Developer & Designer
             </motion.h1>

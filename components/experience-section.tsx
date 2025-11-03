@@ -44,7 +44,7 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Professional Experience</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>Professional Experience</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A journey through my career highlights, showcasing the diverse projects and roles
             that have shaped my expertise in web development, design, and creative problem-solving.
