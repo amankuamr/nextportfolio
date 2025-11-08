@@ -30,7 +30,7 @@ export default function Home() {
       <ProjectsSection />
 
       {/* Experience Section */}
-      <ExperienceSection />
+      {/* <ExperienceSection /> */}
 
       {/* About Section */}
       <AboutSection />
