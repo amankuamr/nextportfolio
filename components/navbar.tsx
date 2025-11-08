@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, Palette, Code, ImageIcon, Menu, X } from "lucide-react"
+import { Home, Palette, Code, ImageIcon, Menu, X, Trophy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
@@ -12,6 +12,7 @@ const navItems = [
   { name: "UI/UX", href: "/ui-ux", icon: Palette },
   { name: "Web Dev", href: "/web-dev", icon: Code },
   { name: "Graphics", href: "/graphics", icon: ImageIcon },
+  { name: "Achievements", href: "/achievements", icon: Trophy },
 ]
 
 export default function Navbar() {
