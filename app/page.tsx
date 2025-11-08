@@ -10,7 +10,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-auto">
+    <div className="h-screen overflow-y-auto bg-white">
       {/* Hero Section */}
       <HeroSection />
 
