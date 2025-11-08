@@ -87,8 +87,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navigation - Bottom pill-shaped bar */}
-      <nav className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-4 py-3">
+      <nav className="md:hidden fixed bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-4 py-2">
           <div className="flex items-center space-x-6">
             {navItems.map((item, index) => {
               const isActive = pathname === item.href;

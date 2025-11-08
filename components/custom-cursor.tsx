@@ -48,9 +48,9 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Main cursor - Hidden on mobile */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        className="hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
         animate={{
           x: mousePosition.x - 12,
           y: mousePosition.y - 12,
@@ -65,7 +65,7 @@ export default function CustomCursor() {
         <div className="w-6 h-6 bg-white rounded-full shadow-lg" />
       </motion.div>
 
-      {/* Color trail */}
+      {/* Color trail - Hidden on mobile */}
       {trail.map((position, index) => {
         const colors = [
           'bg-pink-400',
@@ -83,7 +83,7 @@ export default function CustomCursor() {
         return (
           <motion.div
             key={index}
-            className={`fixed top-0 left-0 pointer-events-none z-[9998] rounded-full ${colors[index % colors.length]}`}
+            className={`hidden md:block fixed top-0 left-0 pointer-events-none z-[9998] rounded-full ${colors[index % colors.length]}`}
             style={{
               width: `${8 - index * 0.5}px`,
               height: `${8 - index * 0.5}px`,
