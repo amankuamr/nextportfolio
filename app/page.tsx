@@ -1,18 +1,23 @@
 import HeroSection from "@/components/hero-section"
+import MobileHeroSection from "@/components/mobile-hero-section"
 import TechMarquee from "@/components/tech-marquee"
 import ServicesSection from "@/components/services-section"
 import ProjectsSection from "@/components/projects-section"
 import AchievementsSection from "@/components/achievements-section"
 import AboutSection from "@/components/about-section"
-import ExperienceSection from "@/components/experience-section"
 import Footer from "@/components/footer"
 
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-auto bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <HeroSection />
+      <div className="hidden lg:block">
+        <HeroSection />
+      </div>
+      <div className="lg:hidden">
+        <MobileHeroSection />
+      </div>
 
       {/* Tech Marquee */}
       <TechMarquee />
@@ -23,14 +28,11 @@ export default function Home() {
       {/* Featured Projects Section */}
       <ProjectsSection />
 
-      {/* Achievements Section */}
-      <AchievementsSection />
-
       {/* About Section */}
       <AboutSection />
 
-      {/* Experience Section */}
-      <ExperienceSection />
+      {/* Achievements Section */}
+      <AchievementsSection />
 
       {/* Footer */}
       <Footer />

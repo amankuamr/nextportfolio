@@ -34,7 +34,7 @@ export default function Footer() {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Brand Section */}
             <motion.div
@@ -150,7 +150,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <motion.p
                 initial={{ opacity: 0 }}

@@ -33,7 +33,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navbar />
         <SocialMenu />
-        <main className="pt-20 min-h-screen">
+        <main className="pt-20 lg:pt-20 pt-0 min-h-screen">
           {children}
         </main>
       </body>

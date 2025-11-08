@@ -28,7 +28,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-bold text-black" style={{ fontFamily: 'DelailtaSignature' }}>Aman Kumar</h1>
+          <h1 className="text-xl font-bold text-black" style={{ fontFamily: 'DelailtaSignature' }}>Aman Kumar</h1>
         </motion.div>
       </div>
 
@@ -91,7 +91,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu button */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
+      <div className="md:hidden fixed top-4 right-2 z-50">
         <motion.div
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.1 }}
@@ -100,7 +100,7 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-11 h-11"
+            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10"
           >
             {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </Button>
