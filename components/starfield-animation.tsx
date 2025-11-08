@@ -1,22 +1,31 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 
 // Function to generate multiple box shadows for stars
-const generateBoxShadows = (n: number) => {
+const generateBoxShadows = (n: number, seed?: number) => {
   const shadows = []
+  // Use a seeded random function for consistent results
+  let randomSeed = seed || 12345
+  const seededRandom = () => {
+    randomSeed = (randomSeed * 9301 + 49297) % 233280
+    return randomSeed / 233280
+  }
+
   for (let i = 0; i < n; i++) {
-    const x = Math.floor(Math.random() * 2000)
-    const y = Math.floor(Math.random() * 2000)
+    const x = Math.floor(seededRandom() * 2000)
+    const y = Math.floor(seededRandom() * 2000)
     shadows.push(`${x}px ${y}px #FFF`)
   }
   return shadows.join(', ')
 }
 
 export default function StarfieldAnimation() {
-  const shadowsSmall = generateBoxShadows(700)
-  const shadowsMedium = generateBoxShadows(200)
-  const shadowsBig = generateBoxShadows(100)
+  // Use consistent seeds for server and client
+  const shadowsSmall = generateBoxShadows(700, 12345)
+  const shadowsMedium = generateBoxShadows(200, 67890)
+  const shadowsBig = generateBoxShadows(100, 11111)
 
   return (
     <div className="absolute inset-0 overflow-hidden">
