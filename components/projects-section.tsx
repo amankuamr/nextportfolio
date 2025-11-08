@@ -40,12 +40,14 @@ export default function ProjectsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>Featured Projects</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
+            Featured Projects
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             A showcase of my recent work across web development, design, and creative projects
           </p>
         </motion.div>
@@ -57,16 +59,16 @@ export default function ProjectsSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button asChild size="lg">
-            <Link href="/web-dev">
+          <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4">
+            <Link href="/web-dev" className="flex items-center font-medium">
               View All Projects
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </Button>
         </motion.div>
