@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export default function HeroSection() {
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8 lg:py-20 min-h-screen flex items-start justify-center pt-16 lg:pt-32 overflow-hidden">
+    <section className="relative py-12 px-4 sm:px-6 lg:px-8 lg:py-20 h-screen flex items-start justify-center pt-16 lg:pt-32 overflow-hidden">
       {/* Animated gradient circles */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
@@ -87,7 +87,7 @@ export default function HeroSection() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0"
+                className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-[20rem] lg:h-[20rem] xl:w-[24rem] xl:h-[24rem] rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0"
               >
                 <Image
                   src="/profile/profile.jpeg"
@@ -136,7 +136,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight"
               style={{ fontFamily: 'font1' }}
             >
               Creative Developer & Designer
@@ -147,7 +147,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl"
             >
               Crafting digital experiences that combine beautiful design with powerful functionality.
               Specializing in web development, UI/UX design, and graphics design.
@@ -158,15 +158,15 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-8"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6"
             >
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg">
+              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-6 py-3 text-base">
                 <Link href="#projects">
                   View My Work
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-6 py-3 text-base">
                 <Link href="#contact">Get In Touch</Link>
               </Button>
             </motion.div>
