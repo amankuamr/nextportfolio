@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export default function MobileHeroSection() {
   return (
-    <section className="relative py-2 px-4 overflow-hidden h-screen flex flex-col justify-center">
+    <section className="relative py-0 px-4 overflow-hidden h-screen flex flex-col justify-start pt-16">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -45,7 +45,7 @@ export default function MobileHeroSection() {
         className="absolute bottom-20 right-5 w-8 h-8 bg-black/5 rounded-full"
       />
 
-      <div className="max-w-4xl mx-auto w-full relative z-10 flex flex-col items-center text-center space-y-3">
+      <div className="max-w-4xl mx-auto w-full relative z-10 flex flex-col items-center text-center space-y-2">
         {/* Profile Image - Top for mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -75,25 +75,24 @@ export default function MobileHeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </motion.div>
 
-            {/* Floating elements */}
+            {/* Floating gradient dots */}
             <motion.div
               animate={{
-                rotate: 360,
-                scale: [1, 1.1, 1],
+                scale: [1, 1.2, 1],
+                opacity: [0.7, 1, 0.7],
               }}
               transition={{
-                rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
-              className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-black to-gray-600 rounded-full flex items-center justify-center shadow-lg"
-            >
-              <span className="text-white font-bold text-sm">A</span>
-            </motion.div>
+              className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            />
 
             <motion.div
               animate={{
-                y: [0, -5, 0],
-                rotate: [0, 10, 0],
+                scale: [1, 1.3, 1],
+                opacity: [0.6, 1, 0.6],
               }}
               transition={{
                 duration: 4,
@@ -101,10 +100,22 @@ export default function MobileHeroSection() {
                 ease: "easeInOut",
                 delay: 1
               }}
-              className="absolute -bottom-2 -left-2 w-10 h-10 bg-white border-2 border-gray-200 rounded-2xl flex items-center justify-center shadow-lg"
-            >
-              <span className="text-lg">💻</span>
-            </motion.div>
+              className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            />
+
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.8, 1, 0.8],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+              className="absolute top-1/2 -right-3 w-3 h-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            />
           </div>
         </motion.div>
 
@@ -113,7 +124,7 @@ export default function MobileHeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-3"
+          className="space-y-2"
         >
           {/* Greeting */}
           <motion.div
@@ -135,7 +146,7 @@ export default function MobileHeroSection() {
             style={{ fontFamily: 'font1' }}
           >
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Aman Kumar
             </span>
           </motion.h1>
@@ -219,25 +230,6 @@ export default function MobileHeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator - positioned at bottom */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-1 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-8 border-2 border-gray-400 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-2 bg-gray-400 rounded-full mt-1"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

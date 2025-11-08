@@ -87,7 +87,7 @@ export default function HeroSection() {
               style={{ fontFamily: 'font1' }}
             >
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 Aman Kumar
               </span>
             </motion.h1>
@@ -199,25 +199,24 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </motion.div>
 
-              {/* Floating elements */}
+              {/* Floating gradient dots */}
               <motion.div
                 animate={{
-                  rotate: 360,
-                  scale: [1, 1.1, 1],
+                  scale: [1, 1.2, 1],
+                  opacity: [0.7, 1, 0.7],
                 }}
                 transition={{
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
-                className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-black to-gray-600 rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-white font-bold text-lg">A</span>
-              </motion.div>
+                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+              />
 
               <motion.div
                 animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 10, 0],
+                  scale: [1, 1.3, 1],
+                  opacity: [0.6, 1, 0.6],
                 }}
                 transition={{
                   duration: 4,
@@ -225,33 +224,26 @@ export default function HeroSection() {
                   ease: "easeInOut",
                   delay: 1
                 }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-white border-2 border-gray-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <span className="text-2xl">💻</span>
-              </motion.div>
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+              />
+
+              <motion.div
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.8, 1, 0.8],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                className="absolute top-1/2 -right-6 w-4 h-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-            />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
