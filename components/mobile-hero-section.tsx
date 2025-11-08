@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -145,7 +145,7 @@ export default function MobileHeroSection() {
             className="text-2xl sm:text-3xl font-bold text-black leading-tight"
             style={{ fontFamily: 'font1' }}
           >
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Aman Kumar
             </span>

@@ -160,7 +160,7 @@ export default function AchievementsPage() {
                 Ready to Work Together?
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Let's discuss how my skills and achievements can contribute to your next project
+                Let&apos;s discuss how my skills and achievements can contribute to your next project
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
