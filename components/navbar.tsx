@@ -7,6 +7,14 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Home, Palette, Code, ImageIcon, Menu, X, Trophy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+// Morphing path data
+const morphData = {
+  open: "M 300,-1.9235101 C 947.48798,352.73374 368.08761,564.6745 301.42857,1052.3622",
+  close: "M 300,-1.9235101 C -43.940589,374.16231 223.80189,644.6745 301.42857,1052.3622",
+  reset: "M 300,-1.9235101 C 304.63084,565.59088 299.51618,538.96021 301.42857,1052.3622",
+  initial: "M 300,-1.9235101 C -43.940589,374.16231 223.80189,644.6745 301.42857,1052.3622"
+}
+
 const navItems = [
   { name: "Home", href: "/", icon: Home },
   { name: "UI/UX", href: "/ui-ux", icon: Palette },
@@ -100,55 +108,119 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10"
+            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10 relative overflow-hidden"
           >
-            {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              animate={isOpen ? "open" : "closed"}
+            >
+              <motion.span
+                className="absolute w-4 h-0.5 bg-black rounded-full"
+                variants={{
+                  closed: { rotate: 0, y: -6 },
+                  open: { rotate: 45, y: 0 }
+                }}
+                transition={{ duration: 0.25 }}
+              />
+              <motion.span
+                className="absolute w-4 h-0.5 bg-black rounded-full"
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 }
+                }}
+                transition={{ duration: 0.25 }}
+              />
+              <motion.span
+                className="absolute w-4 h-0.5 bg-black rounded-full"
+                variants={{
+                  closed: { rotate: 0, y: 6 },
+                  open: { rotate: -45, y: 0 }
+                }}
+                transition={{ duration: 0.25 }}
+              />
+            </motion.div>
           </Button>
         </motion.div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Morphing Side Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ y: "-50%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "-50%", opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 right-0 h-1/2 bg-white border-b border-gray-200 shadow-lg z-40"
-          >
-            {/* Close button inside the menu */}
-            <div className="absolute top-4 right-4 z-50">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="bg-gray-100 hover:bg-gray-200 text-black rounded-full shadow-md"
+          <>
+            {/* Morphing SVG Background */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-30 pointer-events-none"
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 600 800"
+                preserveAspectRatio="none"
+                className="absolute top-0 left-0 w-full h-full"
               >
-                <X className="w-5 h-5" />
-              </Button>
-            </div>
+                <motion.path
+                  fill="none"
+                  stroke="#F06292"
+                  strokeWidth="5"
+                  d={morphData.initial}
+                  animate={isOpen ? "open" : "closed"}
+                  variants={{
+                    closed: { d: morphData.close },
+                    open: { d: morphData.open }
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
+                />
+              </svg>
+            </motion.div>
 
-            <div className="flex flex-col justify-center items-center h-full space-y-6 pt-8">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    className="flex items-center space-x-3 px-6 py-3 text-black hover:text-gray-600 rounded-lg transition-all duration-200 text-lg font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.name}</span>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+            {/* Side Menu */}
+            <motion.nav
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="fixed top-0 left-0 w-80 h-full bg-white shadow-2xl z-40 overflow-hidden rounded-r-3xl"
+            >
+              {/* Menu Content */}
+              <div className="relative h-full">
+                {/* Menu Items */}
+                <div className="flex flex-col justify-center items-start h-full pl-8 pr-16 space-y-6">
+                  {navItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={item.href}
+                        className="flex items-center space-x-4 px-4 py-3 text-black hover:text-gray-600 rounded-lg transition-all duration-200 text-lg font-medium group"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <item.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+                        <span>{item.name}</span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.nav>
+
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/20 z-20"
+              onClick={() => setIsOpen(false)}
+            />
+          </>
         )}
       </AnimatePresence>
     </>
