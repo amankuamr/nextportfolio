@@ -5,89 +5,107 @@ import ProjectCard from "@/components/project-card"
 
 const webDevProjects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Imagi",
+    description: "A game gallery platform where I upload my gameplay screenshots.",
+    image: "/projectss/imagi.png",
+    liveUrl: "https://iimagii.vercel.app",
     githubUrl: "https://github.com/example",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"]
+    technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"]
   },
   {
-    title: "Task Management App",
-    description: "Real-time collaborative project management tool with team features and progress tracking.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Darla Browser",
+    description: "A gambling site UI/UX for demonstration purposes.",
+    image: "/projectss/darla browser.png",
+    liveUrl: "https://darla-browser.vercel.app/",
     githubUrl: "https://github.com/example",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"]
+    technologies: ["Framer", "Next.js", "Shadcn", "Figma"]
   },
   {
-    title: "Social Media Dashboard",
-    description: "Analytics dashboard for social media management with data visualization and reporting.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Reboot",
+    description: "An ecommerce website for shoes and footwear.",
+    image: "/projectss/reboot.png",
+    liveUrl: "https://rebooot.vercel.app/",
     githubUrl: "https://github.com/example",
-    technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "Redis"]
+    technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"]
   },
   {
-    title: "Learning Management System",
-    description: "Online education platform with course management, video streaming, and progress tracking.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Moviez",
+    description: "A movies and series site made as a side project.",
+    image: "/projectss/moviez.png",
+    liveUrl: "https://amankuamr.github.io/Moviez/",
     githubUrl: "https://github.com/example",
-    technologies: ["React", "Django", "PostgreSQL", "AWS S3", "WebRTC"]
+    technologies: ["HTML", "CSS", "JS", "TMDB"]
   },
   {
-    title: "Weather App",
-    description: "Beautiful weather application with location-based forecasts and interactive maps.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
+    title: "Event of Distinction",
+    description: "A website for a non profitable organization.",
+    image: "/projectss/EOD.png",
+    liveUrl: "https://eventof-distinct.vercel.app/",
     githubUrl: "https://github.com/example",
-    technologies: ["JavaScript", "OpenWeather API", "Leaflet.js", "CSS3"]
-  },
-  {
-    title: "Portfolio Website",
-    description: "Responsive portfolio website with smooth animations and optimized performance.",
-    image: "/api/placeholder/400/300",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"]
+    technologies: ["HTML", "CSS", "JS"]
   }
 ]
 
 export default function WebDevPage() {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Web Development Projects</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A collection of web applications and websites I&apos;ve built using modern technologies
-            and best practices. Each project showcases different aspects of full-stack development.
-          </p>
-        </motion.div>
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>
+                Web Development Projects
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                A showcase of my web development work across different technologies and frameworks
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {webDevProjects.map((project, index) => (
-            <ProjectCard key={project.title} {...project} index={index} />
-          ))}
-        </div>
+        {/* Projects Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {webDevProjects.map((project, index) => (
+                <ProjectCard key={project.title} {...project} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-muted-foreground">
-            Interested in working together? Let&apos;s discuss your project requirements.
-          </p>
-        </motion.div>
+        {/* Call to Action */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8"
+            >
+              <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>
+                Ready to Work Together?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Let&apos;s discuss how my development skills can contribute to your next project
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:aman@example.com" className="bg-gradient-to-r from-pink-400 to-orange-500 text-white px-8 py-4 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                  Get In Touch
+                </a>
+                <a href="/achievements" className="border border-pink-400 text-pink-400 px-8 py-4 rounded-lg font-medium hover:bg-pink-400 hover:text-white transition-colors">
+                  View My Achievements
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
     </div>
   )

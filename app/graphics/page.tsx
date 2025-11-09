@@ -1,154 +1,182 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Download } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { ImageIcon, Award, Star, Target, Zap, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const graphicsProjects = [
+const graphicsAchievements = [
   {
-    title: "Brand Identity Package",
-    description: "Complete brand identity design including logo, business cards, letterhead, and brand guidelines for a tech startup.",
-    image: "/api/placeholder/400/300",
+    title: "Graphics Design Expert",
+    description: "Proficient in Adobe Creative Suite and modern design tools. Created visual identities, marketing materials, and digital graphics for various brands and projects.",
+    icon: ImageIcon,
+    category: "Design Skills",
+    date: "2021 - Present",
+    details: [
+      "Designed 100+ graphics projects",
+      "Mastered Adobe Creative Suite",
+      "Created brand identities"
+    ]
+  },
+  {
+    title: "Brand Identity Specialist",
+    description: "Specialized in developing comprehensive brand identities including logos, color palettes, typography, and brand guidelines for businesses and startups.",
+    icon: Award,
     category: "Branding",
-    technologies: ["Adobe Illustrator", "Photoshop", "InDesign"]
+    date: "2022 - Present",
+    details: [
+      "Developed 25+ brand identities",
+      "Created logo design systems",
+      "Established brand guidelines"
+    ]
   },
   {
-    title: "Magazine Layout Design",
-    description: "Editorial design for a lifestyle magazine with custom typography and engaging visual hierarchy.",
-    image: "/api/placeholder/400/300",
-    category: "Print Design",
-    technologies: ["Adobe InDesign", "Photoshop", "Typography"]
-  },
-  {
-    title: "Social Media Graphics",
-    description: "Complete social media kit including posts, stories, and promotional graphics for an e-commerce brand.",
-    image: "/api/placeholder/400/300",
+    title: "Digital Marketing Graphics",
+    description: "Experienced in creating engaging social media graphics, banners, and digital marketing materials that drive engagement and conversions.",
+    icon: Star,
     category: "Digital Marketing",
-    technologies: ["Adobe Photoshop", "Canva", "Social Media Design"]
+    date: "2020 - Present",
+    details: [
+      "Designed 500+ social media posts",
+      "Created marketing campaigns",
+      "Improved engagement rates by 40%"
+    ]
   },
   {
-    title: "Poster Design Series",
-    description: "Event poster series for a music festival with vibrant colors and dynamic compositions.",
-    image: "/api/placeholder/400/300",
-    category: "Event Design",
-    technologies: ["Adobe Illustrator", "Photoshop", "Color Theory"]
+    title: "Print Design Professional",
+    description: "Skilled in print design including magazines, brochures, posters, and packaging with attention to typography, layout, and printing specifications.",
+    icon: Target,
+    category: "Print Design",
+    date: "2019 - Present",
+    details: [
+      "Designed 50+ print materials",
+      "Managed print production",
+      "Expert in CMYK color spaces"
+    ]
   },
   {
-    title: "Packaging Design",
-    description: "Product packaging design for a premium skincare line with sustainable and elegant aesthetics.",
-    image: "/api/placeholder/400/300",
-    category: "Packaging",
-    technologies: ["Adobe Illustrator", "3D Rendering", "Material Design"]
+    title: "Illustration & Art Direction",
+    description: "Created custom illustrations and provided art direction for various projects, bringing concepts to life through visual storytelling.",
+    icon: Users,
+    category: "Illustration",
+    date: "2021 - Present",
+    details: [
+      "Created 75+ custom illustrations",
+      "Directed art for campaigns",
+      "Developed illustration styles"
+    ]
   },
   {
-    title: "Icon Set Design",
-    description: "Custom icon set for a mobile application with consistent style and scalability.",
-    image: "/api/placeholder/400/300",
-    category: "Icon Design",
-    technologies: ["Adobe Illustrator", "SVG", "Icon Design"]
-  },
-  {
-    title: "Book Cover Design",
-    description: "Intriguing book cover design for a mystery novel with atmospheric illustration and typography.",
-    image: "/api/placeholder/400/300",
-    category: "Book Design",
-    technologies: ["Adobe Photoshop", "Illustration", "Typography"]
-  },
-  {
-    title: "Infographic Design",
-    description: "Data visualization infographic explaining complex statistics in an engaging and easy-to-understand format.",
-    image: "/api/placeholder/400/300",
-    category: "Infographics",
-    technologies: ["Adobe Illustrator", "Data Visualization", "Color Coding"]
+    title: "Design Innovation Pioneer",
+    description: "Always exploring new design trends, techniques, and technologies to create cutting-edge visual solutions and push creative boundaries.",
+    icon: Zap,
+    category: "Innovation",
+    date: "2018 - Present",
+    details: [
+      "Explored emerging design tools",
+      "Contributed to design community",
+      "Published design tutorials"
+    ]
   }
 ]
 
+const categories = ["All", "Design Skills", "Branding", "Digital Marketing", "Print Design", "Illustration", "Innovation"]
+
 export default function GraphicsPage() {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Graphics Design Portfolio</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of visual design work spanning branding, print design, digital graphics,
-            and creative illustrations. Each piece tells a story and serves a specific purpose.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {graphicsProjects.map((project, index) => (
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="h-full"
+              transition={{ duration: 0.8 }}
             >
-              <Card className="h-full overflow-hidden group hover:shadow-lg transition-shadow duration-300">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-md">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                <CardHeader>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-sm">{project.description}</CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-
-                <CardFooter className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download
-                  </Button>
-                  <Button size="sm">
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
-                </CardFooter>
-              </Card>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>
+                Graphics Design
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                A comprehensive showcase of my creative journey, skills, and accomplishments in visual design and graphics
+              </p>
             </motion.div>
-          ))}
-        </div>
+          </div>
+        </section>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-muted-foreground">
-            Need custom graphics or branding? Let&apos;s create something amazing together.
-          </p>
-        </motion.div>
+        {/* Achievements Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {graphicsAchievements.map((achievement, index) => (
+                <motion.div
+                  key={achievement.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="p-4 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <achievement.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: 'BitcountGridSingle' }}>{achievement.title}</h3>
+                      <span className="text-sm text-muted-foreground">{achievement.category}</span>
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground mb-4">{achievement.description}</p>
+
+                  <div className="mb-4">
+                    <span className="text-sm font-medium text-pink-400">{achievement.date}</span>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {achievement.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="flex items-center text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-pink-400 rounded-full mr-3 flex-shrink-0"></div>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8"
+            >
+              <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>
+                Ready to Work Together?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Let&apos;s discuss how my graphics design skills and achievements can contribute to your next project
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <a href="mailto:aman@example.com">
+                    Get In Touch
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a href="/web-dev">
+                    View My Work
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
     </div>
   )
