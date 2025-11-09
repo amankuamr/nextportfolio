@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @font-face {
   font-family: 'font1';
   src: url('/fonts/font1.otf') format('opentype');
@@ -95,6 +96,14 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
+/* Goo filter for project cards */
+.goo-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
 /* Custom cursor styles */
 * {
   cursor: none !important;
@@ -103,3 +112,4 @@ body {
 a, button, [role="button"], input, textarea, select {
   cursor: none !important;
 }
+
