@@ -3,25 +3,29 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, RotateCcw } from "lucide-react"
+import Image from "next/image"
 
 const skills = [
   {
     title: "Web Development",
     shortDescription: "Building modern web applications",
     description: "Building responsive, performant web applications with modern technologies.",
-    skills: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB"]
+    skills: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB"],
+    image: "/skillstop/web dev.avif"
   },
   {
     title: "UI/UX Design",
     shortDescription: "Creating beautiful user interfaces",
     description: "Creating intuitive and beautiful user interfaces that delight users.",
-    skills: ["Figma", "Adobe XD", "Sketch", "Prototyping", "User Research", "Wireframing", "Design Systems", "Usability Testing"]
+    skills: ["Figma", "Adobe XD", "Sketch", "Prototyping", "User Research", "Wireframing", "Design Systems", "Usability Testing"],
+    image: "/skillstop/ui.avif"
   },
   {
     title: "Graphics Design",
     shortDescription: "Designing stunning visuals and logos",
     description: "Designing stunning visuals, logos, and marketing materials.",
-    skills: ["Adobe Photoshop", "Illustrator", "After Effects", "InDesign", "Branding", "Logo Design", "Motion Graphics", "Print Design"]
+    skills: ["Adobe Photoshop", "Illustrator", "After Effects", "InDesign", "Branding", "Logo Design", "Motion Graphics", "Print Design"],
+    image: "/skillstop/graphic.avif"
   }
 ]
 
@@ -73,8 +77,20 @@ export default function ServicesSection() {
                 />
 
                 <div className="relative z-10 h-full p-8 flex flex-col justify-between">
+                  {/* Skill Image Background */}
+                  {skill.image && (
+                    <div className="absolute inset-0 opacity-20">
+                      <Image
+                        src={skill.image}
+                        alt={`${skill.title} background`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+
                   {/* Content Area */}
-                  <div className="flex-1 flex flex-col justify-center items-center text-center">
+                  <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center">
                     {/* Content */}
                     <div className="relative overflow-hidden min-h-[160px] w-full flex items-center justify-center">
                       <motion.div
