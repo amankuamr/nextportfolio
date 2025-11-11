@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Users, Target, Zap, CheckCircle, ExternalLink, Home, Search, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import OtherCaseStudies from "@/components/other-case-studies"
 
 export default function KirayaWalaCaseStudy() {
   return (
@@ -335,36 +336,8 @@ export default function KirayaWalaCaseStudy() {
             ))}
           </div>
         </motion.section>
+        <OtherCaseStudies currentSlug="kiraya-wala" />
 
-        {/* Call to Action */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>
-              Ready for Your Next Project?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Let&apos;s create intuitive designs that solve real user problems and drive business success.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <a href="mailto:aman@example.com">
-                  Start a Conversation
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/ui-ux">
-                  Explore More Work
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </motion.section>
       </div>
     </div>
   )

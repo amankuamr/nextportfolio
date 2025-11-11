@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Users, Target, Zap, CheckCircle, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import OtherCaseStudies from "@/components/other-case-studies"
 
 export default function VnBoloCaseStudy() {
   return (
@@ -293,35 +294,7 @@ export default function VnBoloCaseStudy() {
           </div>
         </motion.section>
 
-        {/* Call to Action */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>
-              Interested in Similar Work?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Let&apos;s discuss how I can help bring your vision to life with thoughtful design and user experience.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <a href="mailto:aman@example.com">
-                  Get In Touch
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/ui-ux">
-                  View More Projects
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </motion.section>
+        <OtherCaseStudies currentSlug="vn-bolo" />
       </div>
     </div>
   )

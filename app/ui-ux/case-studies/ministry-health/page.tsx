@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, ShoppingCart, Heart, Star, CheckCircle, ExternalLink, Search, Filter } from "lucide-react"
+import { ArrowLeft, Building, Users, Target, CheckCircle, ExternalLink, Globe, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
 
 
-export default function RebootCaseStudy() {
+export default function MinistryHealthCaseStudy() {
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
@@ -35,17 +35,17 @@ export default function RebootCaseStudy() {
         >
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-6xl font-bold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>
-              Reboot
+              Ministry of Health and Family Welfare
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Modern Ecommerce Platform for Shoe Shopping
+              Government Website Redesign for Enhanced Public Access
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <h3 className="text-lg font-semibold mb-2">Type</h3>
-              <p className="text-muted-foreground">Personal Project</p>
+              <h3 className="text-lg font-semibold mb-2">Client</h3>
+              <p className="text-muted-foreground">Government Assignment</p>
             </div>
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-2">Role</h3>
@@ -53,14 +53,14 @@ export default function RebootCaseStudy() {
             </div>
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-2">Duration</h3>
-              <p className="text-muted-foreground">2 Months</p>
+              <p className="text-muted-foreground">1 Month</p>
             </div>
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
             <img
-              src="/projectss/reboot/reboot1.png"
-              alt="Reboot Project Preview"
+              src="/projectss/gov/gov1.png"
+              alt="Ministry of Health Website Preview"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -78,27 +78,27 @@ export default function RebootCaseStudy() {
             Project Overview
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Reboot is a personal project I developed to explore modern ecommerce design patterns
-            and user experience principles. As a shoe shopping platform, it focuses on creating
-            an intuitive and engaging shopping experience that combines aesthetics with functionality.
-            This project was instrumental in building my confidence in creating new designs and
-            handling more complex projects.
+            This project was an assignment from a company to test my design capabilities. I was tasked
+            with redesigning the existing Ministry of Health and Family Welfare website, focusing
+            specifically on the main homepage. The goal was to modernize the interface while
+            maintaining accessibility and improving user experience for citizens accessing government
+            health services and information.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <ShoppingCart className="w-8 h-8 text-pink-400 mb-4" />
-              <h3 className="font-semibold mb-2">Ecommerce Focus</h3>
-              <p className="text-sm text-muted-foreground">Complete shopping journey from discovery to checkout</p>
+              <Building className="w-8 h-8 text-pink-400 mb-4" />
+              <h3 className="font-semibold mb-2">Government Sector</h3>
+              <p className="text-sm text-muted-foreground">Public service website redesign</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <Search className="w-8 h-8 text-pink-400 mb-4" />
-              <h3 className="font-semibold mb-2">Smart Discovery</h3>
-              <p className="text-sm text-muted-foreground">Advanced search and filtering capabilities</p>
+              <Globe className="w-8 h-8 text-pink-400 mb-4" />
+              <h3 className="font-semibold mb-2">Public Access</h3>
+              <p className="text-sm text-muted-foreground">Improved accessibility for citizens</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <Heart className="w-8 h-8 text-pink-400 mb-4" />
-              <h3 className="font-semibold mb-2">Personal Experience</h3>
-              <p className="text-sm text-muted-foreground">Built confidence through hands-on design practice</p>
+              <Shield className="w-8 h-8 text-pink-400 mb-4" />
+              <h3 className="font-semibold mb-2">Trust Building</h3>
+              <p className="text-sm text-muted-foreground">Enhanced credibility and user confidence</p>
             </div>
           </div>
         </motion.section>
@@ -119,19 +119,19 @@ export default function RebootCaseStudy() {
             <ul className="space-y-3 text-red-700">
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span>Overwhelming product discovery in competitive fashion market</span>
+                <span>Outdated visual design that didn&apos;t reflect modern government standards</span>
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span>Complex checkout process leading to cart abandonment</span>
+                <span>Poor information hierarchy making it difficult to find important services</span>
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span>Lack of personalization in product recommendations</span>
+                <span>Lack of mobile responsiveness in an increasingly mobile-first world</span>
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span>Need for mobile-optimized shopping experience</span>
+                <span>Accessibility issues preventing users with disabilities from accessing services</span>
               </li>
             </ul>
           </div>
@@ -149,30 +149,31 @@ export default function RebootCaseStudy() {
             The Solution
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I designed a modern ecommerce platform that prioritizes user experience through
-            clean aesthetics, intuitive navigation, and seamless functionality. The design
-            focuses on reducing friction in the shopping journey while maintaining visual appeal.
+            I approached this redesign with a focus on modern government design principles,
+            emphasizing clarity, accessibility, and user-centered design. The new homepage
+            prioritizes essential health services while maintaining a professional and trustworthy
+            appearance that citizens expect from government websites.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <CheckCircle className="w-8 h-8 text-green-600 mb-4" />
-              <h3 className="font-semibold mb-2 text-green-800">Streamlined Navigation</h3>
-              <p className="text-sm text-green-700">Intuitive category browsing and search functionality</p>
+              <h3 className="font-semibold mb-2 text-green-800">Modern Visual Design</h3>
+              <p className="text-sm text-green-700">Updated aesthetics aligned with contemporary design standards</p>
             </div>
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <CheckCircle className="w-8 h-8 text-green-600 mb-4" />
-              <h3 className="font-semibold mb-2 text-green-800">Enhanced Product Pages</h3>
-              <p className="text-sm text-green-700">Detailed product information with multiple views</p>
+              <h3 className="font-semibold mb-2 text-green-800">Improved Information Architecture</h3>
+              <p className="text-sm text-green-700">Clear categorization of health services and resources</p>
             </div>
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <CheckCircle className="w-8 h-8 text-green-600 mb-4" />
-              <h3 className="font-semibold mb-2 text-green-800">Simplified Checkout</h3>
-              <p className="text-sm text-green-700">Guest checkout and multiple payment options</p>
+              <h3 className="font-semibold mb-2 text-green-800">Mobile-First Responsive Design</h3>
+              <p className="text-sm text-green-700">Optimized experience across all devices and screen sizes</p>
             </div>
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <CheckCircle className="w-8 h-8 text-green-600 mb-4" />
-              <h3 className="font-semibold mb-2 text-green-800">Personal Dashboard</h3>
-              <p className="text-sm text-green-700">Order tracking and personalized recommendations</p>
+              <h3 className="font-semibold mb-2 text-green-800">Enhanced Accessibility</h3>
+              <p className="text-sm text-green-700">WCAG compliant design for inclusive user experience</p>
             </div>
           </div>
         </motion.section>
@@ -191,20 +192,20 @@ export default function RebootCaseStudy() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <img
-                src="/projectss/reboot/reboot01.png"
-                alt="Reboot Screenshot 1"
+                src="/projectss/gov/gov1.png"
+                alt="Ministry Website Redesign Screenshot 1"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <img
-                src="/projectss/reboot/reboot02.png"
-                alt="Reboot Screenshot 2"
+                src="/projectss/gov/gov2.png"
+                alt="Ministry Website Redesign Screenshot 2"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-4">
               <img
-                src="/projectss/reboot/reboot03.png"
-                alt="Reboot Screenshot 3"
+                src="/projectss/gov/gov3.png"
+                alt="Ministry Website Redesign Screenshot 3"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -228,10 +229,10 @@ export default function RebootCaseStudy() {
                 <span className="text-pink-600 font-bold">1</span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Market Research</h3>
+                <h3 className="text-xl font-semibold mb-2">Analysis of Existing Design</h3>
                 <p className="text-muted-foreground">
-                  Analyzed successful ecommerce platforms and identified best practices
-                  for fashion and footwear shopping experiences.
+                  Thoroughly analyzed the current website to identify pain points, outdated elements,
+                  and areas for improvement while understanding the content structure.
                 </p>
               </div>
             </div>
@@ -240,10 +241,10 @@ export default function RebootCaseStudy() {
                 <span className="text-pink-600 font-bold">2</span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">User Journey Mapping</h3>
+                <h3 className="text-xl font-semibold mb-2">Research & Benchmarking</h3>
                 <p className="text-muted-foreground">
-                  Created comprehensive user flows for different shopping scenarios,
-                  from casual browsing to planned purchases.
+                  Studied modern government website designs and accessibility guidelines to
+                  establish best practices for the redesign.
                 </p>
               </div>
             </div>
@@ -252,10 +253,10 @@ export default function RebootCaseStudy() {
                 <span className="text-pink-600 font-bold">3</span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Visual Design & Branding</h3>
+                <h3 className="text-xl font-semibold mb-2">Wireframing & Prototyping</h3>
                 <p className="text-muted-foreground">
-                  Developed a modern visual identity with attention to typography,
-                  color schemes, and micro-interactions.
+                  Created wireframes and interactive prototypes focusing on improved navigation,
+                  content organization, and mobile responsiveness.
                 </p>
               </div>
             </div>
@@ -264,10 +265,10 @@ export default function RebootCaseStudy() {
                 <span className="text-pink-600 font-bold">4</span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Iterative Testing</h3>
+                <h3 className="text-xl font-semibold mb-2">Visual Design & Refinement</h3>
                 <p className="text-muted-foreground">
-                  Conducted self-testing and gathered feedback to refine the design
-                  and improve usability across all touchpoints.
+                  Applied modern visual design principles while ensuring the design maintains
+                  the authoritative and trustworthy feel expected from government websites.
                 </p>
               </div>
             </div>
@@ -287,27 +288,28 @@ export default function RebootCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-blue-800 mb-2">Confidence</h3>
-              <p className="text-blue-700">Built strong foundation in ecommerce design</p>
+              <h3 className="text-2xl font-bold text-blue-800 mb-2">Modern</h3>
+              <p className="text-blue-700">Updated design aligned with current standards</p>
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-blue-800 mb-2">Skills</h3>
-              <p className="text-blue-700">Mastered modern design technologies</p>
+              <h3 className="text-2xl font-bold text-blue-800 mb-2">Accessible</h3>
+              <p className="text-blue-700">Improved accessibility for all users</p>
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-blue-800 mb-2">Portfolio</h3>
-              <p className="text-blue-700">Added valuable project to design portfolio</p>
+              <h3 className="text-2xl font-bold text-blue-800 mb-2">Responsive</h3>
+              <p className="text-blue-700">Mobile-optimized user experience</p>
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-blue-800 mb-2">Experience</h3>
-              <p className="text-blue-700">Prepared for handling complex projects</p>
+              <h3 className="text-2xl font-bold text-blue-800 mb-2">Proven</h3>
+              <p className="text-blue-700">Compatibility with modern techniques</p>
             </div>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            This personal project was a turning point in my design journey. By tackling
-            the challenges of ecommerce design independently, I gained invaluable experience
-            in creating user-centered solutions. The project significantly boosted my confidence
-            and equipped me with the skills to handle more ambitious design challenges.
+            This assignment was a crucial test of my design abilities, demonstrating my capability
+            to handle complex redesign projects. The experience significantly enhanced my skills
+            in government website design, accessibility standards, and modern UI/UX practices.
+            It proved my adaptability to different design contexts and my ability to deliver
+            professional results under evaluation.
           </p>
         </motion.section>
 
@@ -323,7 +325,7 @@ export default function RebootCaseStudy() {
             Tools & Technologies
           </h2>
           <div className="flex flex-wrap gap-4">
-            {["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator", "Principle"].map((tool) => (
+            {["Figma", "Adobe XD", "Sketch", "Accessibility Tools", "Government Design Guidelines"].map((tool) => (
               <span
                 key={tool}
                 className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
@@ -333,8 +335,7 @@ export default function RebootCaseStudy() {
             ))}
           </div>
         </motion.section>
-        <OtherCaseStudies currentSlug="reboot" />
-
+        <OtherCaseStudies currentSlug="ministry-health" />
       </div>
     </div>
   )

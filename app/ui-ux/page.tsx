@@ -38,6 +38,17 @@ const uiUxProjects = [
     liveLabel: "Case Study",
     githubLabel: "Figma",
     githubIcon: Figma
+  },
+  {
+    title: "Ministry of Health and Family Welfare",
+    description: "Redesign of government website homepage for Ministry of Health and Family Welfare",
+    image: "/projectss/gov/gov1.png",
+    liveUrl: "/ui-ux/case-studies/ministry-health",
+    githubUrl: "#",
+    technologies: ["Figma", "UI/UX Design"],
+    liveLabel: "Case Study",
+    githubLabel: "Design",
+    githubIcon: Figma
   }
 ]
 
