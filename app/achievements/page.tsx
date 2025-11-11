@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Trophy, Award, Star, Target, Zap, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Footer from "@/components/footer"
 
 const achievements = [
   {
@@ -83,8 +84,9 @@ const categories = ["All", "Technical Skills", "Design", "Community", "Soft Skil
 
 export default function AchievementsPage() {
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-white">
+      <div className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -177,7 +179,9 @@ export default function AchievementsPage() {
             </motion.div>
           </div>
         </section>
+        </div>
       </div>
+      <Footer />
     </div>
   )
 }
