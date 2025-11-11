@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { uiUxProjects } from "@/lib/ui-ux-projects"
 
 interface CaseStudy {
   slug: string
@@ -14,35 +15,15 @@ interface OtherCaseStudiesProps {
   currentSlug: string
 }
 
-const caseStudies: CaseStudy[] = [
-  {
-    slug: "vn-bolo",
-    title: "VN Bolo",
-    description: "Complete UI/UX Design for a Modern Business Platform",
-    image: "/projectss/vnbolo.png"
-  },
-  {
-    slug: "kiraya-wala",
-    title: "Kiraya Wala",
-    description: "Modern UI/UX design for Kiraya Wala, a rental platform under Codestam Technologies",
-    image: "/projectss/Kirayawala/kiraya5.png"
-  },
-  {
-    slug: "reboot",
-    title: "Reboot",
-    description: "Ecommerce site for shoe shopping, personal project using modern technologies",
-    image: "/projectss/reboot/reboot1.png"
-  },
-  {
-    slug: "ministry-health",
-    title: "Ministry of Health and Family Welfare",
-    description: "Redesign of government website homepage for Ministry of Health and Family Welfare",
-    image: "/projectss/gov/gov1.png"
-  }
-]
+const caseStudies: CaseStudy[] = uiUxProjects.map(project => ({
+  slug: project.liveUrl.split('/').pop() || '',
+  title: project.title,
+  description: project.description,
+  image: project.image
+}))
 
 export default function OtherCaseStudies({ currentSlug }: OtherCaseStudiesProps) {
-  const otherStudies = caseStudies.filter(study => study.slug !== currentSlug)
+  const otherStudies = caseStudies.filter(study => study.slug !== currentSlug).slice(0, 3)
 
   return (
     <motion.section

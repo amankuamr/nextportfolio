@@ -1,56 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Figma } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ProjectCard from "@/components/project-card"
-
-const uiUxProjects = [
-  {
-    title: "VN Bolo",
-    description: "this is a ui/ux design for a client named vn bolo where i created its main website pages and also the admin panel",
-    image: "/projectss/vnbolo.png",
-    liveUrl: "/ui-ux/case-studies/vn-bolo",
-    githubUrl: "https://www.figma.com/design/23uRrcji6nvaqb1lJtcdrz/Untitled?node-id=0-1&t=Fgn6m4r3nOqxdDJe-1",
-    technologies: ["Figma", "UI/UX Design"],
-    liveLabel: "Case Study",
-    githubLabel: "Figma",
-    githubIcon: Figma
-  },
-  {
-    title: "Kiraya Wala",
-    description: "Modern UI/UX design for Kiraya Wala, a rental platform under Codestam Technologies",
-    image: "/projectss/Kirayawala/kiraya5.png",
-    liveUrl: "/ui-ux/case-studies/kiraya-wala",
-    githubUrl: "https://www.figma.com/design/hGSyPVOcepIZbypu2wNnJm/Untitled?node-id=1-355&t=jtnCBFqVQxKnQKqs-1",
-    technologies: ["Figma", "UI/UX Design"],
-    liveLabel: "Case Study",
-    githubLabel: "Figma",
-    githubIcon: Figma
-  },
-  {
-    title: "Reboot",
-    description: "Ecommerce site for shoe shopping, personal project using modern technologies",
-    image: "/projectss/reboot/reboot1.png",
-    liveUrl: "/ui-ux/case-studies/reboot",
-    githubUrl: "https://www.figma.com/design/aYaSvZRubf983rJa77ixLI/Untitled?t=jtnCBFqVQxKnQKqs-1",
-    technologies: ["Figma", "UI/UX Design"],
-    liveLabel: "Case Study",
-    githubLabel: "Figma",
-    githubIcon: Figma
-  },
-  {
-    title: "Ministry of Health and Family Welfare",
-    description: "Redesign of government website homepage for Ministry of Health and Family Welfare",
-    image: "/projectss/gov/gov1.png",
-    liveUrl: "/ui-ux/case-studies/ministry-health",
-    githubUrl: "#",
-    technologies: ["Figma", "UI/UX Design"],
-    liveLabel: "Case Study",
-    githubLabel: "Design",
-    githubIcon: Figma
-  }
-]
+import { uiUxProjects } from "@/lib/ui-ux-projects"
 
 export default function UiUxPage() {
   return (
