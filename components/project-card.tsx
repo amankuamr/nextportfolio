@@ -1,7 +1,8 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github, Figma } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -13,6 +14,10 @@ interface ProjectCardProps {
   githubUrl?: string
   technologies: string[]
   index: number
+  liveLabel?: string
+  githubLabel?: string
+  liveIcon?: React.ComponentType<{ className?: string }>
+  githubIcon?: React.ComponentType<{ className?: string }>
 }
 
 export default function ProjectCard({
@@ -22,7 +27,11 @@ export default function ProjectCard({
   liveUrl,
   githubUrl,
   technologies,
-  index
+  index,
+  liveLabel,
+  githubLabel,
+  liveIcon,
+  githubIcon
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -67,16 +76,31 @@ export default function ProjectCard({
         <CardFooter className="pt-0 flex gap-2">
           {liveUrl && (
             <Button asChild size="sm" className="flex-1 bg-black text-white hover:bg-gray-800 transition-colors duration-200">
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                <span className="font-medium">View Live</span>
+              <a
+                href={liveUrl}
+                {...(liveUrl.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="flex items-center justify-center"
+              >
+                {React.createElement(liveIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
+                <span className="font-medium">{liveLabel || "View Live"}</span>
               </a>
             </Button>
           )}
           {githubUrl && (
             <Button asChild variant="outline" size="sm" className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <Github className="w-4 h-4" />
+              <a
+                href={githubUrl}
+                {...(githubUrl.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="flex items-center justify-center"
+              >
+                {githubLabel ? (
+                  <>
+                    {React.createElement(githubIcon || Github, { className: "w-4 h-4 mr-2" })}
+                    <span className="font-medium">{githubLabel}</span>
+                  </>
+                ) : (
+                  React.createElement(githubIcon || Github, { className: "w-4 h-4" })
+                )}
               </a>
             </Button>
           )}

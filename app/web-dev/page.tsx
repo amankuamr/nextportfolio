@@ -43,6 +43,22 @@ const webDevProjects = [
     liveUrl: "https://eventof-distinct.vercel.app/",
     githubUrl: "https://github.com/example",
     technologies: ["HTML", "CSS", "JS"]
+  },
+  {
+    title: "portfolio (old)",
+    description: "a portfolio created using pure html , css , js , bootstrap",
+    image: "/projectss/portfolio(old).png",
+    liveUrl: "https://amankumarr.vercel.app",
+    githubUrl: "https://github.com/example",
+    technologies: ["HTML", "CSS", "JS", "Bootstrap"]
+  },
+  {
+    title: "BW Story prototype",
+    description: "a social media app (5 pages ) and using html , css , js , and bootstrap",
+    image: "/projectss/bwstory.png",
+    liveUrl: "https://amankuamr.github.io/BWStory/",
+    githubUrl: "https://github.com/example",
+    technologies: ["HTML", "CSS", "JS", "Bootstrap"]
   }
 ]
 
