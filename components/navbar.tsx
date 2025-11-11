@@ -143,67 +143,44 @@ export default function Navbar() {
         </motion.div>
       </div>
 
-      {/* Mobile Navigation - Morphing Side Menu */}
+      {/* Mobile Navigation - Simplified Top Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Morphing SVG Background */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-30 pointer-events-none"
-            >
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 600 800"
-                preserveAspectRatio="none"
-                className="absolute top-0 left-0 w-full h-full"
-              >
-                <motion.path
-                  fill="none"
-                  stroke="#F06292"
-                  strokeWidth="5"
-                  d={morphData.initial}
-                  animate={isOpen ? "open" : "closed"}
-                  variants={{
-                    closed: { d: morphData.close },
-                    open: { d: morphData.open }
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut"
-                  }}
-                />
-              </svg>
-            </motion.div>
-
-            {/* Side Menu */}
+            {/* Dropdown Menu */}
             <motion.nav
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="fixed top-0 left-0 w-80 h-full bg-white shadow-2xl z-40 overflow-hidden rounded-r-3xl"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={{
+                closed: {
+                  y: "-100%",
+                  transition: { duration: 0.3, ease: "easeIn" }
+                },
+                open: {
+                  y: 0,
+                  transition: { duration: 0.4, ease: "easeOut" }
+                }
+              }}
+              className="fixed top-16 left-4 w-80 bg-white shadow-lg z-50 border border-gray-200 rounded-lg"
             >
               {/* Menu Content */}
-              <div className="relative h-full">
+              <div className="px-4 py-6">
                 {/* Menu Items */}
-                <div className="flex flex-col justify-center items-start h-full pl-8 pr-16 space-y-6">
+                <div className="flex flex-col space-y-4">
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2, delay: index * 0.05 }}
                     >
                       <Link
                         href={item.href}
-                        className="flex items-center space-x-4 px-4 py-3 text-black hover:text-gray-600 rounded-lg transition-all duration-200 text-lg font-medium group"
+                        className="flex items-center space-x-3 px-4 py-3 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-all duration-200 text-base font-medium group"
                         onClick={() => setIsOpen(false)}
                       >
-                        <item.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+                        <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                         <span>{item.name}</span>
                       </Link>
                     </motion.div>
@@ -217,7 +194,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/20 z-20"
+              className="fixed inset-0 bg-black/20 z-30"
               onClick={() => setIsOpen(false)}
             />
           </>
