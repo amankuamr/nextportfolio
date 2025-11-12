@@ -75,7 +75,7 @@ export default function VNBoloCarouselDesignProcess() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Brand Consistency</h3>
                 <p className="text-muted-foreground">
-                  Analyzed VN Bolo's existing brand identity and color scheme to ensure the carousel design maintains visual consistency across all slides and elements.
+                  Analyzed VN Bolo&apos;s existing brand identity and color scheme to ensure the carousel design maintains visual consistency across all slides and elements.
                 </p>
               </div>
             </div>
