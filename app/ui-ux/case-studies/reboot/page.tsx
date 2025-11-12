@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, ShoppingCart, Heart, Star, CheckCircle, ExternalLink, Search, Filter } from "lucide-react"
+import { ArrowLeft, ShoppingCart, Heart, CheckCircle, Search} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"

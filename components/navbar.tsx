@@ -4,16 +4,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, Palette, Code, ImageIcon, Menu, X, Trophy } from "lucide-react"
+import { Home, Palette, Code, ImageIcon, Trophy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // Morphing path data
-const morphData = {
-  open: "M 300,-1.9235101 C 947.48798,352.73374 368.08761,564.6745 301.42857,1052.3622",
-  close: "M 300,-1.9235101 C -43.940589,374.16231 223.80189,644.6745 301.42857,1052.3622",
-  reset: "M 300,-1.9235101 C 304.63084,565.59088 299.51618,538.96021 301.42857,1052.3622",
-  initial: "M 300,-1.9235101 C -43.940589,374.16231 223.80189,644.6745 301.42857,1052.3622"
-}
 
 const navItems = [
   { name: "Home", href: "/", icon: Home },

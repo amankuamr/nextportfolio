@@ -1,5 +1,3 @@
-import { Figma } from "lucide-react"
-
 export const graphicsProjects = [
   {
     title: "Load Carry QR Code Mockups",
