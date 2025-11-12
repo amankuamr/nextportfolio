@@ -7,40 +7,40 @@ import { Button } from "@/components/ui/button"
 
 const achievements = [
   {
-    title: "Full Stack Developer",
-    description: "Proficient in modern web technologies including React, Next.js, Node.js, and cloud platforms.",
+    title: "Pariksha Pe Charcha",
+    description: "Participated in the national event 'Pariksha Pe Charcha' with the Prime Minister, focusing on exam stress management.",
     icon: Trophy,
-    category: "Technical Skills"
-  },
-  {
-    title: "UI/UX Designer",
-    description: "Creating intuitive and beautiful user experiences with tools like Figma and Framer.",
-    icon: Award,
-    category: "Design"
-  },
-  {
-    title: "Open Source Contributor",
-    description: "Active contributor to various open source projects and community initiatives.",
-    icon: Star,
     category: "Community"
   },
   {
-    title: "Problem Solver",
-    description: "Strong analytical skills with experience in algorithm design and optimization.",
-    icon: Trophy,
-    category: "Technical Skills"
-  },
-  {
-    title: "Team Player",
-    description: "Collaborative approach with experience in agile development and cross-functional teams.",
+    title: "UI/UX Recommendation Letter",
+    description: "Received a recommendation letter for outstanding performance and contributions in UI/UX design.",
     icon: Award,
-    category: "Soft Skills"
+    category: "Professional"
   },
   {
-    title: "Continuous Learner",
-    description: "Always staying updated with the latest technologies and industry trends.",
+    title: "Codestam Technologies Role",
+    description: "UI/UX Designer & Web Developer at Codestam Technologies, working with real-life clients on various projects.",
     icon: Star,
-    category: "Personal Growth"
+    category: "Professional"
+  },
+  {
+    title: "Plasmid UI/UX Internship",
+    description: "Completed UI/UX internship at Plasmid, recognized for outstanding design solutions and user research.",
+    icon: Trophy,
+    category: "Professional"
+  },
+  {
+    title: "Tech Fest Leadership",
+    description: "Led the graphics design team for Tech Pragati Tech Fest, creating branding and digital assets.",
+    icon: Award,
+    category: "Leadership"
+  },
+  {
+    title: "Google UX Certification",
+    description: "Completed the Google UX Experience course, demonstrating strong skills in user experience design.",
+    icon: Star,
+    category: "Education"
   }
 ]
 

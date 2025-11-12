@@ -56,5 +56,13 @@ export const graphicsProjects = [
     liveUrl: "/graphics/design-process/vn-bolo-product-3",
     technologies: ["Adobe Illustrator", "Photoshop", "Product Design"],
     liveLabel: "Design Process"
+  },
+  {
+    title: "VN Bolo Carousel",
+    description: "Website advertisement carousel created using VN Bolo color scheme with Canva",
+    image: "/graphics design/vncarousal/4.png",
+    liveUrl: "/graphics/design-process/vn-bolo-carousel",
+    technologies: ["Canva", "Digital Design", "Carousel Design"],
+    liveLabel: "Design Process"
   }
 ]
