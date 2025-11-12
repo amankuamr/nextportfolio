@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import OtherGraphicsProjects from "@/components/other-graphics-projects"
 
 export default function VNBoloProduct3DesignProcess() {
   return (
@@ -164,6 +165,9 @@ export default function VNBoloProduct3DesignProcess() {
             ))}
           </div>
         </motion.section>
+
+        {/* Other Graphics Projects */}
+        <OtherGraphicsProjects currentSlug="/graphics/design-process/vn-bolo-product-3" />
       </div>
     </div>
   )

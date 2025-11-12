@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import OtherGraphicsProjects from "@/components/other-graphics-projects"
 
 export default function CodestamPosterDesignProcess() {
   return (
@@ -146,6 +147,9 @@ export default function CodestamPosterDesignProcess() {
             ))}
           </div>
         </motion.section>
+
+        {/* Other Graphics Projects */}
+        <OtherGraphicsProjects currentSlug="/graphics/design-process/codestam-poster" />
       </div>
     </div>
   )
