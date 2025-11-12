@@ -1,15 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Trophy, Award, Star } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Trophy, Award, Star, Target, Zap, Users } from "lucide-react"
 
 const achievements = [
   {
     title: "Pariksha Pe Charcha",
     description: "Participated in the national event 'Pariksha Pe Charcha' with the Prime Minister, focusing on exam stress management.",
-    icon: Trophy,
+    icon: Users,
     category: "Community"
   },
   {
@@ -33,13 +31,13 @@ const achievements = [
   {
     title: "Tech Fest Leadership",
     description: "Led the graphics design team for Tech Pragati Tech Fest, creating branding and digital assets.",
-    icon: Award,
+    icon: Target,
     category: "Leadership"
   },
   {
     title: "Google UX Certification",
     description: "Completed the Google UX Experience course, demonstrating strong skills in user experience design.",
-    icon: Star,
+    icon: Zap,
     category: "Education"
   }
 ]
@@ -51,17 +49,19 @@ export default function AchievementsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ fontFamily: 'BitcountGridSingle' }}>Achievements</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
+            Achievements
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Milestones and accomplishments that define my journey in technology and design
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}
@@ -69,36 +69,24 @@ export default function AchievementsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
+              whileHover={{ y: -4 }}
+              className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1" style={{ fontFamily: 'Metal Mania' }}>{achievement.title}</h3>
-                  <span className="text-sm text-muted-foreground">{achievement.category}</span>
+                  <h3 className="text-xl font-bold text-black mb-1" style={{ fontFamily: 'Cal Sans', letterSpacing: '0.05em' }}>
+                    {achievement.title}
+                  </h3>
+                  <span className="text-sm text-gray-600">{achievement.category}</span>
                 </div>
               </div>
-              <p className="text-muted-foreground">{achievement.description}</p>
+              <p className="text-gray-600 leading-relaxed">{achievement.description}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button asChild size="lg">
-            <Link href="/achievements">
-              View All Achievements
-              <Trophy className="ml-2 w-4 h-4" />
-            </Link>
-          </Button>
-        </motion.div>
       </div>
     </section>
   )

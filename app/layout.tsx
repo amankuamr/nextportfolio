@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Metal_Mania } from "next/font/google";
+import { Geist, Geist_Mono, Metal_Mania, Cal_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import SocialMenu from "@/components/social-menu";
@@ -21,6 +21,12 @@ const metalMania = Metal_Mania({
   weight: "400",
 });
 
+const calSans = Cal_Sans({
+  variable: "--font-cal-sans",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Aman Kumar - Creative Developer",
   description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects",
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${metalMania.variable} antialiased bg-white text-black overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${metalMania.variable} ${calSans.variable} antialiased bg-white text-black overflow-x-hidden`}
       >
         <CustomCursor />
         <Navbar />

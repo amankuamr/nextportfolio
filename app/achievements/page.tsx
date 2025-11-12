@@ -146,7 +146,7 @@ export default function AchievementsPage() {
                       <achievement.icon className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: 'BitcountGridSingle' }}>{achievement.title}</h3>
+                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: 'Cal Sans', letterSpacing: '0.05em' }}>{achievement.title}</h3>
                       <span className="text-sm text-muted-foreground">{achievement.category}</span>
                     </div>
                   </div>
