@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -118,31 +119,39 @@ export default function VNBoloProduct1DesignProcess() {
           </h2>
           <div className="space-y-8">
             <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-              <img
+              <Image
                 src="/graphics design/Wild/3.png"
                 alt="VN Bolo Product Design - Main View"
+                width={800}
+                height={600}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="space-y-4">
-                <img
+                <Image
                   src="/graphics design/Wild/1.png"
                   alt="VN Bolo Product Design - View 1"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div className="space-y-4">
-                <img
+                <Image
                   src="/graphics design/Wild/2.png"
                   alt="VN Bolo Product Design - View 2"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div className="space-y-4">
-                <img
+                <Image
                   src="/graphics design/Wild/4.png"
                   alt="VN Bolo Product Design - View 4"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>

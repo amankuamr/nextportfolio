@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Users, Target, Zap, CheckCircle, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { ArrowLeft, Users, Target, Zap, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
@@ -57,9 +58,11 @@ export default function BigDealCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <img
+            <Image
               src="/projectss/bigdeal/deal1.png"
               alt="Big Deal Project Preview"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -183,21 +186,27 @@ export default function BigDealCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/bigdeal/deal2.png"
                 alt="Big Deal Screenshot 1"
+                width={400}
+                height={300}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <img
+              <Image
                 src="/projectss/bigdeal/deal3.png"
                 alt="Big Deal Screenshot 2"
+                width={400}
+                height={300}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/bigdeal/deal4.png"
                 alt="Big Deal Screenshot 3"
+                width={400}
+                height={300}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Users, Target, Zap, CheckCircle, ExternalLink } from "lucide-react"
+import { ArrowLeft, Users, Target, Zap, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
 
@@ -57,7 +58,7 @@ export default function MoviezCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <img
+            <Image
               src="/projectss/moviez/moviez1.png"
               alt="Moviez Project Preview"
               className="w-full h-auto rounded-lg shadow-lg"
@@ -183,14 +184,14 @@ export default function MoviezCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/moviez/moviez2.png"
                 alt="Moviez Screenshot 1"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/moviez/moviez3.png"
                 alt="Moviez Screenshot 2"
                 className="w-full h-auto rounded-lg shadow-lg"

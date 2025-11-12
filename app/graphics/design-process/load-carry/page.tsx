@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -117,9 +118,11 @@ export default function LoadCarryDesignProcess() {
             Design Preview
           </h2>
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <img
+            <Image
               src="/graphics design/loadcarry.png"
               alt="Load Carry QR Code Mockups"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>

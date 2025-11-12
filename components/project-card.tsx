@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ExternalLink, Github} from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -43,9 +44,11 @@ export default function ProjectCard({
     >
       <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group-hover:border-gray-300">
         <div className="relative overflow-hidden">
-          <img
+          <Image
             src={image}
             alt={title}
+            width={400}
+            height={300}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />

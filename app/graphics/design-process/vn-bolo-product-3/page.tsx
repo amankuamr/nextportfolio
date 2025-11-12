@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherGraphicsProjects from "@/components/other-graphics-projects"
@@ -118,7 +119,7 @@ export default function VNBoloProduct3DesignProcess() {
           </h2>
           <div className="space-y-8">
             <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-              <img
+              <Image
                 src="/graphics design/product3/2.png"
                 alt="VN Bolo Product Design 3 - Main View"
                 className="w-full h-auto rounded-lg shadow-lg"
@@ -126,14 +127,14 @@ export default function VNBoloProduct3DesignProcess() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <img
+                <Image
                   src="/graphics design/product3/1.png"
                   alt="VN Bolo Product Design 3 - View 1"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div className="space-y-4">
-                <img
+                <Image
                   src="/graphics design/product3/3.png"
                   alt="VN Bolo Product Design 3 - View 3"
                   className="w-full h-auto rounded-lg shadow-lg"

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
 import { uiUxProjects } from "@/lib/ui-ux-projects"
 
@@ -49,9 +50,11 @@ export default function OtherCaseStudies({ currentSlug }: OtherCaseStudiesProps)
           <Link key={study.slug} href={`/ui-ux/case-studies/${study.slug}`}>
             <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group cursor-pointer h-full flex flex-col">
               <div className="relative overflow-hidden rounded-lg mb-6">
-                <img
+                <Image
                   src={study.image}
                   alt={study.title}
+                  width={400}
+                  height={300}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

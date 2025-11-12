@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowLeft, ShoppingCart, Heart, CheckCircle, Search} from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
 
@@ -58,7 +59,7 @@ export default function RebootCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <img
+            <Image
               src="/projectss/reboot/reboot1.png"
               alt="Reboot Project Preview"
               className="w-full h-auto rounded-lg shadow-lg"
@@ -190,19 +191,19 @@ export default function RebootCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/reboot/reboot01.png"
                 alt="Reboot Screenshot 1"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <img
+              <Image
                 src="/projectss/reboot/reboot02.png"
                 alt="Reboot Screenshot 2"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-4">
-              <img
+              <Image
                 src="/projectss/reboot/reboot03.png"
                 alt="Reboot Screenshot 3"
                 className="w-full h-auto rounded-lg shadow-lg"
