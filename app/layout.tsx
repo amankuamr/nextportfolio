@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: "Aman Kumar - Creative Developer",
   description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects",
   icons: {
-    icon: "/profile/profile.jpeg",
+    icon: "/profile/profile.ico",
   },
 };
 

@@ -6,6 +6,19 @@ import { useState } from "react"
 
 const experiences = [
   {
+    title: "Graphics Designer",
+    company: "Codestam Technologies",
+    duration: "Jun 2024 - Aug 2024",
+    location: "Remote",
+    description: "Collaborated with the Codestam team to create various design assets including posters, website carousels, business cards, PowerPoint presentations, and logos for client projects.",
+    achievements: [
+      "Created comprehensive design assets for 5+ client projects",
+      "Designed multiple website carousels and interactive elements",
+      "Developed professional branding materials including logos and business cards"
+    ],
+    technologies: ["Adobe Illustrator", "Photoshop", "Figma", "Canva", "PowerPoint"]
+  },
+  {
     title: "UI/UX Designer & Web Developer",
     company: "Codestam Technologies",
     duration: "Jun 2024 - Aug 2024",
@@ -21,7 +34,7 @@ const experiences = [
   {
     title: "UI/UX Internship",
     company: "Plasmid",
-    duration: "Mar 2025",
+    duration: "Jan 2025 - Mar 2025",
     location: "Remote",
     description: "Completed industrial training focusing on real-world UI/UX and development projects with hands-on experience in industry-standard tools and methodologies.",
     achievements: [
@@ -34,7 +47,7 @@ const experiences = [
   {
     title: "Graphics Design Lead",
     company: "Tech Pragati Tech Fest",
-    duration: "Feb 2024",
+    duration: "Jan 2023 - Feb 2024",
     location: "College Campus",
     description: "Led the graphics design team for Tech Pragati, creating comprehensive branding and visual assets for a major college technology festival.",
     achievements: [
@@ -43,6 +56,19 @@ const experiences = [
       "Designed posters and digital assets"
     ],
     technologies: ["Adobe Illustrator", "Photoshop", "Canva", "Branding"]
+  },
+  {
+    title: "Freelance Logo Design & Web Development",
+    company: "Self-Employed",
+    duration: "2021 - Present (3 years)",
+    location: "Remote",
+    description: "Self-employed freelance work providing logo design and web development services to clients acquired through personal connections and networking.",
+    achievements: [
+      "Successfully delivered 20+ client projects",
+      "Built strong client relationships through networking",
+      "Maintained 100% client satisfaction rate"
+    ],
+    technologies: ["Adobe Illustrator", "Figma", "HTML/CSS", "JavaScript", "React"]
   }
 ]
 
