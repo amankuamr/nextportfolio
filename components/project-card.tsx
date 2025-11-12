@@ -52,7 +52,7 @@ export default function ProjectCard({
         </div>
 
         <CardHeader className="pb-3">
-          <CardTitle className="text-xl font-bold text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
+          <CardTitle className="text-xl font-bold text-black" style={{ fontFamily: 'Metal Mania' }}>
             {title}
           </CardTitle>
           <CardDescription className="text-gray-600 leading-relaxed">

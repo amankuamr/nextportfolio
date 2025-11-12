@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Metal_Mania } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import SocialMenu from "@/components/social-menu";
@@ -15,9 +15,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const metalMania = Metal_Mania({
+  variable: "--font-metal-mania",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Portfolio - Creative Developer",
+  title: "Aman Kumar - Creative Developer",
   description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects",
+  icons: {
+    icon: "/profile/profile.jpeg",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${metalMania.variable} antialiased bg-white text-black overflow-x-hidden`}
       >
         <CustomCursor />
         <Navbar />

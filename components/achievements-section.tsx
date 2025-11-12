@@ -76,7 +76,7 @@ export default function AchievementsSection() {
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1" style={{ fontFamily: 'BitcountGridSingle' }}>{achievement.title}</h3>
+                  <h3 className="text-xl font-semibold mb-1" style={{ fontFamily: 'Metal Mania' }}>{achievement.title}</h3>
                   <span className="text-sm text-muted-foreground">{achievement.category}</span>
                 </div>
               </div>
