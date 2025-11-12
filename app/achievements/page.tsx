@@ -7,80 +7,103 @@ import Footer from "@/components/footer"
 
 const achievements = [
   {
-    title: "Full Stack Developer",
-    description: "Proficient in modern web technologies including React, Next.js, Node.js, and cloud platforms. Built multiple production-ready applications with scalable architectures.",
+    title: "UI/UX Designer & Web Developer at Codestam Technologies",
+    description: "Completed a 3-month role at Codestam Technologies, working with real-life clients on various UI/UX and web development projects.",
     icon: Trophy,
-    category: "Technical Skills",
-    date: "2023 - Present",
+    category: "Professional",
+    date: "2024-06-18 to 2024-08-30",
     details: [
-      "Developed 15+ full-stack applications",
-      "Implemented CI/CD pipelines",
-      "Experience with AWS, Vercel, and Firebase"
+      "3-month internship at Codestam Technologies",
+      "Worked with real-life clients",
+      "Projects: vnbolo, kiraya wala, rillasamento, mall of ranchi, gun pro hub"
     ]
   },
   {
-    title: "UI/UX Designer",
-    description: "Creating intuitive and beautiful user experiences with tools like Figma and Framer. Focus on user-centered design principles and accessibility.",
+    title: "Tech Pragati Tech Fest Lead Graphics Designer",
+    description: "Led the graphics design team for Tech Pragati Tech Fest, creating event branding, posters, and digital assets for a successful college festival.",
     icon: Award,
-    category: "Design",
-    date: "2022 - Present",
+    category: "Leadership",
+    date: "2024-02-20",
     details: [
-      "Designed 50+ user interfaces",
-      "Conducted user research and testing",
-      "Expert in Figma and prototyping tools"
+      "Led graphics design team for Tech Pragati",
+      "Created event branding and posters",
+      "Developed digital assets for college festival"
     ]
   },
   {
-    title: "Open Source Contributor",
-    description: "Active contributor to various open source projects and community initiatives. Passionate about giving back to the developer community.",
+    title: "Plasmid Industrial Training",
+    description: "Completed industrial training at Plasmid, gaining hands-on experience in real-world UI/UX and development projects.",
+    icon: Trophy,
+    category: "Professional",
+    date: "2025-03-04",
+    details: [
+      "Completed industrial training at Plasmid",
+      "Hands-on experience in UI/UX and development",
+      "Real-world project exposure"
+    ]
+  },
+  {
+    title: "Plasmid UI/UX Internship",
+    description: "Completed a UI/UX internship at Plasmid, recognized for outstanding design solutions and user research.",
+    icon: Target,
+    category: "Professional",
+    date: "2025-03-04",
+    details: [
+      "Completed UI/UX internship at Plasmid",
+      "Recognized for outstanding design solutions",
+      "Conducted user research"
+    ]
+  },
+  {
+    title: "GDSC Core Graphics Design Member",
+    description: "Selected as a core member for graphics design in the Google Developer Student Clubs, contributing to event branding and visual content.",
     icon: Star,
     category: "Community",
-    date: "2021 - Present",
+    date: "2023-09-01",
     details: [
-      "Contributed to 20+ open source projects",
-      "Maintained popular npm packages",
-      "Organized community workshops"
+      "Core member in GDSC graphics design",
+      "Contributed to event branding",
+      "Created visual content for events"
     ]
   },
   {
-    title: "Problem Solver",
-    description: "Strong analytical skills with experience in algorithm design and optimization. Excel at breaking down complex problems into manageable solutions.",
-    icon: Target,
-    category: "Technical Skills",
-    date: "2020 - Present",
+    title: "UI/UX Recommendation Letter",
+    description: "Received a recommendation letter for outstanding performance and contributions in UI/UX design.",
+    icon: Award,
+    category: "Professional",
+    date: "2025-03-04",
     details: [
-      "Solved 100+ algorithmic challenges",
-      "Optimized application performance by 40%",
-      "Mentored junior developers"
+      "Received recommendation letter",
+      "Outstanding performance in UI/UX design",
+      "Contributions to design projects"
     ]
   },
   {
-    title: "Team Player",
-    description: "Collaborative approach with experience in agile development and cross-functional teams. Strong communication and leadership skills.",
-    icon: Users,
-    category: "Soft Skills",
-    date: "2019 - Present",
-    details: [
-      "Led 5+ development teams",
-      "Implemented agile methodologies",
-      "Excellent stakeholder communication"
-    ]
-  },
-  {
-    title: "Continuous Learner",
-    description: "Always staying updated with the latest technologies and industry trends. Committed to lifelong learning and professional development.",
+    title: "UX Experience Google Course",
+    description: "Completed the Google UX Experience course, demonstrating strong skills in user experience design and prototyping.",
     icon: Zap,
-    category: "Personal Growth",
-    date: "2018 - Present",
+    category: "Education",
+    date: "2023-06-10",
     details: [
-      "Earned 15+ certifications",
-      "Attended 50+ tech conferences",
-      "Published 25+ technical articles"
+      "Completed Google UX Experience course",
+      "Demonstrated skills in UX design",
+      "Proficient in prototyping"
+    ]
+  },
+  {
+    title: "Pariksha Pe Charcha",
+    description: "Participated in the national event 'Pariksha Pe Charcha' with the Prime Minister, focusing on exam stress management and student motivation.",
+    icon: Users,
+    category: "Community",
+    date: "2022-04-01",
+    details: [
+      "Participated in national event with PM",
+      "Focused on exam stress management",
+      "Student motivation initiatives"
     ]
   }
 ]
 
-const categories = ["All", "Technical Skills", "Design", "Community", "Soft Skills", "Personal Growth"]
 
 export default function AchievementsPage() {
   return (
