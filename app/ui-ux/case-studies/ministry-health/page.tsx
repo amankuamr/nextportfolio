@@ -62,6 +62,8 @@ export default function MinistryHealthCaseStudy() {
             <Image
               src="/projectss/gov/gov1.png"
               alt="Ministry of Health Website Preview"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -195,11 +197,15 @@ export default function MinistryHealthCaseStudy() {
               <Image
                 src="/projectss/gov/gov1.png"
                 alt="Ministry Website Redesign Screenshot 1"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <Image
                 src="/projectss/gov/gov2.png"
                 alt="Ministry Website Redesign Screenshot 2"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -207,6 +213,8 @@ export default function MinistryHealthCaseStudy() {
               <Image
                 src="/projectss/gov/gov3.png"
                 alt="Ministry Website Redesign Screenshot 3"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

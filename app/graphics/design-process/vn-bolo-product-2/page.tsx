@@ -132,6 +132,8 @@ export default function VNBoloProduct2DesignProcess() {
                 <Image
                   src="/graphics design/product2/1.png"
                   alt="VN Bolo Product Design 2 - View 1"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -139,6 +141,8 @@ export default function VNBoloProduct2DesignProcess() {
                 <Image
                   src="/graphics design/product2/3.png"
                   alt="VN Bolo Product Design 2 - View 3"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -146,6 +150,8 @@ export default function VNBoloProduct2DesignProcess() {
                 <Image
                   src="/graphics design/product2/4.png"
                   alt="VN Bolo Product Design 2 - View 4"
+                  width={400}
+                  height={300}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>

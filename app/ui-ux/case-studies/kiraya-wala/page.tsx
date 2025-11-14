@@ -61,6 +61,8 @@ export default function KirayaWalaCaseStudy() {
             <Image
               src="/projectss/Kirayawala/kiraya5.png"
               alt="Kiraya Wala Project Preview"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -192,11 +194,15 @@ export default function KirayaWalaCaseStudy() {
               <Image
                 src="/projectss/Kirayawala/kiraya1.png"
                 alt="Kiraya Wala Screenshot 1"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <Image
                 src="/projectss/Kirayawala/kiraya2.png"
                 alt="Kiraya Wala Screenshot 2"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -204,11 +210,15 @@ export default function KirayaWalaCaseStudy() {
               <Image
                 src="/projectss/Kirayawala/kiraya3.png"
                 alt="Kiraya Wala Screenshot 3"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <Image
                 src="/projectss/Kirayawala/kiraya4.png"
                 alt="Kiraya Wala Screenshot 4"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

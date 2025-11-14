@@ -187,11 +187,15 @@ export default function PortfolioOldCaseStudy() {
               <Image
                 src="/projectss/portfolioold/portfolio2.png"
                 alt="Portfolio Old Screenshot 1"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <Image
                 src="/projectss/portfolioold/portfolio3.png"
                 alt="Portfolio Old Screenshot 2"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -199,6 +203,8 @@ export default function PortfolioOldCaseStudy() {
               <Image
                 src="/projectss/portfolioold/portfolio4.png"
                 alt="Portfolio Old Screenshot 3"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

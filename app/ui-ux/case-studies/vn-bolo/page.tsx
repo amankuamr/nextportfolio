@@ -61,6 +61,8 @@ export default function VnBoloCaseStudy() {
             <Image
               src="/projectss/vnbolo.png"
               alt="VN Bolo Project Preview"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>

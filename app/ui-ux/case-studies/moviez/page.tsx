@@ -187,6 +187,8 @@ export default function MoviezCaseStudy() {
               <Image
                 src="/projectss/moviez/moviez2.png"
                 alt="Moviez Screenshot 1"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -194,6 +196,8 @@ export default function MoviezCaseStudy() {
               <Image
                 src="/projectss/moviez/moviez3.png"
                 alt="Moviez Screenshot 2"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

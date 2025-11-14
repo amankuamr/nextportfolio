@@ -194,11 +194,15 @@ export default function RebootCaseStudy() {
               <Image
                 src="/projectss/reboot/reboot01.png"
                 alt="Reboot Screenshot 1"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <Image
                 src="/projectss/reboot/reboot02.png"
                 alt="Reboot Screenshot 2"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -206,6 +210,8 @@ export default function RebootCaseStudy() {
               <Image
                 src="/projectss/reboot/reboot03.png"
                 alt="Reboot Screenshot 3"
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
