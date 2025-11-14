@@ -138,7 +138,7 @@ export default function HeroSection() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium">
-                <Link href="#contact">Get In Touch</Link>
+                <Link href="#contact">Resume</Link>
               </Button>
             </motion.div>
 
