@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Github, Instagram, Mail, MapPin, Phone, Globe } from "lucide-react"
+import { Github, Instagram, Mail, MapPin, Phone, Globe, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StarfieldAnimation from "@/components/starfield-animation"
 
@@ -23,6 +23,7 @@ const footerLinks = {
     { name: "GitHub", href: "https://github.com/amankuamr", icon: Github },
     { name: "Instagram", href: "https://instagram.com/aman.k_sah", icon: Instagram },
     { name: "Portfolio", href: "https://iimagii.vercel.app", icon: Globe },
+    { name: "Resume", href: "https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing", icon: FileText },
     { name: "Email", href: "mailto:amankumar1948sahu@gmail.com", icon: Mail }
   ]
 }

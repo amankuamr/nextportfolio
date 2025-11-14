@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -138,7 +138,7 @@ export default function HeroSection() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium">
-                <Link href="#contact">Resume</Link>
+                <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </motion.div>
 
@@ -152,6 +152,7 @@ export default function HeroSection() {
               {[
                 { icon: Github, href: "https://github.com", label: "GitHub" },
                 { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+                { icon: FileText, href: "https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing", label: "Resume" },
                 { icon: Mail, href: "mailto:aman@example.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
