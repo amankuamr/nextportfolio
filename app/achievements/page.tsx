@@ -11,7 +11,7 @@ const achievements = [
     description: "Completed a 3-month role at Codestam Technologies, working with real-life clients on various UI/UX and web development projects.",
     icon: Trophy,
     category: "Professional",
-    date: "2024-06-18 to 2024-08-30",
+    date: "18th June to 15th August 2025",
     details: [
       "3-month internship at Codestam Technologies",
       "Worked with real-life clients",

@@ -20,7 +20,7 @@ export default function AboutSection() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>About Me</h2>
             <p className="text-xl mb-6" style={{ fontFamily: 'Home Writing', fontSize: '2rem' }}>
-              I&apos;m a passionate creative developer and designer with over 5 years of experience
+              I&apos;m a passionate creative developer and designer with over 3 years of experience
               in crafting digital experiences. I love combining technical expertise with artistic
               vision to create solutions that not only work beautifully but also tell a story.
             </p>

@@ -18,7 +18,7 @@ const achievements = [
   },
   {
     title: "Codestam Technologies Role",
-    description: "UI/UX Designer & Web Developer at Codestam Technologies, working with real-life clients on various projects.",
+    description: "UI/UX Designer & Web Developer at Codestam Technologies from 18th June to 15th August 2025, working with real-life clients on various projects.",
     icon: Star,
     category: "Professional"
   },

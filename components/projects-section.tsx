@@ -1,35 +1,42 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Figma } from "lucide-react"
 import Link from "next/link"
 import ProjectCard from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 
 const featuredProjects = [
   {
-    title: "Imagi",
-    description: "A game gallery platform where I upload my gameplay screenshots.",
-    image: "/projectss/imagi.png",
-    liveUrl: "https://iimagii.vercel.app",
-    githubUrl: "https://github.com/example",
-    technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"]
-  },
-  {
-    title: "Darla Browser",
-    description: "A gambling site UI/UX for demonstration purposes.",
-    image: "/projectss/darla browser.png",
-    liveUrl: "https://darla-browser.vercel.app/",
-    githubUrl: "https://github.com/example",
-    technologies: ["Framer", "Next.js", "Shadcn", "Figma"]
+    title: "Big Deal",
+    description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
+    image: "/projectss/bigdeal/deal1.png",
+    liveUrl: "/ui-ux/case-studies/big-deal",
+    githubUrl: "https://bigdeal.framer.ai/",
+    technologies: ["Figma", "Framer", "UI/UX Design"],
+    liveLabel: "Case Study",
+    githubLabel: "Live Site",
+    githubIcon: Figma
   },
   {
     title: "Reboot",
     description: "An ecommerce website for shoes and footwear.",
     image: "/projectss/reboot.png",
-    liveUrl: "https://rebooot.vercel.app/",
-    githubUrl: "https://github.com/example",
-    technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"]
+    liveUrl: "/web-dev/case-studies/reboot",
+    githubUrl: "https://rebooot.vercel.app/",
+    technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"],
+    liveLabel: "Case Study",
+    githubLabel: "View Live"
+  },
+  {
+    title: "Imagi",
+    description: "A game gallery platform where I upload my gameplay screenshots.",
+    image: "/projectss/imagi.png",
+    liveUrl: "/web-dev/case-studies/imagi",
+    githubUrl: "https://iimagii.vercel.app",
+    technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"],
+    liveLabel: "Case Study",
+    githubLabel: "View Live"
   }
 ]
 
