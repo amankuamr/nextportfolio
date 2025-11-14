@@ -64,7 +64,7 @@ export default function OtherGraphicsProjects({ currentSlug }: OtherGraphicsProj
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="flex-1 flex flex-col">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: 'Cal Sans', letterSpacing: '0.05em' }}>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300 font-cal-sans">
                   {project.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">

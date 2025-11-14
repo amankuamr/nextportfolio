@@ -426,7 +426,7 @@ export default function RebootCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="reboot" />
+        <OtherCaseStudies currentSlug="reboot" category="web-dev" />
       </div>
     </div>
   )

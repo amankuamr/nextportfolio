@@ -428,7 +428,7 @@ export default function PortfolioOldCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="portfolio-old" />
+        <OtherCaseStudies currentSlug="portfolio-old" category="web-dev" />
       </div>
     </div>
   )

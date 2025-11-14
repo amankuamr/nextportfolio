@@ -379,7 +379,7 @@ export default function DarlaBrowserCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="darla-browser" />
+        <OtherCaseStudies currentSlug="darla-browser" category="web-dev" />
       </div>
     </div>
   )

@@ -77,7 +77,7 @@ export default function AchievementsSection() {
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-1" style={{ fontFamily: 'Cal Sans', letterSpacing: '0.05em' }}>
+                  <h3 className="text-xl font-bold text-black mb-1 font-cal-sans">
                     {achievement.title}
                   </h3>
                   <span className="text-sm text-gray-600">{achievement.category}</span>

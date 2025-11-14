@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400&display=swap');
 @import "tailwindcss";
 
 
@@ -102,6 +103,17 @@ body {
   top: 0;
   left: 0;
   visibility: hidden;
+}
+
+/* Font variables */
+:root {
+  --font-cal-sans: 'Cal Sans', sans-serif;
+}
+
+/* Font classes */
+.font-cal-sans {
+  font-family: var(--font-cal-sans);
+  letter-spacing: 0.05em;
 }
 
 /* Custom cursor styles */

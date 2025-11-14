@@ -419,7 +419,7 @@ export default function MoviezCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="moviez" />
+        <OtherCaseStudies currentSlug="moviez" category="web-dev" />
       </div>
     </div>
   )

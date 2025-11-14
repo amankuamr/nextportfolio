@@ -380,7 +380,7 @@ export default function EventOfDistinctionCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="event-of-distinction" />
+        <OtherCaseStudies currentSlug="event-of-distinction" category="web-dev" />
       </div>
     </div>
   )

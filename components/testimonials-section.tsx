@@ -114,7 +114,7 @@ export default function ExperienceSection() {
                 <div className="flex items-center">
                   <Briefcase className="w-5 h-5 text-blue-600 mr-4 flex-shrink-0" />
                   <div>
-                    <h3 className="text-lg font-semibold text-black group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Cal Sans', letterSpacing: '0.05em' }}>
+                    <h3 className="text-lg font-semibold text-black group-hover:text-blue-600 transition-colors font-cal-sans">
                       {experience.title}
                     </h3>
                     <p className="text-sm text-gray-600">{experience.company}</p>

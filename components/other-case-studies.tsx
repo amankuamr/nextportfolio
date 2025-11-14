@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { uiUxProjects } from "@/lib/ui-ux-projects"
+import { webDevProjects } from "@/lib/web-dev-projects"
+import { graphicsProjects } from "@/lib/graphics-projects"
 
 interface CaseStudy {
   slug: string
@@ -14,16 +16,50 @@ interface CaseStudy {
 
 interface OtherCaseStudiesProps {
   currentSlug: string
+  category?: "web-dev" | "ui-ux" | "graphics"
 }
 
-const caseStudies: CaseStudy[] = uiUxProjects.map(project => ({
-  slug: project.liveUrl.split('/').pop() || '',
-  title: project.title,
-  description: project.description,
-  image: project.image
-}))
+const getCaseStudies = (category: string = "ui-ux") => {
+  let projects
+  switch (category) {
+    case "web-dev":
+      projects = webDevProjects
+      break
+    case "ui-ux":
+      projects = uiUxProjects
+      break
+    case "graphics":
+      projects = graphicsProjects
+      break
+    default:
+      projects = uiUxProjects
+  }
 
-export default function OtherCaseStudies({ currentSlug }: OtherCaseStudiesProps) {
+  return projects.map(project => ({
+    slug: project.liveUrl.split('/').pop() || '',
+    title: project.title,
+    description: project.description,
+    image: project.image
+  }))
+}
+
+const getLinkPath = (category: string = "ui-ux") => {
+  switch (category) {
+    case "web-dev":
+      return "/web-dev/case-studies/"
+    case "ui-ux":
+      return "/ui-ux/case-studies/"
+    case "graphics":
+      return "/graphics/design-process/"
+    default:
+      return "/ui-ux/case-studies/"
+  }
+}
+
+export default function OtherCaseStudies({ currentSlug, category = "ui-ux" }: OtherCaseStudiesProps) {
+  const caseStudies = getCaseStudies(category)
+  const linkPath = getLinkPath(category)
+
   // Find the current case study index
   const currentIndex = caseStudies.findIndex(study => study.slug === currentSlug)
 
@@ -47,7 +83,7 @@ export default function OtherCaseStudies({ currentSlug }: OtherCaseStudiesProps)
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {otherStudies.map((study) => (
-          <Link key={study.slug} href={`/ui-ux/case-studies/${study.slug}`}>
+          <Link key={study.slug} href={`${linkPath}${study.slug}`}>
             <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group cursor-pointer h-full flex flex-col">
               <div className="relative overflow-hidden rounded-lg mb-6">
                 <Image

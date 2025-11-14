@@ -381,7 +381,7 @@ export default function BWStoryCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="bw-story" />
+        <OtherCaseStudies currentSlug="bw-story" category="web-dev" />
       </div>
     </div>
   )

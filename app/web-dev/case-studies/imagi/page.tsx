@@ -5,6 +5,7 @@ import Image from "next/image"
 import { ArrowLeft, CheckCircle, Gamepad2, Upload, Eye, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import ScrollButtons from "@/components/scroll-buttons"
 import OtherCaseStudies from "@/components/other-case-studies"
 
 export default function ImagiCaseStudy() {
@@ -376,7 +377,7 @@ export default function ImagiCaseStudy() {
           </div>
         </motion.section>
 
-        <OtherCaseStudies currentSlug="imagi" />
+        <OtherCaseStudies currentSlug="imagi" category="web-dev" />
       </div>
     </div>
   )
