@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/projects-section"
 import AboutSection from "@/components/about-section"
 import AchievementsSection from "@/components/achievements-section"
 import ExperienceSection from "@/components/testimonials-section"
+import ScrollButtons from "@/components/scroll-buttons"
 import Footer from "@/components/footer"
 
 
@@ -40,6 +41,7 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+      <ScrollButtons />
     </div>
   )
 }

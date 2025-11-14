@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function VnBoloCaseStudy() {
   return (
@@ -298,6 +299,7 @@ export default function VnBoloCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="vn-bolo" />
+        <ScrollButtons />
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, Heart, Users, Calendar, Award, Globe } from "lu
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function EventOfDistinctionCaseStudy() {
   return (
@@ -381,6 +382,7 @@ export default function EventOfDistinctionCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="event-of-distinction" category="web-dev" />
+        <ScrollButtons />
       </div>
     </div>
   )

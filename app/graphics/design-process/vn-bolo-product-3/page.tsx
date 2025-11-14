@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherGraphicsProjects from "@/components/other-graphics-projects"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function VNBoloProduct3DesignProcess() {
   return (
@@ -169,6 +170,7 @@ export default function VNBoloProduct3DesignProcess() {
 
         {/* Other Graphics Projects */}
         <OtherGraphicsProjects currentSlug="/graphics/design-process/vn-bolo-product-3" />
+        <ScrollButtons />
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function PortfolioOldCaseStudy() {
   return (
@@ -328,6 +329,7 @@ export default function PortfolioOldCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="portfolio-old" />
+        <ScrollButtons />
       </div>
     </div>
   )

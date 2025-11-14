@@ -6,6 +6,7 @@ import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherGraphicsProjects from "@/components/other-graphics-projects"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function VNBoloProduct1DesignProcess() {
   return (
@@ -184,6 +185,7 @@ export default function VNBoloProduct1DesignProcess() {
 
         {/* Other Graphics Projects */}
         <OtherGraphicsProjects currentSlug="/graphics/design-process/vn-bolo-product-1" />
+        <ScrollButtons />
       </div>
     </div>
   )

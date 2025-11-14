@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, Home, Search, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function KirayaWalaCaseStudy() {
   return (
@@ -348,6 +349,7 @@ export default function KirayaWalaCaseStudy() {
           </div>
         </motion.section>
         <OtherCaseStudies currentSlug="kiraya-wala" />
+        <ScrollButtons />
 
       </div>
     </div>

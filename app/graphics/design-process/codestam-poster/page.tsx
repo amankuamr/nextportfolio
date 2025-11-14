@@ -6,6 +6,7 @@ import { ArrowLeft, Palette, Layers, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherGraphicsProjects from "@/components/other-graphics-projects"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function CodestamPosterDesignProcess() {
   return (
@@ -153,6 +154,7 @@ export default function CodestamPosterDesignProcess() {
 
         {/* Other Graphics Projects */}
         <OtherGraphicsProjects currentSlug="/graphics/design-process/codestam-poster" />
+        <ScrollButtons />
       </div>
     </div>
   )

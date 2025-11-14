@@ -378,6 +378,7 @@ export default function ImagiCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="imagi" category="web-dev" />
+        <ScrollButtons />
       </div>
     </div>
   )

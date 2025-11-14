@@ -37,14 +37,49 @@ export default function ScrollButtons() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 20 }}
-          transition={{ duration: 0.3 }}
-          className="hidden md:block fixed right-6 top-1/2 transform translate-y-16 z-50"
-        >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col space-y-2">
+        <>
+          {/* Desktop version */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3 }}
+            className="hidden md:block fixed right-6 top-1/2 transform translate-y-40 z-50"
+          >
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col space-y-2">
+              <motion.button
+                onClick={scrollToTop}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:text-black group"
+              >
+                <ChevronUp className="w-5 h-5 transition-transform duration-300 group-hover:scale-125" />
+              </motion.button>
+              <motion.button
+                onClick={scrollToBottom}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:text-black group"
+              >
+                <ChevronDown className="w-5 h-5 transition-transform duration-300 group-hover:scale-125" />
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* Mobile version */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed bottom-20 right-4 z-50 flex flex-col space-y-2"
+          >
             <motion.button
               onClick={scrollToTop}
               whileHover={{
@@ -52,7 +87,7 @@ export default function ScrollButtons() {
                 transition: { duration: 0.2, ease: "easeOut" }
               }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:text-black group"
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
             >
               <ChevronUp className="w-5 h-5 transition-transform duration-300 group-hover:scale-125" />
             </motion.button>
@@ -63,12 +98,12 @@ export default function ScrollButtons() {
                 transition: { duration: 0.2, ease: "easeOut" }
               }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:text-black group"
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
             >
               <ChevronDown className="w-5 h-5 transition-transform duration-300 group-hover:scale-125" />
             </motion.button>
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   )

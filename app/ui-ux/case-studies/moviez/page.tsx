@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function MoviezCaseStudy() {
   return (
@@ -321,6 +322,7 @@ export default function MoviezCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="moviez" />
+        <ScrollButtons />
       </div>
     </div>
   )

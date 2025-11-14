@@ -6,6 +6,7 @@ import { ArrowLeft, Users, Target, Zap, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function BigDealCaseStudy() {
   return (
@@ -330,6 +331,7 @@ export default function BigDealCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="big-deal" />
+        <ScrollButtons />
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, ShoppingCart, CreditCard, Truck, Shield, Star }
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function RebootCaseStudy() {
   return (
@@ -427,6 +428,7 @@ export default function RebootCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="reboot" category="web-dev" />
+        <ScrollButtons />
       </div>
     </div>
   )

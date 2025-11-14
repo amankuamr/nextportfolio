@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, Smartphone, Users, MessageCircle, Heart, Share,
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
+import ScrollButtons from "@/components/scroll-buttons"
 
 export default function BWStoryCaseStudy() {
   return (
@@ -382,6 +383,7 @@ export default function BWStoryCaseStudy() {
         </motion.section>
 
         <OtherCaseStudies currentSlug="bw-story" category="web-dev" />
+        <ScrollButtons />
       </div>
     </div>
   )
