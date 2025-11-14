@@ -30,7 +30,9 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-xl font-bold text-black" style={{ fontFamily: 'DelailtaSignature' }}>Aman Kumar</h1>
+          <Link href="/">
+            <h1 className="text-xl font-bold text-black hover:text-gray-600 transition-colors duration-300 cursor-pointer" style={{ fontFamily: 'DelailtaSignature' }}>Aman Kumar</h1>
+          </Link>
         </motion.div>
       </div>
 

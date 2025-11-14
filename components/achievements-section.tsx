@@ -12,19 +12,19 @@ const achievements = [
   },
   {
     title: "UI/UX Recommendation Letter",
-    description: "Received a recommendation letter for outstanding performance and contributions in UI/UX design.",
+    description: "Received a recommendation letter in March for outstanding performance and contributions in UI/UX design.",
     icon: Award,
     category: "Professional"
   },
   {
     title: "Codestam Technologies Role",
-    description: "UI/UX Designer & Web Developer at Codestam Technologies from 18th June to 15th August 2025, working with real-life clients on various projects.",
+    description: "UI/UX Designer & Web Developer at Codestam Technologies from June to September, working with real-life clients on various projects.",
     icon: Star,
     category: "Professional"
   },
   {
     title: "Plasmid UI/UX Internship",
-    description: "Completed UI/UX internship at Plasmid, recognized for outstanding design solutions and user research.",
+    description: "Completed UI/UX internship at Plasmid in March, recognized for outstanding design solutions and user research.",
     icon: Trophy,
     category: "Professional"
   },

@@ -8,7 +8,7 @@ const experiences = [
   {
     title: "Graphics Designer",
     company: "Codestam Technologies",
-    duration: "Jun 2024 - Aug 2024",
+    duration: "June 2025 - September 2025",
     location: "Remote",
     description: "Collaborated with the Codestam team to create various design assets including posters, website carousels, business cards, PowerPoint presentations, and logos for client projects.",
     achievements: [
@@ -21,7 +21,7 @@ const experiences = [
   {
     title: "UI/UX Designer & Web Developer",
     company: "Codestam Technologies",
-    duration: "Jun 2024 - Aug 2024",
+    duration: "June 2025 - September 2025",
     location: "Remote",
     description: "Worked with real-life clients on various UI/UX and web development projects. Delivered high-quality solutions for vnbolo, kiraya wala, rillasamento, mall of ranchi, and gun pro hub.",
     achievements: [
@@ -34,7 +34,7 @@ const experiences = [
   {
     title: "UI/UX Internship",
     company: "Plasmid",
-    duration: "Jan 2025 - Mar 2025",
+    duration: "January 2025 - March 2025",
     location: "Remote",
     description: "Completed industrial training focusing on real-world UI/UX and development projects with hands-on experience in industry-standard tools and methodologies.",
     achievements: [
@@ -47,7 +47,7 @@ const experiences = [
   {
     title: "Graphics Design Lead",
     company: "Tech Pragati Tech Fest",
-    duration: "Jan 2023 - Feb 2024",
+    duration: "January 2023 - February 2024",
     location: "College Campus",
     description: "Led the graphics design team for Tech Pragati, creating comprehensive branding and visual assets for a major college technology festival.",
     achievements: [

@@ -11,7 +11,7 @@ const achievements = [
     description: "Completed a 3-month role at Codestam Technologies, working with real-life clients on various UI/UX and web development projects.",
     icon: Trophy,
     category: "Professional",
-    date: "18th June to 15th August 2025",
+    date: "24th June to 18th September 2025",
     details: [
       "3-month internship at Codestam Technologies",
       "Worked with real-life clients",
@@ -23,7 +23,7 @@ const achievements = [
     description: "Led the graphics design team for Tech Pragati Tech Fest, creating event branding, posters, and digital assets for a successful college festival.",
     icon: Award,
     category: "Leadership",
-    date: "2024-02-20",
+    date: "20th February 2024",
     details: [
       "Led graphics design team for Tech Pragati",
       "Created event branding and posters",
@@ -35,7 +35,7 @@ const achievements = [
     description: "Completed industrial training at Plasmid, gaining hands-on experience in real-world UI/UX and development projects.",
     icon: Trophy,
     category: "Professional",
-    date: "2025-03-04",
+    date: "4th March 2025",
     details: [
       "Completed industrial training at Plasmid",
       "Hands-on experience in UI/UX and development",
@@ -47,7 +47,7 @@ const achievements = [
     description: "Completed a UI/UX internship at Plasmid, recognized for outstanding design solutions and user research.",
     icon: Target,
     category: "Professional",
-    date: "2025-03-04",
+    date: "4th March 2025",
     details: [
       "Completed UI/UX internship at Plasmid",
       "Recognized for outstanding design solutions",
@@ -59,7 +59,7 @@ const achievements = [
     description: "Selected as a core member for graphics design in the Google Developer Student Clubs, contributing to event branding and visual content.",
     icon: Star,
     category: "Community",
-    date: "2023-09-01",
+    date: "1st September 2023",
     details: [
       "Core member in GDSC graphics design",
       "Contributed to event branding",
@@ -71,7 +71,7 @@ const achievements = [
     description: "Received a recommendation letter for outstanding performance and contributions in UI/UX design.",
     icon: Award,
     category: "Professional",
-    date: "2025-03-04",
+    date: "4th March 2025",
     details: [
       "Received recommendation letter",
       "Outstanding performance in UI/UX design",
@@ -83,7 +83,7 @@ const achievements = [
     description: "Completed the Google UX Experience course, demonstrating strong skills in user experience design and prototyping.",
     icon: Zap,
     category: "Education",
-    date: "2023-06-10",
+    date: "10th June 2023",
     details: [
       "Completed Google UX Experience course",
       "Demonstrated skills in UX design",
@@ -95,7 +95,7 @@ const achievements = [
     description: "Participated in the national event 'Pariksha Pe Charcha' with the Prime Minister, focusing on exam stress management and student motivation.",
     icon: Users,
     category: "Community",
-    date: "2022-04-01",
+    date: "1st April 2022",
     details: [
       "Participated in national event with PM",
       "Focused on exam stress management",
