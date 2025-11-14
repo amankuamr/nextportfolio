@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowLeft, CheckCircle, Smartphone, Users, MessageCircle, Heart, Share, Camera, Star, Zap } from "lucide-react"
+import { ArrowLeft, CheckCircle, Smartphone, Users, MessageCircle, Camera, Star, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"

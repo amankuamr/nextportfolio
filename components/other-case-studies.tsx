@@ -7,12 +7,7 @@ import { uiUxProjects } from "@/lib/ui-ux-projects"
 import { webDevProjects } from "@/lib/web-dev-projects"
 import { graphicsProjects } from "@/lib/graphics-projects"
 
-interface CaseStudy {
-  slug: string
-  title: string
-  description: string
-  image: string
-}
+
 
 interface OtherCaseStudiesProps {
   currentSlug: string

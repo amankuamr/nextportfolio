@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowLeft, CheckCircle, Heart, Users, Calendar, Award, Globe } from "lucide-react"
+import { ArrowLeft, CheckCircle, Heart, Users, Award, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
