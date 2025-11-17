@@ -231,6 +231,53 @@ export default function NayansukhAdminCaseStudy() {
           </div>
         </motion.section>
 
+        {/* Screenshots */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'BitcountGridSingle' }}>
+            Project Screenshots
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <Image
+                src="/projectss/nayansukh/panel1.png"
+                alt="Nayansukh Admin Panel - Dashboard"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+              <Image
+                src="/projectss/nayansukh/panel2.png"
+                alt="Nayansukh Admin Panel - Management View"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-4">
+              <Image
+                src="/projectss/nayansukh/panel3.png"
+                alt="Nayansukh Admin Panel - Analytics"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+              <Image
+                src="/projectss/nayansukh/panel4.png"
+                alt="Nayansukh Admin Panel - Settings"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </motion.section>
+
         {/* Technical Implementation */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
