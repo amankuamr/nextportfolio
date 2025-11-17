@@ -3,7 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ExternalLink, Github} from "lucide-react"
+import { ExternalLink, Github, FileText} from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -84,7 +84,7 @@ export default function ProjectCard({
                 {...(liveUrl.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="flex items-center justify-center"
               >
-                {React.createElement(liveIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
+                {React.createElement(liveIcon || FileText, { className: "w-4 h-4 mr-2" })}
                 <span className="font-medium">{liveLabel || "View Live"}</span>
               </a>
             </Button>
@@ -98,11 +98,11 @@ export default function ProjectCard({
               >
                 {githubLabel ? (
                   <>
-                    {React.createElement(githubIcon || Github, { className: "w-4 h-4 mr-2" })}
+                    {React.createElement(githubIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
                     <span className="font-medium">{githubLabel}</span>
                   </>
                 ) : (
-                  React.createElement(githubIcon || Github, { className: "w-4 h-4" })
+                  React.createElement(githubIcon || ExternalLink, { className: "w-4 h-4" })
                 )}
               </a>
             </Button>
