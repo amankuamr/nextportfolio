@@ -68,5 +68,25 @@ export const webDevProjects = [
     technologies: ["HTML", "CSS", "JS", "Bootstrap"],
     liveLabel: "Case Study",
     githubLabel: "View Live"
+  },
+  {
+    title: "Nayansukh",
+    description: "Multi-page website design and development for Nayansukh client using requested color scheme.",
+    image: "/projectss/nayansukh/nayan1.png",
+    liveUrl: "/web-dev/case-studies/nayansukh",
+    githubUrl: "#",
+    technologies: ["HTML", "CSS", "Bootstrap"],
+    liveLabel: "Case Study",
+    githubLabel: "Coming Soon"
+  },
+  {
+    title: "Admin Panel (Nayansukh)",
+    description: "Theme-matching admin panel for Nayansukh with full frontend functionality.",
+    image: "/projectss/nayansukh/panel1.png",
+    liveUrl: "/web-dev/case-studies/nayansukh-admin",
+    githubUrl: "#",
+    technologies: ["HTML", "CSS", "JS", "Bootstrap"],
+    liveLabel: "Case Study",
+    githubLabel: "Coming Soon"
   }
 ]

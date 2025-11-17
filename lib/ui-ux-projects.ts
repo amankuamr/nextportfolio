@@ -77,5 +77,16 @@ export const uiUxProjects = [
     liveLabel: "Case Study",
     githubLabel: "Live Site",
     githubIcon: Figma
+  },
+  {
+    title: "Dashboard Design (VN BOLO)",
+    description: "Intuitive admin dashboard design that perfectly matches the VN BOLO brand theme and website.",
+    image: "/projectss/vnboloadmin/admin1.png",
+    liveUrl: "/ui-ux/case-studies/vn-bolo-admin",
+    githubUrl: "https://www.figma.com/design/olwFO2zJVtHXAyPIckFZpO/vnboloadmin?node-id=0-1&t=wCn2BVnpO1SI5E3q-1",
+    technologies: ["Figma", "UI/UX Design", "Admin Panel"],
+    liveLabel: "Case Study",
+    githubLabel: "Figma",
+    githubIcon: Figma
   }
 ]
