@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button"
 import StarfieldAnimation from "@/components/starfield-animation"
 
 const footerLinks = {
-  services: [
+  skills: [
     { name: "Web Development", href: "/web-dev" },
     { name: "UI/UX Design", href: "/ui-ux" },
     { name: "Graphics Design", href: "/graphics" },
-    { name: "Consulting", href: "/consulting" }
+    { name: "Achievements", href: "/achievements" }
   ],
-  company: [
+  portfolio: [
     { name: "About", href: "/#about" },
     { name: "Experience", href: "/#experience" },
     { name: "Projects", href: "/#projects" },
@@ -68,16 +68,16 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Services */}
+            {/* Skills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Services</h4>
+              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Skills</h4>
               <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
+                {footerLinks.skills.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -90,16 +90,16 @@ export default function Footer() {
               </ul>
             </motion.div>
 
-            {/* Company */}
+            {/* Portfolio */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Company</h4>
+              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Portfolio</h4>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+                {footerLinks.portfolio.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -119,9 +119,9 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Let&apos;s Work Together</h4>
+              <h4 className="text-lg font-semibold mb-6" style={{ fontFamily: 'BitcountGridSingle' }}>Connect With Me</h4>
               <p className="text-gray-300 mb-6">
-                Ready to bring your ideas to life? I&apos;d love to hear about your project and discuss how we can create something amazing together.
+              Explore my portfolio and see how we can collaborate on your next creative project. Let&apos;s build something extraordinary together.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -160,7 +160,7 @@ export default function Footer() {
                 viewport={{ once: true }}
                 className="text-gray-400 text-sm"
               >
-                © 2024 Aman Kumar. All rights reserved.
+                © 2025 Aman Kumar. All rights reserved.
               </motion.p>
 
               <motion.div

@@ -197,7 +197,7 @@ export default function MobileHeroSection() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="sm" className="border-black text-black hover:bg-black hover:text-white px-4 py-2 text-sm font-medium">
-              <Link href="#contact">Resume</Link>
+              <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </motion.div>
 
