@@ -15,7 +15,7 @@ const featuredProjects = [
     githubUrl: "https://bigdeal.framer.ai/",
     technologies: ["Figma", "Framer", "UI/UX Design"],
     liveLabel: "Case Study",
-    githubLabel: "Live Site",
+    githubLabel: "Live",
     githubIcon: Figma
   },
   {
@@ -26,7 +26,7 @@ const featuredProjects = [
     githubUrl: "https://rebooot.vercel.app/",
     technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Imagi",
@@ -36,7 +36,7 @@ const featuredProjects = [
     githubUrl: "https://iimagii.vercel.app",
     technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   }
 ]
 

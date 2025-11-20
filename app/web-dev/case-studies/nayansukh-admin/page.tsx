@@ -59,13 +59,22 @@ export default function NayansukhAdminCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-purple-400/10 to-indigo-500/10 border border-purple-400/20 rounded-2xl p-8">
-            <Image
+            <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
+              <Image
               src="/projectss/nayansukh/panel1.png"
               alt="Nayansukh Admin Panel Preview"
               width={800}
               height={600}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+              className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </motion.section>
 
@@ -244,36 +253,72 @@ export default function NayansukhAdminCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/nayansukh/panel1.png"
                 alt="Nayansukh Admin Panel - Dashboard"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
+              
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/nayansukh/panel2.png"
                 alt="Nayansukh Admin Panel - Management View"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
+              
             </div>
             <div className="space-y-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/nayansukh/panel3.png"
                 alt="Nayansukh Admin Panel - Analytics"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
+              
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/nayansukh/panel4.png"
                 alt="Nayansukh Admin Panel - Settings"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
+              
             </div>
           </div>
         </motion.section>

@@ -59,11 +59,19 @@ export default function MoviezCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <Image
+            <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
+              <Image
               src="/projectss/moviez/moviez1.png"
               alt="Moviez Project Preview"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+              className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.section>
 
@@ -185,22 +193,38 @@ export default function MoviezCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/moviez/moviez2.png"
                 alt="Moviez Screenshot 1"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
             </div>
             <div className="space-y-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/moviez/moviez3.png"
                 alt="Moviez Screenshot 2"
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </motion.section>

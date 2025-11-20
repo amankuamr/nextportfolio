@@ -120,26 +120,65 @@ export default function VNBoloProduct3DesignProcess() {
           </h2>
           <div className="space-y-8">
             <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-              <Image
-                src="/graphics design/product3/2.png"
-                alt="VN Bolo Product Design 3 - Main View"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+              <div
+                className="relative group"
+                onContextMenu={(e) => e.preventDefault()}
+                style={{ userSelect: 'none' }}
+              >
+                <Image
+                  src="/graphics design/product3/2.png"
+                  alt="VN Bolo Product Design 3 - Main View"
+                  className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                    <p className="text-sm font-medium">Protected Content</p>
+                    <p className="text-xs">Right-click disabled</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <Image
-                  src="/graphics design/product3/1.png"
-                  alt="VN Bolo Product Design 3 - View 1"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+                <div
+                  className="relative group"
+                  onContextMenu={(e) => e.preventDefault()}
+                  style={{ userSelect: 'none' }}
+                >
+                  <Image
+                    src="/graphics design/product3/1.png"
+                    alt="VN Bolo Product Design 3 - View 1"
+                    className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                      <p className="text-sm font-medium">Protected Content</p>
+                      <p className="text-xs">Right-click disabled</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="space-y-4">
-                <Image
-                  src="/graphics design/product3/3.png"
-                  alt="VN Bolo Product Design 3 - View 3"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+                <div
+                  className="relative group"
+                  onContextMenu={(e) => e.preventDefault()}
+                  style={{ userSelect: 'none' }}
+                >
+                  <Image
+                    src="/graphics design/product3/3.png"
+                    alt="VN Bolo Product Design 3 - View 3"
+                    className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                      <p className="text-sm font-medium">Protected Content</p>
+                      <p className="text-xs">Right-click disabled</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

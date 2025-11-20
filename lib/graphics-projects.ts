@@ -62,5 +62,29 @@ export const graphicsProjects = [
     liveUrl: "/graphics/design-process/vn-bolo-carousel",
     technologies: ["Canva", "Digital Design", "Carousel Design"],
     liveLabel: "Design Process"
+  },
+  {
+    title: "Chatra Rifle Logo Design",
+    description: "This logo design project boosted my confidence in attracting higher-level clients and provided valuable learning experience.",
+    image: "/graphics design/chatra/Rifle.png",
+    liveUrl: "/graphics/design-process/chatra-rifle",
+    technologies: ["Adobe Illustrator", "Photoshop", "Logo Design"],
+    liveLabel: "Design Process"
+  },
+  {
+    title: "Tech Pragati Logo and T-Shirt Designs",
+    description: "Lead graphics designer for Tech Pragati branding. Created logo, t-shirt designs, and promotional materials that prepared me for workshops.",
+    image: "/graphics design/tech pragati/logo1.png",
+    liveUrl: "/graphics/design-process/tech-pragati",
+    technologies: ["Adobe Illustrator", "Photoshop", "T-Shirt Design", "Branding"],
+    liveLabel: "Design Process"
+  },
+  {
+    title: "Posters Designs",
+    description: "Lead designer for Tech Pragati Tech Fest posters.\nSupported my team in creating promotional materials.",
+    image: "/graphics design/poster/poster7.png",
+    liveUrl: "/graphics/design-process/posters-design",
+    technologies: ["Adobe Illustrator", "Photoshop", "Poster Design", "Event Marketing"],
+    liveLabel: "Design Process"
   }
 ]

@@ -59,13 +59,21 @@ export default function VnBoloAdminCaseStudy() {
           </div>
 
           <div className="bg-gradient-to-r from-pink-400/10 to-orange-500/10 border border-pink-400/20 rounded-2xl p-8">
-            <Image
+            <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
+              <Image
               src="/projectss/vnboloadmin/admin1.png"
               alt="VN BOLO Admin Dashboard Preview"
               width={800}
               height={600}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+              className="w-full h-auto rounded-lg shadow-lg pointer-events-none" draggable={false}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                  <p className="text-sm font-medium">Protected Content</p>
+                  <p className="text-xs">Right-click disabled</p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.section>
 
@@ -192,6 +200,7 @@ export default function VnBoloAdminCaseStudy() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/vnboloadmin/admin2.png"
                 alt="VN BOLO Admin Dashboard - Analytics View"
@@ -200,7 +209,9 @@ export default function VnBoloAdminCaseStudy() {
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+             </div>
+             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <div className="relative group" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
               <Image
                 src="/projectss/vnboloadmin/admin3.png"
                 alt="VN BOLO Admin Dashboard - Management View"
@@ -209,6 +220,7 @@ export default function VnBoloAdminCaseStudy() {
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
+          </div>
           </div>
         </motion.section>
 

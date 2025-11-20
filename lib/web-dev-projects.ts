@@ -7,7 +7,7 @@ export const webDevProjects = [
     githubUrl: "https://iimagii.vercel.app",
     technologies: ["Next.js", "Framer", "Tailwind CSS", "TypeScript"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Darla Browser",
@@ -17,7 +17,7 @@ export const webDevProjects = [
     githubUrl: "https://darla-browser.vercel.app/",
     technologies: ["Framer", "Next.js", "Shadcn", "Figma"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Reboot",
@@ -27,7 +27,7 @@ export const webDevProjects = [
     githubUrl: "https://rebooot.vercel.app/",
     technologies: ["Next.js", "Framer", "Bootstrap", "Firebase", "Authentication"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Moviez",
@@ -37,7 +37,7 @@ export const webDevProjects = [
     githubUrl: "https://amankuamr.github.io/Moviez/",
     technologies: ["HTML", "CSS", "JS", "TMDB"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Event of Distinction",
@@ -47,7 +47,7 @@ export const webDevProjects = [
     githubUrl: "https://eventof-distinct.vercel.app/",
     technologies: ["HTML", "CSS", "JS"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "portfolio (old)",
@@ -57,7 +57,7 @@ export const webDevProjects = [
     githubUrl: "https://amankumarr.vercel.app",
     technologies: ["HTML", "CSS", "JS", "Bootstrap"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "BW Story prototype",
@@ -67,7 +67,7 @@ export const webDevProjects = [
     githubUrl: "https://amankuamr.github.io/BWStory/",
     technologies: ["HTML", "CSS", "JS", "Bootstrap"],
     liveLabel: "Case Study",
-    githubLabel: "View Live"
+    githubLabel: "Live"
   },
   {
     title: "Nayansukh",
