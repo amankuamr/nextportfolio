@@ -131,13 +131,13 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
             >
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group">
+              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full">
                 <Link href="#projects">
                   View My Work
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium">
+              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium rounded-full">
                 <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </motion.div>

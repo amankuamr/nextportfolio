@@ -55,7 +55,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full shadow-lg"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
                       initial={false}
                       transition={{
                         type: "spring",
@@ -64,7 +64,7 @@ export default function Navbar() {
                         mass: 0.8
                       }}
                       style={{
-                        boxShadow: "0 4px 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(251, 146, 60, 0.2)"
+                        boxShadow: "0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(30, 64, 175, 0.2)"
                       }}
                     />
                   )}

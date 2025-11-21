@@ -72,7 +72,7 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4">
+          <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4 rounded-full">
             <Link href="/web-dev" className="flex items-center font-medium">
               View All Projects
               <ArrowRight className="ml-2 w-5 h-5" />

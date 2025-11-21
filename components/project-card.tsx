@@ -42,7 +42,7 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       className="h-full group"
     >
-      <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group-hover:border-gray-300">
+      <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group-hover:border-gray-300 rounded-2xl">
         <div className="relative overflow-hidden">
           <Image
             src={image}
@@ -78,7 +78,7 @@ export default function ProjectCard({
 
         <CardFooter className="pt-0 flex gap-2">
           {liveUrl && (
-            <Button asChild size="sm" className="flex-1 bg-black text-white hover:bg-gray-800 transition-colors duration-200">
+            <Button asChild size="sm" className="flex-1 bg-black text-white hover:bg-gray-800 transition-colors duration-200 rounded-full">
               <a
                 href={liveUrl}
                 {...(liveUrl.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -90,7 +90,7 @@ export default function ProjectCard({
             </Button>
           )}
           {githubUrl && (
-            <Button asChild variant="outline" size="sm" className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200">
+            <Button asChild variant="outline" size="sm" className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
               <a
                 href={githubUrl}
                 {...(githubUrl.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
