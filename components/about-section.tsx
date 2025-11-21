@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Code, Camera, Trophy, Award } from "lucide-react"
+import { Camera, Trophy, Award, MapPin, Github, Instagram, Globe, FileText } from "lucide-react"
 
 export default function AboutSection() {
   return (
@@ -53,24 +53,45 @@ export default function AboutSection() {
             </p>
           </motion.div>
 
-          {/* Skills */}
+          {/* Location */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6"
+            className="col-span-1 row-span-1 flex flex-col gap-6"
           >
-            <div className="flex items-center mb-3">
-              <Code className="w-5 h-5 mr-2 text-green-400" />
-              <h4 className="text-lg font-bold font-cal-sans">Skills</h4>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-4 flex-1">
+              <div className="flex items-center mb-2">
+                <MapPin className="w-4 h-4 mr-2 text-red-400" />
+                <h5 className="text-sm font-bold font-cal-sans">Country</h5>
+              </div>
+              <p className="text-xs leading-relaxed">
+                India, Jharkhand, Ranchi, Tatisilwai
+              </p>
             </div>
-            <ul className="text-sm space-y-1">
-              <li>• Web Development</li>
-              <li>• UI/UX Design</li>
-              <li>• Graphics Design</li>
-              <li>• Branding & Digital Assets</li>
-            </ul>
+            <div className="flex flex-row gap-2">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+                <a href="https://github.com/amankuamr" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
+                  <Github className="w-8 h-8" />
+                </a>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+                <a href="https://instagram.com/aman.k_sah" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
+                  <Instagram className="w-8 h-8" />
+                </a>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+                <a href="https://iimagii.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
+                  <Globe className="w-8 h-8" />
+                </a>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+                <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
+                  <FileText className="w-8 h-8" />
+                </a>
+              </div>
+            </div>
           </motion.div>
 
           {/* Experience */}
@@ -102,12 +123,12 @@ export default function AboutSection() {
               <Camera className="w-5 h-5 mr-2 text-purple-400" />
               <h4 className="text-lg font-bold font-cal-sans">Beyond Code</h4>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="text-sm bg-white/10 px-2 py-1 rounded-full">Photography</span>
-              <span className="text-sm bg-white/10 px-2 py-1 rounded-full">Gaming</span>
-              <span className="text-sm bg-white/10 px-2 py-1 rounded-full">Hiking</span>
-              <span className="text-sm bg-white/10 px-2 py-1 rounded-full">Badminton</span>
-            </div>
+            <ul className="text-sm space-y-1">
+              <li>• Photography</li>
+              <li>• Gaming</li>
+              <li>• Hiking</li>
+              <li>• Badminton</li>
+            </ul>
           </motion.div>
 
           {/* Achievements */}
