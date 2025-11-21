@@ -18,6 +18,7 @@ import {
   SiGit
 } from "react-icons/si"
 import { VscCode } from "react-icons/vsc"
+import { BackgroundLines } from "@/components/ui/background-lines"
 
 const techs = [
   { icon: SiReact, color: "#61DAFB", name: "React" },
@@ -40,7 +41,7 @@ const secondRow = techs.slice(techs.length / 2)
 
 export default function AboutSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 text-black relative overflow-hidden" style={{ background: 'white, radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255, 119, 198, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 70%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%)' }}>
+    <BackgroundLines className="py-20 px-4 sm:px-6 lg:px-8 text-black relative overflow-hidden bg-white min-h-screen">
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -263,6 +264,6 @@ export default function AboutSection() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </BackgroundLines>
   )
 }
