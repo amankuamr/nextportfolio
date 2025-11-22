@@ -65,14 +65,13 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-lg p-6 flex items-center justify-center"
+            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-lg"
           >
             <Image
               src="/profile/profile.jpeg"
               alt="Aman Kumar - Creative Developer"
-              width={300}
-              height={300}
-              className="w-full h-full object-cover rounded-xl"
+              fill
+              className="object-cover"
             />
           </motion.div>
 
