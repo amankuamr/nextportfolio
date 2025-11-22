@@ -97,6 +97,10 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Goo filter for project cards */
 .goo-filter {
   position: absolute;
@@ -123,5 +127,10 @@ body {
 
 a, button, [role="button"], input, textarea, select {
   cursor: none !important;
+}
+
+/* Performance optimizations for animations */
+[data-framer-appear-id] {
+  will-change: transform, opacity;
 }
 
