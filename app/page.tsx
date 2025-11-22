@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="hidden lg:block">
+      <div id="hero" className="hidden lg:block">
         <HeroSection />
       </div>
       <div className="lg:hidden">
@@ -23,25 +23,39 @@ export default function Home() {
       </div>
 
       {/* Tech Marquee */}
-      <TechMarquee />
+      <div id="tech-marquee">
+        <TechMarquee />
+      </div>
 
       {/* Services Section */}
-      <ServicesSection />
+      <div id="services">
+        <ServicesSection />
+      </div>
 
       {/* Featured Projects Section */}
-      <ProjectsSection />
+      <div id="projects">
+        <ProjectsSection />
+      </div>
 
       {/* About Section */}
-      <AboutSection />
+      <div id="about">
+        <AboutSection />
+      </div>
 
       {/* Achievements Section */}
-      <AchievementsSection />
+      <div id="achievements">
+        <AchievementsSection />
+      </div>
 
       {/* Experience Section */}
-      <ExperienceSection />
+      <div id="experience">
+        <ExperienceSection />
+      </div>
 
       {/* Hobbies Section */}
-      <HobbiesSection />
+      <div id="hobbies">
+        <HobbiesSection />
+      </div>
 
       {/* Footer */}
       <Footer />

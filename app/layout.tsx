@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Metal_Mania } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import SocialMenu from "@/components/social-menu";
+import SectionNav from "@/components/section-nav";
 import CustomCursor from "@/components/custom-cursor";
 
 const geistSans = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navbar />
         <SocialMenu />
+        <SectionNav />
         <main className="pt-16 lg:pt-0 min-h-screen">
           {children}
         </main>
