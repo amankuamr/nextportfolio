@@ -101,7 +101,7 @@ export default function AboutSection() {
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1">
               <div className="flex items-center mb-2">
                 <MapPin className="w-4 h-4 mr-2 text-red-400" />
-                <h5 className="text-sm font-bold font-cal-sans">Country</h5>
+                <h4 className="text-lg font-bold font-cal-sans">Location</h4>
               </div>
               <p className="text-xs leading-relaxed">
                 India, Jharkhand, Ranchi, Tatisilwai

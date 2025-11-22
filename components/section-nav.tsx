@@ -103,6 +103,22 @@ export default function SectionNav() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col space-y-2 relative"
       >
+        {/* Active Indicator */}
+        <motion.div
+          className="absolute w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+          style={{
+            boxShadow: "0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(30, 64, 175, 0.2)"
+          }}
+          animate={{
+            y: activeIndex * 48, // 48px is button height + space-y-2 (40 + 8)
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+          }}
+          initial={false}
+        />
         {sectionItems.map((item, index) => {
           const isActive = activeIndex === index
           return (
@@ -119,12 +135,9 @@ export default function SectionNav() {
                 transition: { duration: 0.2, ease: "easeOut" }
               }}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/20 transition-all duration-300 group relative ${
-                isActive ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg' : 'bg-white/10 text-black hover:text-gray-600'
+              className={`flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/20 transition-all duration-300 group relative z-10 ${
+                isActive ? 'text-white' : 'bg-transparent text-black hover:text-gray-600'
               }`}
-              style={isActive ? {
-                boxShadow: "0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(30, 64, 175, 0.2)"
-              } : {}}
             >
               <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
             </motion.button>
