@@ -3,46 +3,31 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Camera, Trophy, MapPin, Github, Instagram, Globe, FileText, Play, Pause, SkipBack, SkipForward, Heart, Volume2 } from "lucide-react"
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiFramer,
-  SiFigma,
-  SiAdobexd,
-  SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiNodedotjs,
-  SiMongodb,
-  SiGit
-} from "react-icons/si"
-import { VscCode } from "react-icons/vsc"
 import { SiSpotify } from "react-icons/si"
 import { BackgroundLines } from "@/components/ui/background-lines"
 import { useMusic } from "@/lib/music-context"
 
-const techs = [
-  { icon: SiReact, color: "#61DAFB", name: "React" },
-  { icon: SiNextdotjs, color: "#000000", name: "Next.js" },
-  { icon: SiTypescript, color: "#3178C6", name: "TypeScript" },
-  { icon: SiTailwindcss, color: "#06B6D4", name: "Tailwind CSS" },
-  { icon: SiFramer, color: "#0055FF", name: "Framer Motion" },
-  { icon: SiFigma, color: "#F24E1E", name: "Figma" },
-  { icon: SiAdobexd, color: "#FF61F6", name: "Adobe XD" },
-  { icon: SiAdobephotoshop, color: "#31A8FF", name: "Photoshop" },
-  { icon: SiAdobeillustrator, color: "#FF9A00", name: "Illustrator" },
-  { icon: SiNodedotjs, color: "#339933", name: "Node.js" },
-  { icon: SiMongodb, color: "#47A248", name: "MongoDB" },
-  { icon: SiGit, color: "#F05032", name: "Git" },
-  { icon: VscCode, color: "#007ACC", name: "VS Code" }
-]
 
-const firstRow = techs.slice(0, techs.length / 2)
-const secondRow = techs.slice(techs.length / 2)
+
+
 
 export default function AboutSection() {
   const { isPlaying, currentSong, togglePlay, nextSong, prevSong, progress, handleProgressClick } = useMusic()
+
+  const usefulImages = [
+    "/useful/image1.jpeg",
+    "/useful/image2.jpeg",
+    "/useful/image3.jpeg",
+    "/useful/image4.jpeg",
+    "/useful/image5.jpeg",
+    "/useful/image6.jpg",
+    "/useful/image7.jpg",
+    "/useful/image8.jpg",
+    "/useful/image9.jpeg"
+  ]
+
+
+
 
   return (
     <BackgroundLines className="py-20 px-4 sm:px-6 lg:px-8 text-black relative overflow-hidden bg-white min-h-screen">
@@ -238,84 +223,52 @@ export default function AboutSection() {
             </ul>
           </motion.div>
 
-          {/* Call to Action */}
+          {/* Useful Images Marquee */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-6 overflow-hidden flex flex-col justify-center"
+            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-0 overflow-hidden h-full"
           >
-            <div className="relative flex flex-col gap-2 py-0">
-              <div className="flex space-x-8 animate-marquee">
-                {firstRow.map((tech, index) => (
-                  <motion.div
-                    key={`first-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <tech.icon size={32} color={tech.color} />
-                  </motion.div>
-                ))}
-                {firstRow.map((tech, index) => (
-                  <motion.div
-                    key={`first-dup-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <tech.icon size={32} color={tech.color} />
-                  </motion.div>
-                ))}
-              </div>
-              <div className="flex space-x-8 animate-marquee-reverse">
-                {secondRow.map((tech, index) => (
-                  <motion.div
-                    key={`second-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <tech.icon size={32} color={tech.color} />
-                  </motion.div>
-                ))}
-                {secondRow.map((tech, index) => (
-                  <motion.div
-                    key={`second-dup-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <tech.icon size={32} color={tech.color} />
-                  </motion.div>
-                ))}
-              </div>
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white to-transparent"></div>
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white to-transparent"></div>
-              <style jsx>{`
-                @keyframes marquee {
-                  0% {
-                    transform: translateX(0);
-                  }
-                  100% {
-                    transform: translateX(-50%);
-                  }
-                }
-                .animate-marquee {
-                  animation: marquee 30s linear infinite;
-                }
-                .animate-marquee:hover {
-                  animation-play-state: paused;
-                }
-                .animate-marquee-reverse {
-                  animation: marquee 30s linear infinite reverse;
-                }
-                .animate-marquee-reverse:hover {
-                  animation-play-state: paused;
-                }
-              `}</style>
+            <div className="flex h-full animate-marquee">
+              {usefulImages.map((img, index) => (
+                <Image
+                  key={`first-${index}`}
+                  src={img}
+                  alt={`Useful image ${index + 1}`}
+                  width={160}
+                  height={200}
+                  className="flex-shrink-0 object-cover"
+                />
+              ))}
+              {usefulImages.map((img, index) => (
+                <Image
+                  key={`first-dup-${index}`}
+                  src={img}
+                  alt={`Useful image ${index + 1}`}
+                  width={160}
+                  height={200}
+                  className="flex-shrink-0 object-cover"
+                />
+              ))}
             </div>
+            <style jsx>{`
+              @keyframes marquee {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              .animate-marquee {
+                animation: marquee 20s linear infinite;
+              }
+              .animate-marquee:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
           </motion.div>
         </div>
       </div>
