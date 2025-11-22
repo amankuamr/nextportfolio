@@ -64,8 +64,8 @@ export default function ServicesSection() {
             return (
               <motion.div
                 key={skill.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 className="group relative h-80 rounded-2xl bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
