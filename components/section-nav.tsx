@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, FolderOpen, User, Trophy, Users, Heart } from "lucide-react"
 
@@ -38,6 +39,7 @@ const sectionItems = [
 ]
 
 export default function SectionNav() {
+  const pathname = usePathname()
   const [activeIndex, setActiveIndex] = useState(-1)
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState(-1)
@@ -83,6 +85,8 @@ export default function SectionNav() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  if (pathname !== "/") return null
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.slice(1))
