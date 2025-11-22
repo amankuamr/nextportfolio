@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, FolderOpen, User, Trophy, Users, Heart } from "lucide-react"
 
 const sectionItems = [
@@ -40,6 +40,7 @@ const sectionItems = [
 export default function SectionNav() {
   const [activeIndex, setActiveIndex] = useState(-1)
   const [isVisible, setIsVisible] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState(-1)
 
   useEffect(() => {
     const observerOptions = {
@@ -68,15 +69,9 @@ export default function SectionNav() {
       }
     })
 
-    // Show menu after hero section
+    // Show menu when scroll buttons appear
     const handleScroll = () => {
-      const heroElement = document.getElementById("hero")
-      if (heroElement) {
-        const heroBottom = heroElement.offsetTop + heroElement.offsetHeight
-        setIsVisible(window.scrollY > heroBottom)
-      } else {
-        setIsVisible(window.scrollY > 100) // fallback
-      }
+      setIsVisible(window.scrollY > 200)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -109,6 +104,8 @@ export default function SectionNav() {
             <motion.button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(-1)}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
@@ -129,6 +126,24 @@ export default function SectionNav() {
           )
         })}
       </motion.div>
+
+      {/* Tooltip */}
+      <AnimatePresence>
+        {hoveredIndex !== -1 && (
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute left-full ml-4 top-1/2 transform -translate-y-1/2 bg-black/80 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-50"
+            style={{
+              top: `${8 + hoveredIndex * 48 + 20}px`, // center on the button
+            }}
+          >
+            {sectionItems[hoveredIndex].name}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
