@@ -135,7 +135,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                  className="px-3 py-1 bg-black/10 text-black text-sm font-medium rounded-full border border-black/20"
+                  className="px-3 py-1 bg-gray-100 text-black text-sm font-medium rounded-full border border-gray-300"
                 >
                   {skill}
                 </motion.span>
@@ -179,7 +179,7 @@ export default function HeroSection() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white border border-gray-200 rounded-full text-gray-600 hover:text-black hover:border-black transition-all duration-200 hover:shadow-lg group"
+                  className="p-3 bg-white border border-gray-200 rounded-full text-gray-600 hover:text-black hover:border-black transition-all duration-200 group"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >

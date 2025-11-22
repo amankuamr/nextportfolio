@@ -65,7 +65,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-lg"
+            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-white border border-gray-200"
           >
             <Image
               src="/profile/profile.jpeg"
@@ -81,7 +81,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 flex flex-col justify-center"
+            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-center"
           >
             <h3 className="text-xl font-bold mb-3 font-cal-sans">Passionate Creator</h3>
             <p className="text-sm leading-relaxed">
@@ -97,7 +97,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="col-span-1 row-span-1 flex flex-col gap-6"
           >
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1">
+            <div className="bg-white border border-gray-200 rounded-2xl p-4 flex-1">
               <div className="flex items-center mb-2">
                 <MapPin className="w-4 h-4 mr-2 text-red-400" />
                 <h4 className="text-lg font-bold font-cal-sans">Location</h4>
@@ -107,22 +107,22 @@ export default function AboutSection() {
               </p>
             </div>
             <div className="flex flex-row gap-2">
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+              <div className="bg-white border border-gray-200 rounded-2xl p-4 flex-1 flex items-center justify-center">
                 <a href="https://github.com/amankuamr" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
                   <Github className="w-8 h-8" />
                 </a>
               </div>
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+              <div className="bg-white border border-gray-200 rounded-2xl p-4 flex-1 flex items-center justify-center">
                 <a href="https://instagram.com/aman.k_sah" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
                   <Instagram className="w-8 h-8" />
                 </a>
               </div>
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+              <div className="bg-white border border-gray-200 rounded-2xl p-4 flex-1 flex items-center justify-center">
                 <a href="https://iimagii.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
                   <Globe className="w-8 h-8" />
                 </a>
               </div>
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-4 flex-1 flex items-center justify-center">
+              <div className="bg-white border border-gray-200 rounded-2xl p-4 flex-1 flex items-center justify-center">
                 <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center hover:bg-white/20 transition-colors rounded-lg">
                   <FileText className="w-8 h-8" />
                 </a>
@@ -136,7 +136,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-black bg-gradient-to-bl from-green-900/50 to-transparent border border-gray-200 rounded-2xl shadow-lg p-6 text-white relative"
+            className="col-span-1 row-span-1 bg-black bg-gradient-to-bl from-green-900/50 to-transparent border border-gray-200 rounded-2xl p-6 text-white relative"
           >
             <div className="absolute top-2 right-2">
               <SiSpotify className="w-8 h-8 text-green-500" />
@@ -169,7 +169,7 @@ export default function AboutSection() {
                   onClick={togglePlay}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors shadow-lg shadow-green-500/50"
+                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors"
                 >
                   {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                 </motion.button>
@@ -207,7 +207,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl shadow-lg p-6"
+            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl p-6"
           >
             <div className="flex items-center mb-3">
               <Camera className="w-5 h-5 mr-2 text-purple-400" />
@@ -227,7 +227,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl shadow-lg p-6"
+            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl p-6"
           >
             <div className="flex items-center mb-3">
               <Trophy className="w-5 h-5 mr-2 text-yellow-400" />
@@ -246,14 +246,14 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 overflow-hidden flex flex-col justify-center"
+            className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-6 overflow-hidden flex flex-col justify-center"
           >
             <div className="relative flex flex-col gap-2 py-0">
               <div className="flex space-x-8 animate-marquee">
                 {firstRow.map((tech, index) => (
                   <motion.div
                     key={`first-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
+                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >

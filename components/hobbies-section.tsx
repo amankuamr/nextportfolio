@@ -62,7 +62,7 @@ export default function HobbiesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative h-64 rounded-2xl bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              className="group relative h-64 rounded-2xl bg-white border border-gray-200 transition-all duration-300 overflow-hidden"
             >
               {/* Expanding circle background */}
               <div

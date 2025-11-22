@@ -70,7 +70,7 @@ export default function AchievementsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
-              className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+              className="group bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">

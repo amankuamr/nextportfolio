@@ -43,7 +43,7 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       className="h-full group"
     >
-      <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group-hover:border-gray-300 rounded-2xl">
+      <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-none rounded-2xl">
         <div className="relative overflow-hidden">
           <Image
             src={image}
@@ -52,7 +52,6 @@ export default function ProjectCard({
             height={300}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
         </div>
 
         <CardHeader className="pb-3">

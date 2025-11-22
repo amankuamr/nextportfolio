@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { motion} from "framer-motion"
 import { ArrowRight} from "lucide-react"
-import Image from "next/image"
 
 const skills = [
   {
@@ -68,7 +67,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="group relative h-80 rounded-2xl bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                className="group relative h-80 rounded-2xl bg-white border border-gray-200 transition-all duration-300 overflow-hidden"
               >
                 {/* Expanding circle background */}
                 <div
@@ -77,17 +76,6 @@ export default function ServicesSection() {
                 />
 
                 <div className="relative z-10 h-full p-8 flex flex-col justify-between">
-                  {/* Skill Image Background */}
-                  {skill.image && (
-                    <div className="absolute inset-0 opacity-20">
-                      <Image
-                        src={skill.image}
-                        alt={`${skill.title} background`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
 
                   {/* Content Area */}
                   <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center">
