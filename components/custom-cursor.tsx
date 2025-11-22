@@ -52,8 +52,8 @@ export default function CustomCursor() {
       <motion.div
         className="hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
           scale: isHovering ? 1.5 : 1
         }}
         transition={{
@@ -62,7 +62,7 @@ export default function CustomCursor() {
           ease: "linear"
         }}
       >
-        <div className="w-6 h-6 bg-white rounded-full shadow-lg" />
+        <div className="w-3 h-3 bg-white rounded-full shadow-lg" />
       </motion.div>
 
       {/* Color trail - Hidden on mobile */}
