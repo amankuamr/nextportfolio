@@ -30,7 +30,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="text-white relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)' }}>
+    <footer className="text-white relative overflow-hidden md:rounded-3xl md:mx-8 md:mb-8" style={{ background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)' }}>
       <StarfieldAnimation />
 
       <div className="relative z-10">
