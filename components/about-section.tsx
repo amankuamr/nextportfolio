@@ -136,7 +136,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-black bg-gradient-to-bl from-green-900/50 to-transparent border border-gray-200 rounded-2xl p-6 text-white relative"
+            className="col-span-1 row-span-1 bg-black bg-gradient-to-br from-green-900/40 via-green-800/30 to-green-700/20 border border-gray-200 rounded-2xl p-6 text-white relative"
           >
             <div className="absolute top-2 right-2">
               <SiSpotify className="w-8 h-8 text-green-500" />
@@ -156,6 +156,13 @@ export default function AboutSection() {
               />
             </div>
             <div className="flex items-center justify-between">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+              >
+                <Heart className="w-4 h-4" />
+              </motion.button>
               <div className="flex items-center space-x-2">
                 <motion.button
                   onClick={prevSong}
@@ -169,7 +176,7 @@ export default function AboutSection() {
                   onClick={togglePlay}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors"
+                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors shadow-lg shadow-green-400/70"
                 >
                   {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                 </motion.button>
@@ -182,22 +189,13 @@ export default function AboutSection() {
                   <SkipForward className="w-4 h-4" />
                 </motion.button>
               </div>
-              <div className="flex items-center space-x-2">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
-                >
-                  <Heart className="w-4 h-4" />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
-                >
-                  <Volume2 className="w-4 h-4" />
-                </motion.button>
-              </div>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+              >
+                <Volume2 className="w-4 h-4" />
+              </motion.button>
             </div>
           </motion.div>
 
