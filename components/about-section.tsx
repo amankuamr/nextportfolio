@@ -18,6 +18,7 @@ import {
   SiGit
 } from "react-icons/si"
 import { VscCode } from "react-icons/vsc"
+import { SiSpotify } from "react-icons/si"
 import { BackgroundLines } from "@/components/ui/background-lines"
 import { useMusic } from "@/lib/music-context"
 
@@ -136,8 +137,11 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-black border border-gray-200 rounded-2xl shadow-lg p-6 text-white relative"
+            className="col-span-1 row-span-1 bg-black bg-gradient-to-bl from-green-900/50 to-transparent border border-gray-200 rounded-2xl shadow-lg p-6 text-white relative"
           >
+            <div className="absolute top-2 right-2">
+              <SiSpotify className="w-8 h-8 text-green-500" />
+            </div>
             <div className="mb-3">
               <h4 className="text-lg font-bold font-cal-sans truncate">{currentSong.name}</h4>
               <p className="text-sm text-gray-300 truncate">{currentSong.artist}</p>
@@ -166,7 +170,7 @@ export default function AboutSection() {
                   onClick={togglePlay}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors"
+                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors shadow-lg shadow-green-500/50"
                 >
                   {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                 </motion.button>
