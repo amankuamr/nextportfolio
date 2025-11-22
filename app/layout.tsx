@@ -6,6 +6,7 @@ import SocialMenu from "@/components/custom/social-menu";
 import SectionNav from "@/components/section-nav";
 import MusicPlayer from "@/components/custom/music-player";
 import CustomCursor from "@/components/custom/custom-cursor";
+import { MusicProvider } from "@/lib/music-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,14 +43,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${metalMania.variable} antialiased bg-white text-black overflow-x-hidden`}
       >
-        <CustomCursor />
-        <Navbar />
-        <SocialMenu />
-        <SectionNav />
-        <MusicPlayer />
-        <main className="pt-16 lg:pt-0 min-h-screen">
-          {children}
-        </main>
+        <MusicProvider>
+          <CustomCursor />
+          <Navbar />
+          <SocialMenu />
+          <SectionNav />
+          <MusicPlayer />
+          <main className="pt-16 lg:pt-0 min-h-screen">
+            {children}
+          </main>
+        </MusicProvider>
       </body>
     </html>
   );

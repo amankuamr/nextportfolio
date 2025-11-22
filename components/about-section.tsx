@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Camera, Trophy, Award, MapPin, Github, Instagram, Globe, FileText } from "lucide-react"
+import { Camera, Trophy, MapPin, Github, Instagram, Globe, FileText, Play, Pause, SkipBack, SkipForward, Heart, Volume2 } from "lucide-react"
 import {
   SiReact,
   SiNextdotjs,
@@ -19,6 +19,7 @@ import {
 } from "react-icons/si"
 import { VscCode } from "react-icons/vsc"
 import { BackgroundLines } from "@/components/ui/background-lines"
+import { useMusic } from "@/lib/music-context"
 
 const techs = [
   { icon: SiReact, color: "#61DAFB", name: "React" },
@@ -40,6 +41,8 @@ const firstRow = techs.slice(0, techs.length / 2)
 const secondRow = techs.slice(techs.length / 2)
 
 export default function AboutSection() {
+  const { isPlaying, currentSong, togglePlay, nextSong, prevSong, progress, handleProgressClick } = useMusic()
+
   return (
     <BackgroundLines className="py-20 px-4 sm:px-6 lg:px-8 text-black relative overflow-hidden bg-white min-h-screen">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -127,21 +130,72 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Experience */}
+          {/* Music Player */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl shadow-lg p-6"
+            className="col-span-1 row-span-1 bg-black border border-gray-200 rounded-2xl shadow-lg p-6 text-white relative"
           >
-            <div className="flex items-center mb-3">
-              <Award className="w-5 h-5 mr-2 text-orange-400" />
-              <h4 className="text-lg font-bold font-cal-sans">Experience</h4>
+            <div className="mb-3">
+              <h4 className="text-lg font-bold font-cal-sans truncate">{currentSong.name}</h4>
+              <p className="text-sm text-gray-300 truncate">{currentSong.artist}</p>
             </div>
-            <p className="text-sm leading-relaxed">
-              3+ years in digital design and development. Worked at Codestam Technologies, completed internships at Plasmid, and led design teams for tech events.
-            </p>
+            <div
+              className="w-full h-2 bg-gray-700 rounded-full mb-4 cursor-pointer"
+              onClick={handleProgressClick}
+            >
+              <motion.div
+                className="h-full bg-green-500 rounded-full"
+                style={{ width: `${progress}%` }}
+                transition={{ duration: 0.1 }}
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <motion.button
+                  onClick={prevSong}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+                >
+                  <SkipBack className="w-4 h-4" />
+                </motion.button>
+                <motion.button
+                  onClick={togglePlay}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors"
+                >
+                  {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                </motion.button>
+                <motion.button
+                  onClick={nextSong}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+                >
+                  <SkipForward className="w-4 h-4" />
+                </motion.button>
+              </div>
+              <div className="flex items-center space-x-2">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+                >
+                  <Heart className="w-4 h-4" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+                >
+                  <Volume2 className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </div>
           </motion.div>
 
           {/* Hobbies */}

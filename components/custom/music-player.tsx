@@ -1,94 +1,13 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Play, Pause, ChevronRight, SkipBack, SkipForward } from "lucide-react"
-
-const songs = [
-  { name: "A Moment Apart", artist: "Odeszy", src: "/musics/music.mp4", duration: 180 },
-  { name: "This Girl", artist: "Kungs", src: "/musics/music2.mp3", duration: 240 },
-]
+import { useMusic } from "@/lib/music-context"
 
 export default function MusicPlayer() {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentSongIndex, setCurrentSongIndex] = useState(0)
   const [isExpanded, setIsExpanded] = useState(false)
-  const [progress, setProgress] = useState(0)
-  const [volume] = useState(0.7)
-  const audioRef = useRef<HTMLAudioElement>(null)
-
-  const currentSong = songs[currentSongIndex]
-
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying)
-    const audio = audioRef.current
-    if (audio) {
-      if (!isPlaying) {
-        audio.play()
-      } else {
-        audio.pause()
-      }
-    }
-  }
-
-  const nextSong = () => {
-    setCurrentSongIndex((prev) => (prev + 1) % songs.length)
-    setProgress(0)
-  }
-
-  const prevSong = () => {
-    setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length)
-    setProgress(0)
-  }
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (audio) {
-      audio.volume = volume
-    }
-  }, [volume])
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (audio) {
-      const handleTimeUpdate = () => {
-        const progressPercent = (audio.currentTime / audio.duration) * 100
-        setProgress(progressPercent)
-      }
-      const handleEnded = () => {
-        nextSong()
-      }
-      audio.addEventListener('timeupdate', handleTimeUpdate)
-      audio.addEventListener('ended', handleEnded)
-      return () => {
-        audio.removeEventListener('timeupdate', handleTimeUpdate)
-        audio.removeEventListener('ended', handleEnded)
-      }
-    }
-  }, [currentSongIndex])
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (audio && currentSong.src) {
-      audio.src = currentSong.src
-      audio.load()
-      if (isPlaying) {
-        audio.play()
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSong.src])
-
-  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const clickX = e.clientX - rect.left
-    const newProgress = (clickX / rect.width) * 100
-    setProgress(newProgress)
-    const audio = audioRef.current
-    if (audio) {
-      audio.currentTime = (newProgress / 100) * audio.duration
-    }
-  }
+  const { isPlaying, currentSong, togglePlay, nextSong, prevSong, progress, handleProgressClick } = useMusic()
 
   return (
     <div className="hidden md:block fixed bottom-8 left-6 z-50">
@@ -203,9 +122,6 @@ export default function MusicPlayer() {
           )}
         </AnimatePresence>
       </motion.div>
-
-      {/* Hidden Audio Element */}
-      <audio ref={audioRef} />
     </div>
   )
 }
