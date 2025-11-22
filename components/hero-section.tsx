@@ -1,14 +1,30 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useRef } from "react"
 
 export default function HeroSection() {
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -150])
+  const subtitleOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const skillsY = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const skillsScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.8])
+  const buttonsY = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -300])
+  const imageScale = useTransform(scrollYProgress, [0, 0.6], [1, 0.9])
+
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section ref={ref} className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -83,8 +99,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              style={{ y, opacity, fontFamily: 'font1' }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight"
-              style={{ fontFamily: 'font1' }}
             >
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
@@ -97,6 +113,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              style={{ y: subtitleY, opacity: subtitleOpacity }}
               className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
             >
               A passionate <span className="font-semibold text-black">Creative Developer & Designer</span> crafting
@@ -109,6 +126,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
+              style={{ y: skillsY, scale: skillsScale }}
               className="flex flex-wrap gap-3 justify-center lg:justify-start"
             >
               {["React", "Next.js", "TypeScript", "UI/UX", "Figma"].map((skill, index) => (
@@ -129,6 +147,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
+              style={{ y: buttonsY }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
             >
               <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full">
@@ -176,6 +195,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
+            style={{ y: imageY, scale: imageScale }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
