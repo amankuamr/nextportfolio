@@ -43,42 +43,43 @@ export default function SectionNav() {
   const [hoveredIndex, setHoveredIndex] = useState(-1)
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-50% 0px -50% 0px",
-      threshold: 0,
-    }
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY
+      const windowHeight = window.innerHeight
+      const viewportCenter = scrollY + windowHeight / 2
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = sectionItems.findIndex(item => item.href.slice(1) === entry.target.id)
-          if (index !== -1) {
-            setActiveIndex(index)
+      let closestIndex = -1
+      let minDistance = Infinity
+
+      sectionItems.forEach((item, index) => {
+        const element = document.getElementById(item.href.slice(1))
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          const elementTop = scrollY + rect.top
+          const elementBottom = scrollY + rect.bottom
+          const elementCenter = (elementTop + elementBottom) / 2
+          const distance = Math.abs(viewportCenter - elementCenter)
+
+          if (distance < minDistance) {
+            minDistance = distance
+            closestIndex = index
           }
         }
       })
+
+      setActiveIndex(closestIndex)
     }
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-
-    sectionItems.forEach((item) => {
-      const element = document.getElementById(item.href.slice(1))
-      if (element) {
-        observer.observe(element)
-      }
-    })
 
     // Show menu when scroll buttons appear
     const handleScroll = () => {
       setIsVisible(window.scrollY > 200)
+      updateActiveSection()
     }
 
     window.addEventListener("scroll", handleScroll)
     handleScroll() // initial check
 
     return () => {
-      observer.disconnect()
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])

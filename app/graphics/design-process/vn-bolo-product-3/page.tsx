@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherGraphicsProjects from "@/components/other-graphics-projects"
-import ScrollButtons from "@/components/scroll-buttons"
+import ScrollButtons from "@/components/custom/scroll-buttons"
 
 export default function VNBoloProduct3DesignProcess() {
   return (

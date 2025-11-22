@@ -6,7 +6,7 @@ import { ArrowLeft, CheckCircle, Film, Search, Star, Play, Calendar } from "luci
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
-import ScrollButtons from "@/components/scroll-buttons"
+import ScrollButtons from "@/components/custom/scroll-buttons"
 
 export default function MoviezCaseStudy() {
   return (

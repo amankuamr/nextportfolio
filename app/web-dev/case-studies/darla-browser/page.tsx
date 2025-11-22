@@ -5,7 +5,7 @@ import Image from "next/image"
 import { ArrowLeft, CheckCircle, Monitor, Palette, Zap, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import ScrollButtons from "@/components/scroll-buttons"
+import ScrollButtons from "@/components/custom/scroll-buttons"
 import OtherCaseStudies from "@/components/other-case-studies"
 
 export default function DarlaBrowserCaseStudy() {

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Metal_Mania } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import SocialMenu from "@/components/social-menu";
+import SocialMenu from "@/components/custom/social-menu";
 import SectionNav from "@/components/section-nav";
-import CustomCursor from "@/components/custom-cursor";
+import MusicPlayer from "@/components/custom/music-player";
+import CustomCursor from "@/components/custom/custom-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Navbar />
         <SocialMenu />
         <SectionNav />
+        <MusicPlayer />
         <main className="pt-16 lg:pt-0 min-h-screen">
           {children}
         </main>

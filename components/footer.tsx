@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Github, Instagram, Mail, MapPin, Phone, Globe, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import StarfieldAnimation from "@/components/starfield-animation"
+import StarfieldAnimation from "@/components/custom/starfield-animation"
 
 const footerLinks = {
   skills: [
