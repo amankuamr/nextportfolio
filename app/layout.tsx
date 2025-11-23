@@ -7,7 +7,7 @@ import SectionNav from "@/components/section-nav";
 import MusicPlayer from "@/components/custom/music-player";
 import CustomCursor from "@/components/custom/custom-cursor";
 import { MusicProvider } from "@/lib/music-context";
-import SmoothScroll from "@/components/smooth-scroll";
+import SmoothScroll from "@/components/custom/smooth-scroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
