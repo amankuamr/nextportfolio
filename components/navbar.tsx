@@ -3,9 +3,15 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Home, Palette, Code, ImageIcon, Trophy } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 
 // Morphing path data
 
@@ -96,106 +102,71 @@ export default function Navbar() {
 
       {/* Mobile menu button */}
       <div className="md:hidden fixed top-4 right-2 z-50">
-        <motion.div
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.1 }}
-        >
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(!isOpen)}
-            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10 relative overflow-hidden"
-          >
+        <DropdownMenu onOpenChange={setIsOpen}>
+          <DropdownMenuTrigger asChild>
             <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={isOpen ? "open" : "closed"}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.1 }}
             >
-              <motion.span
-                className="absolute w-4 h-0.5 bg-black rounded-full"
-                variants={{
-                  closed: { rotate: 0, y: -6 },
-                  open: { rotate: 45, y: 0 }
-                }}
-                transition={{ duration: 0.25 }}
-              />
-              <motion.span
-                className="absolute w-4 h-0.5 bg-black rounded-full"
-                variants={{
-                  closed: { opacity: 1 },
-                  open: { opacity: 0 }
-                }}
-                transition={{ duration: 0.25 }}
-              />
-              <motion.span
-                className="absolute w-4 h-0.5 bg-black rounded-full"
-                variants={{
-                  closed: { rotate: 0, y: 6 },
-                  open: { rotate: -45, y: 0 }
-                }}
-                transition={{ duration: 0.25 }}
-              />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10 relative overflow-hidden"
+              >
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  animate={isOpen ? "open" : "closed"}
+                >
+                  <motion.span
+                    className="absolute w-4 h-0.5 bg-black rounded-full"
+                    variants={{
+                      closed: { rotate: 0, y: -6 },
+                      open: { rotate: 45, y: 0 }
+                    }}
+                    transition={{ duration: 0.25 }}
+                  />
+                  <motion.span
+                    className="absolute w-4 h-0.5 bg-black rounded-full"
+                    variants={{
+                      closed: { opacity: 1 },
+                      open: { opacity: 0 }
+                    }}
+                    transition={{ duration: 0.25 }}
+                  />
+                  <motion.span
+                    className="absolute w-4 h-0.5 bg-black rounded-full"
+                    variants={{
+                      closed: { rotate: 0, y: 6 },
+                      open: { rotate: -45, y: 0 }
+                    }}
+                    transition={{ duration: 0.25 }}
+                  />
+                </motion.div>
+              </Button>
             </motion.div>
-          </Button>
-        </motion.div>
-      </div>
+          </DropdownMenuTrigger>
 
-      {/* Mobile Navigation - Simplified Top Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* Dropdown Menu */}
-            <motion.nav
-              initial="closed"
-              animate="open"
-              exit="closed"
-              variants={{
-                closed: {
-                  y: "-100%",
-                  transition: { duration: 0.3, ease: "easeIn" }
-                },
-                open: {
-                  y: 0,
-                  transition: { duration: 0.4, ease: "easeOut" }
-                }
-              }}
-              className="fixed top-16 left-4 w-80 bg-white shadow-lg z-50 border border-gray-200 rounded-lg"
-            >
-              {/* Menu Content */}
-              <div className="px-4 py-6">
-                {/* Menu Items */}
-                <div className="flex flex-col space-y-4">
-                  {navItems.map((item, index) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.2, delay: index * 0.05 }}
+          <DropdownMenuContent className="w-64 bg-white shadow-lg border border-gray-200 rounded-lg ml-2 mt-2">
+            {/* Menu Content */}
+            <div className="px-4 py-6">
+              {/* Menu Items */}
+              <div className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-3 px-4 py-3 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-all duration-200 text-base font-medium group cursor-pointer w-full"
                     >
-                      <Link
-                        href={item.href}
-                        className="flex items-center space-x-3 px-4 py-3 text-black hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-all duration-200 text-base font-medium group"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-                        <span>{item.name}</span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
+                      <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                      <span>{item.name}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
               </div>
-            </motion.nav>
-
-            {/* Overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/20 z-30"
-              onClick={() => setIsOpen(false)}
-            />
-          </>
-        )}
-      </AnimatePresence>
+            </div>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </>
   )
 }
