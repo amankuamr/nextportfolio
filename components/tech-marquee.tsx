@@ -36,7 +36,7 @@ const techStack: { name: string; icon: IconType; color: string }[] = [
 
 export default function TechMarquee() {
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-r from-gray-50 to-white py-8">
+    <div className="w-full overflow-hidden bg-white py-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function TechMarquee() {
           {techStack.map((tech) => (
             <motion.div
               key={`${tech.name}-1`}
-              className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+              className="flex-shrink-0 flex items-center justify-center w-16 h-16"
               whileHover={{ scale: 1.05, y: -2 }}
               transition={{ duration: 0.2 }}
             >
@@ -59,7 +59,7 @@ export default function TechMarquee() {
           {techStack.map((tech) => (
             <motion.div
               key={`${tech.name}-2`}
-              className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+              className="flex-shrink-0 flex items-center justify-center w-16 h-16"
               whileHover={{ scale: 1.05, y: -2 }}
               transition={{ duration: 0.2 }}
             >
