@@ -30,6 +30,16 @@ export const webDevProjects = [
     githubLabel: "Live"
   },
   {
+    title: "Mall Of Ranchi",
+    description: "A lottery slot game created under Codestam Technologies with real-time Firebase integration.",
+    image: "/projectss/mallof.png",
+    liveUrl: "/web-dev/case-studies/mall-of-ranchi",
+    githubUrl: "https://mall-of-ranchi.vercel.app/",
+    technologies: ["Next.js", "Firebase", "Real-time Database", "Tailwind CSS", "TypeScript"],
+    liveLabel: "Case Study",
+    githubLabel: "Live"
+  },
+  {
     title: "Moviez",
     description: "A movies and series site made as a side project.",
     image: "/projectss/moviez.png",
