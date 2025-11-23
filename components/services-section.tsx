@@ -61,15 +61,25 @@ const Feature = ({
   index: number;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
       className={cn(
-        "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
+        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
+        index === 0 && "rounded-bl-2xl",
+        index === 2 && "rounded-br-2xl",
         (index === 0 || index === 3) && "lg:border-l dark:border-neutral-800",
         index < 3 && "lg:border-b dark:border-neutral-800"
       )}
     >
       {index < 3 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+        <div className={cn(
+          "opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none",
+          index === 0 && "rounded-bl-2xl",
+          index === 2 && "rounded-br-2xl"
+        )} />
       )}
       <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
         {icon}
@@ -83,6 +93,6 @@ const Feature = ({
       <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
