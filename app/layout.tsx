@@ -30,8 +30,11 @@ export const metadata: Metadata = {
   title: "Aman Kumar - Creative Developer",
   description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects",
   icons: {
-    icon: "/profile/profile.ico",
+    icon: "/profile/favicon_io/favicon.ico",
+    shortcut: "/profile/favicon_io/favicon.ico",
+    apple: "/profile/favicon_io/apple-touch-icon.png",
   },
+  manifest: "/profile/favicon_io/site.webmanifest",
 };
 
 export default function RootLayout({
