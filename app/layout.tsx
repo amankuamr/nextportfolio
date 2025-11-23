@@ -27,8 +27,46 @@ const metalMania = Metal_Mania({
 
 
 export const metadata: Metadata = {
-  title: "Aman Kumar - Creative Developer",
-  description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects",
+  title: "Aman Kumar - Creative Developer | UI/UX Designer & Web Developer",
+  description: "Explore the portfolio of Aman Kumar, a skilled UI/UX designer, web developer, and graphics designer. Discover innovative projects in user interface design, web development, and creative graphics.",
+  keywords: ["Aman Kumar", "UI/UX Designer", "Web Developer", "Graphics Designer", "Portfolio", "Creative Developer", "Next.js", "React"],
+  authors: [{ name: "Aman Kumar" }],
+  creator: "Aman Kumar",
+  publisher: "Aman Kumar",
+  openGraph: {
+    title: "Aman Kumar - Creative Developer",
+    description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects by Aman Kumar.",
+    url: "https://yourwebsite.com", // Replace with actual URL
+    siteName: "Aman Kumar Portfolio",
+    images: [
+      {
+        url: "/profile/profile.jpeg", // Assuming this is the profile image
+        width: 1200,
+        height: 630,
+        alt: "Aman Kumar - Creative Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aman Kumar - Creative Developer",
+    description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects by Aman Kumar.",
+    images: ["/profile/profile.jpeg"],
+    creator: "@yourtwitterhandle", // Replace if applicable
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/profile/favicon_io/favicon.ico",
     shortcut: "/profile/favicon_io/favicon.ico",
