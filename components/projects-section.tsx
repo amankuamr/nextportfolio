@@ -52,7 +52,15 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
-            Featured Projects
+            {"Featured Projects".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="inline-block hover:text-red-500 transition-colors duration-200"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             A showcase of my recent work across web development, design, and creative projects

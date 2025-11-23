@@ -40,7 +40,15 @@ export default function AboutSection() {
           className="text-3xl sm:text-4xl font-bold mb-12 text-center"
           style={{ fontFamily: 'BitcountGridSingle' }}
         >
-          About Me
+          {"About Me".split("").map((char, index) => (
+            <motion.span
+              key={index}
+              whileHover={{ scale: 1.1, y: -5 }}
+              className="inline-block hover:text-red-500 transition-colors duration-200"
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[200px]">

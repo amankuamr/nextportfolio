@@ -33,7 +33,17 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>My Skills</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
+            {"My Skills".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="inline-block hover:text-red-500 transition-colors duration-200"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and creative capabilities
           </p>
