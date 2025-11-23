@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, animate } from "framer-motion"
 import { Briefcase, FolderOpen, User, Trophy, Users, Heart } from "lucide-react"
 
 const sectionItems = [
@@ -91,7 +91,13 @@ export default function SectionNav() {
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.slice(1))
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const elementTop = element.getBoundingClientRect().top + window.scrollY
+      const offset = 80 // adjust offset if needed
+      animate(window.scrollY, elementTop - offset, {
+        duration: 1.5, // slower scroll
+        ease: "easeInOut",
+        onUpdate: (value) => window.scrollTo(0, value)
+      })
     }
   }
 

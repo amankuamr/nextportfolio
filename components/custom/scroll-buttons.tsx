@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, animate } from "framer-motion"
 import { ChevronUp, ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -27,11 +27,20 @@ export default function ScrollButtons() {
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    animate(window.scrollY, 0, {
+      duration: 1.5,
+      ease: "easeInOut",
+      onUpdate: (value) => window.scrollTo(0, value)
+    })
   }
 
   const scrollToBottom = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    const target = document.body.scrollHeight - window.innerHeight
+    animate(window.scrollY, target, {
+      duration: 1.5,
+      ease: "easeInOut",
+      onUpdate: (value) => window.scrollTo(0, value)
+    })
   }
 
   return (
