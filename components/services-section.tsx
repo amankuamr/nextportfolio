@@ -1,43 +1,28 @@
 "use client"
 
-import { useState } from "react"
-import { motion} from "framer-motion"
-import { ArrowRight} from "lucide-react"
+import { motion } from "framer-motion"
+import { Code, Palette, Brush } from "lucide-react"
+import { cn } from "@/lib/utils"
 
-const skills = [
+const features = [
   {
     title: "Web Development",
-    shortDescription: "Building modern web applications",
     description: "Building responsive, performant web applications with modern technologies.",
-    skills: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB"],
-    image: "/skillstop/web dev.avif"
+    icon: <Code className="w-6 h-6" />,
   },
   {
     title: "UI/UX Design",
-    shortDescription: "Creating beautiful user interfaces",
     description: "Creating intuitive and beautiful user interfaces that delight users.",
-    skills: ["Figma", "Adobe XD", "Sketch", "Prototyping", "User Research", "Wireframing", "Design Systems", "Usability Testing"],
-    image: "/skillstop/ui.avif"
+    icon: <Palette className="w-6 h-6" />,
   },
   {
     title: "Graphics Design",
-    shortDescription: "Designing stunning visuals and logos",
     description: "Designing stunning visuals, logos, and marketing materials.",
-    skills: ["Adobe Photoshop", "Illustrator", "After Effects", "InDesign", "Branding", "Logo Design", "Motion Graphics", "Print Design"],
-    image: "/skillstop/graphic.avif"
-  }
+    icon: <Brush className="w-6 h-6" />,
+  },
 ]
 
 export default function ServicesSection() {
-  const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({})
-
-  const toggleFlip = (index: number) => {
-    setFlippedCards(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }))
-  }
-
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -54,118 +39,50 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skills.map((skill, index) => {
-            const colors = ['#f9b234', '#3ecd5e', '#e44002'];
-            const bgColor = colors[index % colors.length];
-            const isFlipped = flippedCards[index] || false;
-
-            return (
-              <motion.div
-                key={skill.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group relative h-80 rounded-2xl bg-white border border-gray-200 transition-all duration-300 overflow-hidden"
-              >
-                {/* Expanding circle background */}
-                <div
-                  className="absolute top-0 right-0 w-32 h-32 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-[10] transition-transform duration-500 ease-in-out"
-                  style={{ backgroundColor: bgColor }}
-                />
-
-                <div className="relative z-10 h-full p-8 flex flex-col justify-between">
-
-                  {/* Content Area */}
-                  <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center">
-                    {/* Content */}
-                    <div className="relative overflow-hidden min-h-[160px] w-full flex items-center justify-center">
-                      <motion.div
-                        className="flex flex-col items-center justify-center text-center"
-                        animate={{
-                          y: isFlipped ? -40 : 0,
-                          opacity: isFlipped ? 0 : 1
-                        }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                      >
-                        {/* Title */}
-                        <motion.h3
-                          className="text-2xl font-bold mb-4 text-black"
-                          style={{ fontFamily: 'BitcountGridSingle' }}
-                          animate={{
-                            opacity: isFlipped ? 0 : 1,
-                            y: isFlipped ? -20 : 0
-                          }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                          {skill.title}
-                        </motion.h3>
-
-                        <p className="text-gray-600 leading-relaxed text-lg">
-                          {skill.shortDescription}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        className="absolute inset-0 flex items-center justify-center"
-                        animate={{
-                          y: isFlipped ? 0 : 40,
-                          opacity: isFlipped ? 1 : 0
-                        }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                      >
-                        <div className="grid grid-cols-2 gap-1 max-w-xs">
-                          {skill.skills.map((skillTag, tagIndex) => (
-                            <motion.div
-                              key={skillTag}
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{
-                                opacity: isFlipped ? 1 : 0,
-                                y: isFlipped ? 0 : 10
-                              }}
-                              transition={{
-                                duration: 0.2,
-                                delay: isFlipped ? tagIndex * 0.03 : 0,
-                                ease: "easeOut"
-                              }}
-                              className="group relative"
-                            >
-                              <div className="flex items-center space-x-1 p-1.5 bg-white border border-gray-200 rounded-md hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 cursor-pointer">
-                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></div>
-                                <span className="text-xs font-medium text-gray-700 truncate">
-                                  {skillTag}
-                                </span>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </div>
-                  </div>
-
-                  {/* Button */}
-                  <div className="relative z-10 flex justify-end">
-                    <motion.button
-                      onClick={() => toggleFlip(index)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 group/btn"
-                    >
-                      <motion.div
-                        animate={{ rotate: isFlipped ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                      </motion.div>
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
         </div>
       </div>
     </section>
   )
 }
+
+const Feature = ({
+  title,
+  description,
+  icon,
+  index,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
+        (index === 0 || index === 3) && "lg:border-l dark:border-neutral-800",
+        index < 3 && "lg:border-b dark:border-neutral-800"
+      )}
+    >
+      {index < 3 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      )}
+      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+        {icon}
+      </div>
+      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-blue-500 group-hover/feature:bg-red-500 transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+          {title}
+        </span>
+      </div>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+        {description}
+      </p>
+    </div>
+  );
+};
