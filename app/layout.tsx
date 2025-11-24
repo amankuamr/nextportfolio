@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Metal_Mania } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import SocialMenu from "@/components/custom/social-menu";
-import SectionNav from "@/components/section-nav";
+import SectionNav from "@/components/custom/section-nav";
 import MusicPlayer from "@/components/custom/music-player";
 import CustomCursor from "@/components/custom/custom-cursor";
 import { MusicProvider } from "@/lib/music-context";

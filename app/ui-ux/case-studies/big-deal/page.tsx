@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import OtherCaseStudies from "@/components/other-case-studies"
 import ScrollButtons from "@/components/custom/scroll-buttons"
-import { BentoGridShowcase } from "@/components/ui/bento-product-features"
 
 export default function BigDealCaseStudy() {
   const [isMobile, setIsMobile] = useState(false)
@@ -195,7 +194,7 @@ export default function BigDealCaseStudy() {
           </div>
         </motion.section>
 
-        {/* Design Features */}
+        {/* Screenshots */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,66 +203,74 @@ export default function BigDealCaseStudy() {
           className="mb-16"
         >
           <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'BitcountGridSingle' }}>
-            Design Features
+            Design Screenshots
           </h2>
-          <BentoGridShowcase
-            integration={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <div
-                  className="relative group mb-4"
-                  onContextMenu={(e) => e.preventDefault()}
-                  style={{ userSelect: 'none' }}
-                >
-                  <Image
-                    src="/projectss/bigdeal/deal1.png"
-                    alt="Big Deal Home Screen"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
-                    draggable={false}
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-                      <p className="text-sm font-medium">Protected Content</p>
-                      <p className="text-xs">Right-click disabled</p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div
+                className="relative group"
+                onContextMenu={(e) => e.preventDefault()}
+                style={{ userSelect: 'none' }}
+              >
+                <Image
+                  src="/projectss/bigdeal/deal2.png"
+                  alt="Big Deal Screenshot 1"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                    <p className="text-sm font-medium">Protected Content</p>
+                    <p className="text-xs">Right-click disabled</p>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Home Screen</h3>
-                <p className="text-muted-foreground">Intuitive landing page with car listings and search functionality.</p>
               </div>
-            }
-            trackers={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-2">Booking Flow</h3>
-                <p className="text-muted-foreground">Seamless booking process with date and car selection.</p>
+              <div
+                className="relative group"
+                onContextMenu={(e) => e.preventDefault()}
+                style={{ userSelect: 'none' }}
+              >
+                <Image
+                  src="/projectss/bigdeal/deal3.png"
+                  alt="Big Deal Screenshot 2"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                    <p className="text-sm font-medium">Protected Content</p>
+                    <p className="text-xs">Right-click disabled</p>
+                  </div>
+                </div>
               </div>
-            }
-            statistic={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-2">User Dashboard</h3>
-                <p className="text-muted-foreground">Personalized dashboard for managing bookings and preferences.</p>
+            </div>
+            <div className="space-y-4">
+              <div
+                className="relative group"
+                onContextMenu={(e) => e.preventDefault()}
+                style={{ userSelect: 'none' }}
+              >
+                <Image
+                  src="/projectss/bigdeal/deal4.png"
+                  alt="Big Deal Screenshot 3"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-lg shadow-lg pointer-events-none"
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+                    <p className="text-sm font-medium">Protected Content</p>
+                    <p className="text-xs">Right-click disabled</p>
+                  </div>
+                </div>
               </div>
-            }
-            focus={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-2">Car Details</h3>
-                <p className="text-muted-foreground">Detailed car information with images and specifications.</p>
-              </div>
-            }
-            productivity={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-2">Payment Integration</h3>
-                <p className="text-muted-foreground">Secure payment processing for rentals.</p>
-              </div>
-            }
-            shortcuts={
-              <div className="p-6 bg-gray-50 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-2">Admin Panel</h3>
-                <p className="text-muted-foreground">Comprehensive admin interface for managing cars, bookings, and users.</p>
-              </div>
-            }
-          />
+            </div>
+          </div>
         </motion.section>
 
         {/* Design Process */}
