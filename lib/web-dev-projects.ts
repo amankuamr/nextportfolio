@@ -64,7 +64,7 @@ export const webDevProjects = [
     description: "a portfolio created using pure html , css , js , bootstrap",
     image: "/projectss/portfolio(old).png",
     liveUrl: "/web-dev/case-studies/portfolio-old",
-    githubUrl: "https://amankumarr.vercel.app",
+    githubUrl: "https://amankumarold.vercel.app",
     technologies: ["HTML", "CSS", "JS", "Bootstrap"],
     liveLabel: "Case Study",
     githubLabel: "Live"
