@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Aman Kumar" }],
   creator: "Aman Kumar",
   publisher: "Aman Kumar",
+  metadataBase: new URL('https://yourwebsite.com'), // Replace with actual URL
   openGraph: {
     title: "Aman Kumar - Creative Developer",
     description: "Showcasing UI/UX Design, Web Development, and Graphics Design projects by Aman Kumar.",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Aman Kumar Portfolio",
     images: [
       {
-        url: "/profile/profile.jpeg", // Assuming this is the profile image
+        url: "/profile/profile.jpeg",
         width: 1200,
         height: 630,
         alt: "Aman Kumar - Creative Developer",
