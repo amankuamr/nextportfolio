@@ -8,6 +8,7 @@ import MusicPlayer from "@/components/custom/music-player";
 import CustomCursor from "@/components/custom/custom-cursor";
 import { MusicProvider } from "@/lib/music-context";
 import SmoothScroll from "@/components/custom/smooth-scroll";
+import GoogleAnalytics from "@/components/analytics/google-analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,6 +86,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${metalMania.variable} antialiased bg-white text-black overflow-x-hidden`}
       >
+        <GoogleAnalytics />
         <MusicProvider>
           <SmoothScroll />
           <CustomCursor />
