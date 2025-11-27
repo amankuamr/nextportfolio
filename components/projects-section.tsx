@@ -5,6 +5,7 @@ import { ArrowRight, Figma } from "lucide-react"
 import Link from "next/link"
 import ProjectCard from "@/components/project-card"
 import { Button } from "@/components/ui/button"
+import Featured from './featured'
 
 const featuredProjects = [
   {
@@ -67,7 +68,9 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <Featured />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 lg:hidden">
           {featuredProjects.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}
