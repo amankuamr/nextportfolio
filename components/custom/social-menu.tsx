@@ -2,7 +2,7 @@
 
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Share2, Github, MessageCircle, Globe, Instagram } from "lucide-react"
+import { Share2, Github, MessageCircle, Instagram, Camera } from "lucide-react"
 
 const socialItems = [
   {
@@ -18,10 +18,10 @@ const socialItems = [
     color: "hover:text-pink-500"
   },
   {
-    name: "Website",
-    href: "https://iimagii.vercel.app",
-    icon: Globe,
-    color: "hover:text-blue-500"
+    name: "Photography",
+    href: "/photography",
+    icon: Camera,
+    color: "hover:text-purple-500"
   },
   {
     name: "WhatsApp",
@@ -63,8 +63,7 @@ export default function SocialMenu() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(item.name === "Photography" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.2, delay: index * 0.1 }}
@@ -96,8 +95,7 @@ export default function SocialMenu() {
             <motion.a
               key={item.name}
               href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(item.name === "Photography" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}

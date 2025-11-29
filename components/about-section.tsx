@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Camera, Trophy, MapPin, Github, Instagram, Globe, FileText, Play, Pause, SkipBack, SkipForward, Heart, Volume2 } from "lucide-react"
+import { Trophy, MapPin, Github, Instagram, Globe, FileText, Play, Pause, SkipBack, SkipForward, Heart, Volume2 } from "lucide-react"
 import { SiSpotify } from "react-icons/si"
 import { BackgroundLines } from "@/components/ui/background-lines"
 import { useMusic } from "@/lib/music-context"
@@ -198,18 +198,15 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-            className="col-span-1 row-span-1 bg-white border border-gray-200 rounded-2xl p-6"
+            className="col-span-1 row-span-1 border border-gray-200 rounded-2xl p-6 relative overflow-hidden"
+            style={{ backgroundImage: 'url(/useful/Passion.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
-            <div className="flex items-center mb-3">
-              <Camera className="w-5 h-5 mr-2 text-purple-400" />
-              <h4 className="text-lg font-bold font-cal-sans">Beyond Code</h4>
-            </div>
-            <ul className="text-sm space-y-1">
-              <li>• Photography</li>
-              <li>• Gaming</li>
-              <li>• Hiking</li>
-              <li>• Badminton</li>
-            </ul>
+            <a
+              href="/photography"
+              className="absolute bottom-4 right-4 inline-flex items-center px-3 py-1 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+            >
+              View
+            </a>
           </motion.div>
 
           {/* Achievements */}
@@ -279,6 +276,7 @@ export default function AboutSection() {
             `}</style>
           </motion.div>
         </div>
+
       </div>
     </BackgroundLines>
   )
