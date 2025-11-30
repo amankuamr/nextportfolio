@@ -117,9 +117,7 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* Goo filter for project cards */
 .goo-filter {
