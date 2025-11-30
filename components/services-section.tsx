@@ -76,6 +76,12 @@ const Feature = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       viewport={{ once: true }}
+      animate={
+        title === "UI/UX Design" || title === "Web Development" || title === "Graphics Design" ? { backgroundSize: '50%' } : {}
+      }
+      whileHover={
+        title === "UI/UX Design" || title === "Web Development" || title === "Graphics Design" ? { backgroundSize: '60%', transition: { duration: 0.2 } } : {}
+      }
       className={cn(
         "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
         index === 0 && "rounded-bl-2xl",
@@ -86,17 +92,14 @@ const Feature = ({
       style={
         title === "UI/UX Design" ? {
           backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/UI⁄UX.png)',
-          backgroundSize: '50%',
           backgroundPosition: 'bottom right',
           backgroundRepeat: 'no-repeat'
         } : title === "Web Development" ? {
           backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/webdev.png)',
-          backgroundSize: '50%',
           backgroundPosition: 'bottom right',
           backgroundRepeat: 'no-repeat'
         } : title === "Graphics Design" ? {
           backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/graphic.png)',
-          backgroundSize: '50%',
           backgroundPosition: 'bottom right',
           backgroundRepeat: 'no-repeat'
         } : {}
