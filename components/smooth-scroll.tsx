@@ -9,11 +9,7 @@ export default function SmoothScroll() {
     const lenisRef = useRef<Lenis | null>(null)
 
     useEffect(() => {
-        lenisRef.current = new Lenis({
-            duration: 2.5, // Increase for slower, smoother scroll
-            easing: (t) => 1 - Math.pow(1 - t, 3), // Cubic ease-out for smoother feel
-            smoothWheel: true,
-        })
+        lenisRef.current = new Lenis()
 
         function raf(time: number) {
             lenisRef.current?.raf(time)
