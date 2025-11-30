@@ -83,6 +83,24 @@ const Feature = ({
         (index === 0 || index === 3) && "lg:border-l dark:border-neutral-800",
         index < 3 && "lg:border-b dark:border-neutral-800"
       )}
+      style={
+        title === "UI/UX Design" ? {
+          backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/UI⁄UX.png)',
+          backgroundSize: '50%',
+          backgroundPosition: 'bottom right',
+          backgroundRepeat: 'no-repeat'
+        } : title === "Web Development" ? {
+          backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/webdev.png)',
+          backgroundSize: '50%',
+          backgroundPosition: 'bottom right',
+          backgroundRepeat: 'no-repeat'
+        } : title === "Graphics Design" ? {
+          backgroundImage: 'linear-gradient(to bottom right, rgba(255,255,255,0.4), transparent 60%), url(/servicves/graphic.png)',
+          backgroundSize: '50%',
+          backgroundPosition: 'bottom right',
+          backgroundRepeat: 'no-repeat'
+        } : {}
+      }
     >
       {index < 3 && (
         <div className={cn(
