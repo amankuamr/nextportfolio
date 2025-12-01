@@ -184,9 +184,9 @@ export default function HornetCaseStudy() {
                         <Image
                             src="/casestudybg/Hornet/phonehalf.png"
                             alt="Hornt App Design"
-                            width={800}
-                            height={1000}
-                            className="w-full max-w-md h-auto"
+                            width={3000}
+                            height={3750}
+                            className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl h-auto"
                         />
                     </div>
                 </motion.section>
