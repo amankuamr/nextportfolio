@@ -39,7 +39,8 @@ export default function HornetCaseStudy() {
                         className="relative w-full h-[400px] md:h-[500px] bg-center bg-no-repeat"
                         style={{
                             backgroundImage: 'url(/casestudybg/Hornet/hornetabs.png)',
-                            backgroundSize: 'cover'
+                            backgroundSize: 'contain',
+                            backgroundRepeat: 'no-repeat'
                         }}
                     />
                 </motion.section>
@@ -68,7 +69,7 @@ export default function HornetCaseStudy() {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[150px]">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px]">
                         {/* Block 1 - Large (top-left, spans 2x2) */}
                         <div className="md:col-span-2 md:row-span-2 bg-gray-100 rounded-lg overflow-hidden">
                             <Image
@@ -183,9 +184,9 @@ export default function HornetCaseStudy() {
                         <Image
                             src="/casestudybg/Hornet/phonehalf.png"
                             alt="Hornt App Design"
-                            width={1800}
-                            height={2400}
-                            className=""
+                            width={800}
+                            height={1000}
+                            className="w-full max-w-md h-auto"
                         />
                     </div>
                 </motion.section>
@@ -234,10 +235,10 @@ export default function HornetCaseStudy() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="flex flex-col justify-center items-center space-y-2 py-8"
+                    className="flex flex-col justify-center items-center space-y-2 py-8 px-4"
                 >
-                    <div className="h-px bg-black/20" style={{ width: '640px' }}></div>
-                    <div className="h-px bg-black/20" style={{ width: '640px' }}></div>
+                    <div className="w-full max-w-md h-px bg-black/20"></div>
+                    <div className="w-full max-w-md h-px bg-black/20"></div>
                 </motion.div>
 
                 {/* Images Section */}
@@ -248,32 +249,32 @@ export default function HornetCaseStudy() {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-                        <div className="flex justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                        <div className="w-full max-w-xs">
                             <Image
                                 src="/casestudybg/Hornet/Home.png"
                                 alt="Hornt Home Screen"
                                 width={400}
                                 height={600}
-                                className=""
+                                className="w-full h-auto rounded-lg"
                             />
                         </div>
-                        <div className="flex justify-center">
+                        <div className="w-full max-w-xs">
                             <Image
                                 src="/casestudybg/Hornet/tripview.png"
                                 alt="Hornt Trip View"
                                 width={400}
                                 height={600}
-                                className=""
+                                className="w-full h-auto rounded-lg"
                             />
                         </div>
-                        <div className="flex justify-center">
+                        <div className="w-full max-w-xs sm:col-span-2 lg:col-span-1">
                             <Image
                                 src="/casestudybg/Hornet/Tourinfo.png"
                                 alt="Hornt Tour Info"
                                 width={400}
                                 height={600}
-                                className=""
+                                className="w-full h-auto rounded-lg"
                             />
                         </div>
                     </div>
