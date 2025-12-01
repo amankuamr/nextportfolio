@@ -12,6 +12,14 @@ import Link from "next/link"
 export default function Featured() {
     const featuredItems = [
         {
+            title: "Hornt",
+            description: "A concept design for a touring app designed in Figma using latest techniques",
+            technologies: ["Figma", "UI/UX Design", "Concept Design"],
+            liveUrl: "/ui-ux/case-studies/hornet",
+            imageSrc: "/casestudybg/Hornet/banner.png",
+            alt: "Hornt Project"
+        },
+        {
             title: "Big Deal",
             description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
             technologies: ["Figma", "Framer", "UI/UX Design"],
@@ -42,6 +50,7 @@ export default function Featured() {
     const cardRef1 = useRef<HTMLDivElement>(null)
     const cardRef2 = useRef<HTMLDivElement>(null)
     const cardRef3 = useRef<HTMLDivElement>(null)
+    const cardRef4 = useRef<HTMLDivElement>(null)
 
     const { scrollYProgress: progress1 } = useScroll({
         target: cardRef1,
@@ -55,18 +64,23 @@ export default function Featured() {
         target: cardRef3,
         offset: ["start end", "end start"]
     })
+    const { scrollYProgress: progress4 } = useScroll({
+        target: cardRef4,
+        offset: ["start end", "end start"]
+    })
 
     const y1 = useTransform(progress1, [0, 1], [0, -100])
     const y2 = useTransform(progress2, [0, 1], [0, -200])
     const y3 = useTransform(progress3, [0, 1], [0, -300])
+    const y4 = useTransform(progress4, [0, 1], [0, -400])
 
-    const refs = [cardRef1, cardRef2, cardRef3]
-    const ys = [y1, y2, y3]
+    const refs = [cardRef1, cardRef2, cardRef3, cardRef4]
+    const ys = [y1, y2, y3, y4]
 
     return (
         <div className="hidden lg:block w-full max-w-6xl mx-auto space-y-12 pb-12">
             {featuredItems.map((item, index) => {
-                const isReversed = index === 1; // Second card reversed
+                const isReversed = index % 2 === 1; // Alternate layout: odd indices reversed
                 return (
                     <motion.div
                         key={index}

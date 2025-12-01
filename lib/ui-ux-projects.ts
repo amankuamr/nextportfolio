@@ -2,6 +2,17 @@ import { Figma } from "lucide-react"
 
 export const uiUxProjects = [
   {
+    title: "Hornt",
+    description: "Concept design for a touring app using latest Figma techniques, featuring both low-fidelity wireframes and high-fidelity prototypes",
+    image: "/casestudybg/Hornet/banner.png",
+    liveUrl: "/ui-ux/case-studies/hornet",
+    githubUrl: "https://www.figma.com/design/...",
+    technologies: ["Figma", "UI/UX Design", "Concept Design"],
+    liveLabel: "Case Study",
+    githubLabel: "Figma",
+    githubIcon: Figma
+  },
+  {
     title: "VN Bolo",
     description: "this is a ui/ux design for a client named vn bolo where i created its main website pages and also the admin panel",
     image: "/projectss/vnbolo.png",

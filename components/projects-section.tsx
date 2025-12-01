@@ -9,6 +9,17 @@ import Featured from './featured'
 
 const featuredProjects = [
   {
+    title: "Hornt",
+    description: "Concept design for a touring app using latest Figma techniques, featuring both low-fidelity wireframes and high-fidelity prototypes",
+    image: "/casestudybg/Hornet/banner.png",
+    liveUrl: "/ui-ux/case-studies/hornet",
+    githubUrl: "https://www.figma.com/design/...",
+    technologies: ["Figma", "UI/UX Design", "Concept Design"],
+    liveLabel: "Case Study",
+    githubLabel: "Figma",
+    githubIcon: Figma
+  },
+  {
     title: "Big Deal",
     description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
     image: "/projectss/bigdeal/deal1.png",
