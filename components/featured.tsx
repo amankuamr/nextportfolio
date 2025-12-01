@@ -3,7 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ExternalLink, FileText } from "lucide-react"
+import { ExternalLink, FileText, Figma } from "lucide-react"
 import { useRef } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -16,6 +16,9 @@ export default function Featured() {
             description: "A concept design for a touring app designed in Figma using latest techniques",
             technologies: ["Figma", "UI/UX Design", "Concept Design"],
             liveUrl: "/ui-ux/case-studies/hornet",
+            githubUrl: "https://www.figma.com/design/EIclgpRliMUyV0UiTDwK3u/Hornet-Touring?node-id=0-1&t=huPLsnAyZkBn9bkH-1",
+            githubLabel: "Figma",
+            githubIcon: Figma,
             imageSrc: "/casestudybg/Hornet/banner.png",
             alt: "Hornt Project"
         },
@@ -136,8 +139,8 @@ export default function Featured() {
                                             {item.githubUrl && (
                                                 <Button asChild variant="outline" size="sm" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
                                                     <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                                                        <ExternalLink className="w-4 h-4 mr-2" />
-                                                        <span className="font-medium">Live</span>
+                                                        {React.createElement(item.githubIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
+                                                        <span className="font-medium">{item.githubLabel || "Live"}</span>
                                                     </a>
                                                 </Button>
                                             )}
@@ -224,8 +227,8 @@ export default function Featured() {
                                                     {item.githubUrl && (
                                                         <Button asChild variant="outline" size="sm" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
                                                             <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                                                                <ExternalLink className="w-4 h-4 mr-2" />
-                                                                <span className="font-medium">Live</span>
+                                                                {React.createElement(item.githubIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
+                                                                <span className="font-medium">{item.githubLabel || "Live"}</span>
                                                             </a>
                                                         </Button>
                                                     )}

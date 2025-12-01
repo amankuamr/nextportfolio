@@ -6,7 +6,7 @@ export const uiUxProjects = [
     description: "Concept design for a touring app using latest Figma techniques, featuring both low-fidelity wireframes and high-fidelity prototypes",
     image: "/casestudybg/Hornet/banner.png",
     liveUrl: "/ui-ux/case-studies/hornet",
-    githubUrl: "https://www.figma.com/design/...",
+    githubUrl: "https://www.figma.com/design/EIclgpRliMUyV0UiTDwK3u/Hornet-Touring?node-id=0-1&t=huPLsnAyZkBn9bkH-1",
     technologies: ["Figma", "UI/UX Design", "Concept Design"],
     liveLabel: "Case Study",
     githubLabel: "Figma",
