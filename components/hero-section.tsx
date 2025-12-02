@@ -169,10 +169,10 @@ export default function HeroSection() {
               className="flex gap-4 justify-center lg:justify-start pt-4"
             >
               {[
-                { icon: Github, href: "https://github.com", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+                { icon: Github, href: "https://github.com/amankuamr", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/aman-kumar-8693a820b/", label: "LinkedIn" },
                 { icon: FileText, href: "https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing", label: "Resume" },
-                { icon: Mail, href: "mailto:aman@example.com", label: "Email" },
+                { icon: Mail, href: "mailto:amankumar1948sahu@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}

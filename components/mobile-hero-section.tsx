@@ -209,9 +209,9 @@ export default function MobileHeroSection() {
             className="flex gap-3 justify-center pt-0"
           >
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:aman@example.com", label: "Email" },
+              { icon: Github, href: "https://github.com/amankuamr", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/aman-kumar-8693a820b/", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:amankumar1948sahu@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
