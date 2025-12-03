@@ -16,7 +16,7 @@ export default function PortfolioWebsiteCaseStudy() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="fixed left-60 top-1/2 transform -translate-y-1/2 z-50"
+                className="fixed left-4 bottom-6 md:left-60 md:top-1/2 md:bottom-auto md:transform md:-translate-y-1/2 z-50"
             >
                 <Link href="/ui-ux">
                     <motion.div
@@ -25,10 +25,10 @@ export default function PortfolioWebsiteCaseStudy() {
                             transition: { duration: 0.2, ease: "easeOut" }
                         }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center justify-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300 group"
+                        className="flex items-center justify-center p-3 md:px-4 md:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300 group"
                     >
-                        <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" />
-                        <span className="ml-2 text-sm font-medium">Back</span>
+                        <ArrowLeft className="w-5 h-5 md:w-4 md:h-4 transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" />
+                        <span className="hidden md:inline-block ml-2 text-sm font-medium">Back</span>
                     </motion.div>
                 </Link>
             </motion.div>
