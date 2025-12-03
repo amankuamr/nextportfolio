@@ -23,13 +23,15 @@ export default function Featured() {
             alt: "Hornt Project"
         },
         {
-            title: "Big Deal",
-            description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
-            technologies: ["Figma", "Framer", "UI/UX Design"],
-            liveUrl: "/ui-ux/case-studies/big-deal",
-            githubUrl: "https://bigdeal.framer.ai/",
-            imageSrc: "/homecustom/bigdeal.png",
-            alt: "Big Deal Project"
+            title: "Portfolio Website",
+            description: "I have created this portfolio website UI design (single page) as a personal project to check my capability with UI design and Auto Layout.",
+            technologies: ["Figma", "Auto Layout"],
+            liveUrl: "/ui-ux/case-studies/portfolio-website",
+            githubUrl: "https://www.figma.com/design/WPSHFJ14ceMTxQNyaXKwV0/Untitled?node-id=0-1&t=bZk3kbSJtrnu537f-1",
+            githubLabel: "Figma",
+            githubIcon: Figma,
+            imageSrc: "/casestudybg/Portfolio_Website/banner1.png",
+            alt: "Portfolio Website Project"
         },
         {
             title: "Imagi",

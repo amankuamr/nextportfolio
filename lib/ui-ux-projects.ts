@@ -13,6 +13,28 @@ export const uiUxProjects = [
     githubIcon: Figma
   },
   {
+    title: "Portfolio Website",
+    description: "Personal portfolio website UI design showcasing modern design principles, clean typography, and responsive layouts using Figma's Auto Layout features.",
+    image: "/casestudybg/Portfolio_Website/banner1.png",
+    liveUrl: "/ui-ux/case-studies/portfolio-website",
+    githubUrl: "https://www.figma.com/design/WPSHFJ14ceMTxQNyaXKwV0/Untitled?node-id=0-1&t=bZk3kbSJtrnu537f-1",
+    technologies: ["Figma", "UI/UX Design", "Auto Layout"],
+    liveLabel: "Case Study",
+    githubLabel: "Figma",
+    githubIcon: Figma
+  },
+  {
+    title: "Big Deal",
+    description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
+    image: "/projectss/bigdeal/deal1.png",
+    liveUrl: "/ui-ux/case-studies/big-deal",
+    githubUrl: "https://bigdeal.framer.ai/",
+    technologies: ["Figma", "Framer", "UI/UX Design"],
+    liveLabel: "Case Study",
+    githubLabel: "Live Site",
+    githubIcon: Figma
+  },
+  {
     title: "VN Bolo",
     description: "this is a ui/ux design for a client named vn bolo where i created its main website pages and also the admin panel",
     image: "/projectss/vnbolo.png",
@@ -76,17 +98,6 @@ export const uiUxProjects = [
     technologies: ["Figma", "HTML", "CSS", "JavaScript"],
     liveLabel: "Case Study",
     githubLabel: "Figma",
-    githubIcon: Figma
-  },
-  {
-    title: "Big Deal",
-    description: "Car rental service UI/UX with animations - College final year major project with team collaboration",
-    image: "/projectss/bigdeal/deal1.png",
-    liveUrl: "/ui-ux/case-studies/big-deal",
-    githubUrl: "https://bigdeal.framer.ai/",
-    technologies: ["Figma", "Framer", "UI/UX Design"],
-    liveLabel: "Case Study",
-    githubLabel: "Live Site",
     githubIcon: Figma
   },
   {
