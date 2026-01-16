@@ -100,9 +100,10 @@
       transform: translateX(-50%);
     }
   }
+
   @keyframes marquee {
-  to {
-    transform: translateX(-50%);
+    to {
+      transform: translateX(-50%);
     }
   }
 }
@@ -118,7 +119,7 @@ body {
 }
 
 html {
-  zoom: 110%;
+  zoom: 90%;
 }
 
 
@@ -147,7 +148,12 @@ html {
   cursor: none !important;
 }
 
-a, button, [role="button"], input, textarea, select {
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
   cursor: none !important;
 }
 
@@ -165,6 +171,7 @@ a, button, [role="button"], input, textarea, select {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
