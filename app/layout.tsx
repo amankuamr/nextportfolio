@@ -9,7 +9,6 @@ import CustomCursor from "@/components/custom/custom-cursor";
 import { MusicProvider } from "@/lib/music-context";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 import SmoothScroll from "@/components/smooth-scroll";
-import PreventZoom from "@/components/prevent-zoom";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,7 +89,6 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <SmoothScroll />
-        <PreventZoom />
         <MusicProvider>
           <CustomCursor />
           <Navbar />

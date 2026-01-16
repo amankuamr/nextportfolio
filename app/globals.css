@@ -118,12 +118,6 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
-html {
-  zoom: 90%;
-}
-
-
-
 /* Goo filter for project cards */
 .goo-filter {
   position: absolute;
