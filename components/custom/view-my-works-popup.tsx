@@ -1,8 +1,10 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { Palette, Figma, Code2 } from "lucide-react"
+import { Palette, Figma, Code2, X, Check } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 interface ViewMyWorksPopupProps {
   isOpen: boolean
@@ -10,38 +12,36 @@ interface ViewMyWorksPopupProps {
 }
 
 export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupProps) {
+  const router = useRouter()
+  const [selected, setSelected] = useState<string | null>(null)
+
   const categories = [
     {
       title: "Graphic Design",
       href: "/graphics",
       icon: Palette,
-      circleColor: "bg-pink-100",
-      iconColor: "text-pink-600",
-      hoverBorder: "hover:border-pink-300",
-      hoverShadow: "hover:shadow-pink-100/50",
-      activeBg: "active:bg-pink-50/80",
     },
     {
       title: "UI/UX",
       href: "/ui-ux",
       icon: Figma,
-      circleColor: "bg-purple-100",
-      iconColor: "text-purple-600",
-      hoverBorder: "hover:border-purple-300",
-      hoverShadow: "hover:shadow-purple-100/50",
-      activeBg: "active:bg-purple-50/80",
     },
     {
       title: "Web Development",
       href: "/web-dev",
       icon: Code2,
-      circleColor: "bg-blue-100",
-      iconColor: "text-blue-600",
-      hoverBorder: "hover:border-blue-300",
-      hoverShadow: "hover:shadow-blue-100/50",
-      activeBg: "active:bg-blue-50/80",
     },
   ]
+
+  const handleSelect = (category: { title: string; href: string }) => {
+    if (selected) return
+    setSelected(category.title)
+    setTimeout(() => {
+      router.push(category.href)
+      onClose()
+      setSelected(null)
+    }, 650)
+  }
 
   return (
     <AnimatePresence>
@@ -52,7 +52,7 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm z-10"
+            className="absolute inset-0 bg-black/20 backdrop-blur-sm z-10"
             onClick={onClose}
           />
 
@@ -65,21 +65,10 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
             onClick={onClose}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative z-20 flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 hover:bg-black/5 transition-colors duration-200"
+            className="relative z-20 flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-white border border-gray-200 shadow-lg hover:bg-gray-50 transition-all duration-300"
             aria-label="Close popup"
           >
-            <svg
-              className="w-5 h-5 text-gray-700"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+            <X className="w-5 h-5 text-black" />
           </motion.button>
 
           <motion.div
@@ -88,59 +77,105 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative z-20 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-5 w-full max-w-xs sm:max-w-sm overflow-hidden"
+            className="relative z-20 bg-white rounded-3xl shadow-2xl border border-gray-200 p-5 sm:p-6 w-full max-w-xs sm:max-w-sm overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent pointer-events-none" />
+            {/* Accent glow */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-600/20 to-blue-800/5 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="relative z-10 text-center mb-4 sm:mb-5">
+            <div className="relative z-10 text-center mb-5">
               <h2
                 className="text-xl sm:text-2xl font-bold text-black mb-1"
                 style={{ fontFamily: 'BitcountGridSingle' }}
               >
                 Choose Category
               </h2>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 rounded-full mx-auto mt-2 sm:mt-2.5" />
+              <div className="w-12 h-0.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full mx-auto mt-2.5" />
             </div>
 
-            <div className="relative z-10 flex flex-col gap-2 sm:gap-2.5">
+            <div className="relative z-10 flex flex-col gap-2.5">
               {categories.map((category, index) => {
                 const Icon = category.icon
+                const isSelected = selected === category.title
+                const isDimmed = selected !== null && selected !== category.title
                 return (
-                  <Link
+                  <motion.button
                     key={category.title}
-                    href={category.href}
-                    onClick={onClose}
-                    className="group block"
+                    type="button"
+                    onClick={() => handleSelect(category)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{
+                      opacity: isDimmed ? 0.3 : 1,
+                      x: 0,
+                      scale: isSelected ? 1.02 : 1,
+                    }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    whileHover={{ x: 4, scale: isSelected ? 1.02 : 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`relative flex items-center gap-3 w-full p-3 rounded-2xl border text-left cursor-pointer shadow-sm overflow-hidden transition-colors duration-300 ${
+                      isSelected
+                        ? "border-blue-600 bg-gradient-to-r from-blue-600 to-blue-800"
+                        : "border-gray-200 bg-gray-50 hover:bg-gray-100"
+                    }`}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      whileHover={{ x: 4, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`flex items-center gap-3 w-full p-2.5 sm:p-3 rounded-2xl border-2 ${category.hoverBorder} ${category.hoverShadow} ${category.activeBg} bg-white/70 backdrop-blur-sm transition-all duration-300 cursor-pointer shadow-sm`}
+                    {/* Fill animation overlay */}
+                    {isSelected && (
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0.6 }}
+                        animate={{ scale: 8, opacity: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="absolute left-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/30 pointer-events-none"
+                      />
+                    )}
+
+                    <div
+                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg transition-transform duration-200 ${
+                        isSelected
+                          ? "bg-white/20"
+                          : "bg-gradient-to-br from-blue-600 to-blue-800 group-hover:scale-110"
+                      }`}
                     >
-                      <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full ${category.circleColor} flex items-center justify-center flex-shrink-0 shadow-sm group-hover:shadow-md transition-shadow duration-300`}>
-                        <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${category.iconColor} group-hover:scale-110 transition-transform duration-200`} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <span
-                          className="text-xs sm:text-sm font-light text-black block"
-                          style={{ fontFamily: 'SilianRail', fontWeight: 300 }}
-                        >
-                          {category.title}
-                        </span>
-                      </div>
-                      <svg
-                        className="w-3.5 h-3.5 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                      <AnimatePresence mode="wait" initial={false}>
+                        {isSelected ? (
+                          <motion.span
+                            key="check"
+                            initial={{ scale: 0, rotate: -45 }}
+                            animate={{ scale: 1, rotate: 0 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                          >
+                            <Check className="w-5 h-5 text-white" />
+                          </motion.span>
+                        ) : (
+                          <motion.span
+                            key="icon"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
+                          >
+                            <Icon className="w-5 h-5 text-white" />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span
+                        className={`text-sm font-medium block transition-colors duration-300 ${
+                          isSelected ? "text-white" : "text-black"
+                        }`}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </motion.div>
-                  </Link>
+                        {category.title}
+                      </span>
+                    </div>
+                    <svg
+                      className={`w-3.5 h-3.5 flex-shrink-0 transition-all duration-200 ${
+                        isSelected ? "text-white/70" : "text-gray-400 group-hover:text-black group-hover:translate-x-0.5"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </motion.button>
                 )
               })}
             </div>
