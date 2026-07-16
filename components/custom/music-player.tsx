@@ -17,36 +17,51 @@ export default function MusicPlayer() {
         transition={{ duration: 0.5, delay: 1 }}
         className="relative flex items-center space-x-2"
       >
-        {/* Play/Pause Button */}
+        {/* Play/Pause Button (Spotify circle) */}
         <motion.button
           onClick={togglePlay}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+          aria-label={isPlaying ? "Pause" : "Play"}
+          className="relative flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg w-12 h-12 hover:bg-white/20 transition-all duration-300"
         >
-          <AnimatePresence mode="wait">
-            {isPlaying ? (
-              <motion.div
-                key="pause"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Pause className="w-5 h-5" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="play"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Play className="w-5 h-5" />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Circular progress ring */}
+          <svg
+            className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
+            viewBox="0 0 48 48"
+          >
+            <circle
+              cx="24"
+              cy="24"
+              r="22"
+              fill="none"
+              stroke="rgba(0,0,0,0.08)"
+              strokeWidth="2"
+            />
+            <circle
+              cx="24"
+              cy="24"
+              r="22"
+              fill="none"
+              stroke="#1DB954"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeDasharray={2 * Math.PI * 22}
+              strokeDashoffset={2 * Math.PI * 22 * (1 - progress / 100)}
+              style={{ transition: "stroke-dashoffset 0.2s linear" }}
+            />
+          </svg>
+
+          {/* Spotify icon (turns red when playing) */}
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className={`w-8 h-8 transition-colors duration-300 ${
+              isPlaying ? "text-red-500" : "text-[#1DB954]"
+            }`}
+          >
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.766.481-1.124.241-3.084-1.884-6.964-2.307-11.541-1.264-.437.1-.881-.191-.981-.639-.099-.47.191-.881.639-.981 5.021-1.155 9.321-.64 12.804 1.464.359.181.5.706.203 1.18zm1.44-3.18c-.299.44-.945.59-1.385.291-3.504-2.155-8.845-2.781-12.984-1.519-.529.16-1.09-.139-1.25-.668-.16-.529.139-1.09.668-1.25 4.781-1.45 10.781-.75 14.845 1.744.44.271.585 1.011.106 1.402zm.124-3.559C15.524 8.641 8.684 8.421 4.624 9.641c-.641.191-1.32-.161-1.511-.801-.191-.641.161-1.32.801-1.511 4.684-1.421 12.504-1.181 17.564 1.499.599.36.795 1.14.435 1.739-.36.599-1.139.795-1.739.435z" />
+          </svg>
         </motion.button>
 
         {/* Expand Button */}
