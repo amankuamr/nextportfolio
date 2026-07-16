@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useState } from "react"
+import ViewMyWorksPopup from "@/components/custom/view-my-works-popup"
 
 export default function MobileHeroSection() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   return (
     <section className="relative py-0 px-4 overflow-hidden h-screen flex flex-col justify-start pt-16">
       {/* Subtle background pattern */}
@@ -190,11 +192,9 @@ export default function MobileHeroSection() {
             transition={{ duration: 0.6, delay: 1.4 }}
             className="flex flex-col gap-1 pt-0"
           >
-            <Button asChild size="sm" className="bg-black text-white hover:bg-gray-800 px-4 py-2 text-sm font-medium group">
-              <Link href="#projects">
-                View My Work
-                <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
+            <Button size="sm" className="bg-black text-white hover:bg-gray-800 px-4 py-2 text-sm font-medium group" onClick={() => setIsPopupOpen(true)}>
+              View My Work
+              <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
             </Button>
             <Button asChild variant="outline" size="sm" className="border-black text-black hover:bg-black hover:text-white px-4 py-2 text-sm font-medium">
               <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -229,7 +229,7 @@ export default function MobileHeroSection() {
           </motion.div>
         </motion.div>
       </div>
-
+      <ViewMyWorksPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </section>
   )
 }

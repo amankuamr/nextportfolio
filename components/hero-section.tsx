@@ -2,13 +2,14 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import ViewMyWorksPopup from "@/components/custom/view-my-works-popup"
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -150,11 +151,9 @@ export default function HeroSection() {
               style={{ y: buttonsY }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
             >
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full">
-                <Link href="#projects">
-                  View My Work
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                </Link>
+              <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full" onClick={() => setIsPopupOpen(true)}>
+                View My Work
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
               <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium rounded-full">
                 <a href="https://drive.google.com/file/d/1Zlt4DDvqfDs1ndf5K1x0cJ4hQt3rid4V/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -266,6 +265,7 @@ export default function HeroSection() {
         </div>
 
       </div>
+      <ViewMyWorksPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </section>
   )
 }

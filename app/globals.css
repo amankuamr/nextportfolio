@@ -44,6 +44,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'SilianRail';
+  src: url('/fonts/SilianRail_PERSONAL_USE_ONLY.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SilianRail';
+  src: url('/fonts/SilianRail_PERSONAL_USE_ONLY.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 0%;
