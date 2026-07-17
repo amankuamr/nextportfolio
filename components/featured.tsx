@@ -139,7 +139,7 @@ export default function Featured() {
                                                 </Link>
                                             </Button>
                                             {item.githubUrl && (
-                                                <Button asChild variant="outline" size="sm" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
+                                                <Button asChild variant="outline" size="sm" className="featured-outline-btn flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
                                                     <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                                                         {React.createElement(item.githubIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
                                                         <span className="font-medium">{item.githubLabel || "Live"}</span>
@@ -227,7 +227,7 @@ export default function Featured() {
                                                         </Link>
                                                     </Button>
                                                     {item.githubUrl && (
-                                                        <Button asChild variant="outline" size="sm" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
+                                                        <Button asChild variant="outline" size="sm" className="featured-outline-btn flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 rounded-full">
                                                             <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                                                                 {React.createElement(item.githubIcon || ExternalLink, { className: "w-4 h-4 mr-2" })}
                                                                 <span className="font-medium">{item.githubLabel || "Live"}</span>
