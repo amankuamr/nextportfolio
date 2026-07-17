@@ -81,7 +81,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="footer-link-underline text-gray-300 hover:text-white transition-colors duration-300 inline-block"
                     >
                       {link.name}
                     </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="footer-link-underline text-gray-300 hover:text-white transition-colors duration-300 inline-block"
                     >
                       {link.name}
                     </Link>

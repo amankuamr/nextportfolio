@@ -10,31 +10,37 @@ const sectionItems = [
     name: "Services",
     href: "#services",
     icon: Briefcase,
+    color: "hover:text-blue-500",
   },
   {
     name: "Projects",
     href: "#projects",
     icon: FolderOpen,
+    color: "hover:text-emerald-500",
   },
   {
     name: "About",
     href: "#about",
     icon: User,
+    color: "hover:text-sky-500",
   },
   {
     name: "Achievements",
     href: "#achievements",
     icon: Trophy,
+    color: "hover:text-amber-500",
   },
   {
     name: "Experience",
     href: "#experience",
     icon: Users,
+    color: "hover:text-violet-500",
   },
   {
     name: "Hobbies",
     href: "#hobbies",
     icon: Heart,
+    color: "hover:text-rose-500",
   },
 ]
 
@@ -142,7 +148,7 @@ export default function SectionNav() {
               }}
               whileTap={{ scale: 0.95 }}
               className={`flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/20 transition-all duration-300 group relative z-10 ${
-                isActive ? 'text-white' : 'bg-transparent text-black hover:text-gray-600'
+                isActive ? 'text-white' : `bg-transparent text-black ${item.color}`
               }`}
             >
               <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
