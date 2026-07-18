@@ -33,6 +33,7 @@ const socialItems = [
 
 export default function SocialMenu() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [hoveredIndex, setHoveredIndex] = React.useState(-1)
 
   return (
     <>
@@ -99,6 +100,8 @@ export default function SocialMenu() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(-1)}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2, ease: "easeOut" }
@@ -110,6 +113,24 @@ export default function SocialMenu() {
             </motion.a>
           ))}
         </motion.div>
+
+        {/* Tooltip */}
+        <AnimatePresence>
+          {hoveredIndex !== -1 && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-black/80 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-50"
+              style={{
+                top: `${8 + hoveredIndex * 48 + 20}px`, // center on the button
+              }}
+            >
+              {socialItems[hoveredIndex].name}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   )
