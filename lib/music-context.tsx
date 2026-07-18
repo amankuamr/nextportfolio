@@ -12,6 +12,8 @@ export interface Song {
 const songs: Song[] = [
   { name: "A Moment Apart", artist: "Odeszy", src: "/musics/music.mp4", duration: 180 },
   { name: "This Girl", artist: "Kungs", src: "/musics/music2.mp3", duration: 240 },
+  { name: "Before the Dawn", artist: "Magnetude", src: "/musics/before%20the%20dawn.mp3", duration: 200 },
+  { name: "Adrenaline Rush", artist: "Sigma", src: "/musics/Adrenaline%20rush%20-%20auth%20-%20Sigma.mp3", duration: 200 },
 ]
 
 interface MusicContextType {
@@ -20,9 +22,11 @@ interface MusicContextType {
   progress: number
   volume: number
   currentSong: Song
+  songs: Song[]
   togglePlay: () => void
   nextSong: () => void
   prevSong: () => void
+  selectSong: (index: number) => void
   setVolume: (vol: number) => void
   handleProgressClick: (e: React.MouseEvent<HTMLDivElement>) => void
   audioRef: React.RefObject<HTMLAudioElement | null>
@@ -71,6 +75,13 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
   const prevSong = () => {
     setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length)
     setProgress(0)
+  }
+
+  const selectSong = (index: number) => {
+    if (index < 0 || index >= songs.length) return
+    setCurrentSongIndex(index)
+    setProgress(0)
+    setIsPlaying(true)
   }
 
   useEffect(() => {
@@ -128,9 +139,11 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
     progress,
     volume,
     currentSong,
+    songs,
     togglePlay,
     nextSong,
     prevSong,
+    selectSong,
     setVolume,
     handleProgressClick,
     audioRef,
