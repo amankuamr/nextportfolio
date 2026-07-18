@@ -4,7 +4,18 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, Calendar, MapPin, FileText, Award, Wrench } from "lucide-react"
 import { useState } from "react"
 
-const experiences = [
+type ExperienceItem = {
+  title: string
+  company: string
+  duration?: string
+  startYear?: number
+  location: string
+  description: string
+  achievements: string[]
+  technologies: string[]
+}
+
+const experiences: ExperienceItem[] = [
   {
     title: "Graphics Designer",
     company: "Codestam Technologies",
@@ -60,7 +71,7 @@ const experiences = [
   {
     title: "Freelance Logo Design & Web Development",
     company: "Self-Employed",
-    duration: "2021 - Present (3 years)",
+    startYear: 2021,
     location: "Remote",
     description: "Self-employed freelance work providing logo design and web development services to clients acquired through personal connections and networking.",
     achievements: [
@@ -69,6 +80,19 @@ const experiences = [
       "Maintained 100% client satisfaction rate"
     ],
     technologies: ["Adobe Illustrator", "Figma", "HTML/CSS", "JavaScript", "React"]
+  },
+  {
+    title: "Self-Attested Projects (UI/UX & Web Development)",
+    company: "Personal Portfolio",
+    startYear: 2022,
+    location: "Remote",
+    description: "A collection of self-initiated UI/UX design and web development projects created to explore modern design trends, sharpen frontend skills, and build a strong personal portfolio.",
+    achievements: [
+      "Designed 10+ UI/UX case studies including Hornt, Big Deal, VN Bolo, Kiraya Wala, and Reboot",
+      "Built 10+ web development projects such as Imagi, Darla Browser, Mall Of Ranchi, and Moviez",
+      "Practiced end-to-end workflows from wireframes and prototypes to live, responsive deployments"
+    ],
+    technologies: ["Figma", "Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"]
   }
 ]
 
@@ -81,6 +105,17 @@ const dotConfig: { key: DetailKey; label: string; color: string; icon: typeof Fi
 ]
 
 type ActiveState = { index: number; key: DetailKey } | null
+
+const CURRENT_YEAR = new Date().getFullYear()
+
+function getDuration(experience: ExperienceItem): string {
+  if (experience.duration) return experience.duration
+  if (experience.startYear) {
+    const years = CURRENT_YEAR - experience.startYear
+    return `${experience.startYear} - Present (${years} year${years === 1 ? "" : "s"})`
+  }
+  return ""
+}
 
 export default function ExperienceSection() {
   const [active, setActive] = useState<ActiveState>(null)
@@ -144,7 +179,7 @@ export default function ExperienceSection() {
                 <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
                   <span className="inline-flex items-center">
                     <Calendar className="w-3.5 h-3.5 mr-1" />
-                    {experience.duration}
+                    {getDuration(experience)}
                   </span>
                   <span className="inline-flex items-center">
                     <MapPin className="w-3.5 h-3.5 mr-1" />
