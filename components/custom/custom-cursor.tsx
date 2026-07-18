@@ -17,10 +17,8 @@ export default function CustomCursor() {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
 
-      // Add current position to trail
       setTrail(prev => {
         const newTrail = [...prev, { x: e.clientX, y: e.clientY }]
-        // Keep only last 10 positions for trail
         return newTrail.slice(-10)
       })
     }
@@ -28,7 +26,6 @@ export default function CustomCursor() {
     const handleMouseEnter = () => setIsHovering(true)
     const handleMouseLeave = () => setIsHovering(false)
 
-    // Add hover listeners to interactive elements
     const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select')
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', handleMouseEnter)
@@ -57,9 +54,9 @@ export default function CustomCursor() {
           scale: isHovering ? 1.5 : 1
         }}
         transition={{
-          type: "tween",
-          duration: 0,
-          ease: "linear"
+          x: { type: "spring", stiffness: 700, damping: 40, mass: 0.3 },
+          y: { type: "spring", stiffness: 700, damping: 40, mass: 0.3 },
+          scale: { duration: 0.2 }
         }}
       >
         <div className="w-3 h-3 bg-white rounded-full shadow-lg" />
