@@ -127,7 +127,7 @@ export default function ExperienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col"
+                className="bg-white border border-gray-200 rounded-2xl p-6 card-outline flex flex-col"
               >
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">

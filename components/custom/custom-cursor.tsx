@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 
 interface CursorPosition {
@@ -9,16 +9,22 @@ interface CursorPosition {
 }
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState<CursorPosition>({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [trail, setTrail] = useState<CursorPosition[]>([])
+  const cursorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      const x = e.clientX
+      const y = e.clientY
+
+      // Imperative, lag-free positioning (no React re-render)
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${x - 6}px, ${y - 6}px, 0)`
+      }
 
       setTrail(prev => {
-        const newTrail = [...prev, { x: e.clientX, y: e.clientY }]
+        const newTrail = [...prev, { x, y }]
         return newTrail.slice(-10)
       })
     }
@@ -46,21 +52,18 @@ export default function CustomCursor() {
   return (
     <>
       {/* Main cursor - Hidden on mobile */}
-      <motion.div
-        className="hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
-          scale: isHovering ? 1.5 : 1
-        }}
-        transition={{
-          x: { type: "spring", stiffness: 700, damping: 40, mass: 0.3 },
-          y: { type: "spring", stiffness: 700, damping: 40, mass: 0.3 },
-          scale: { duration: 0.2 }
-        }}
+      <div
+        ref={cursorRef}
+        className="hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference will-change-transform"
+        style={{ transform: "translate3d(-100px, -100px, 0)" }}
       >
-        <div className="w-3 h-3 bg-white rounded-full shadow-lg" />
-      </motion.div>
+        <motion.div
+          animate={{ scale: isHovering ? 1.5 : 1 }}
+          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        >
+          <div className="w-3 h-3 bg-white rounded-full shadow-lg" />
+        </motion.div>
+      </div>
 
       {/* Color trail - Hidden on mobile */}
       {trail.map((position, index) => {
