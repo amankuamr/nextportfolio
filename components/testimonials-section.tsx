@@ -134,7 +134,7 @@ export default function ExperienceSection() {
                     <Briefcase className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-black font-cal-sans leading-snug">
+                    <h3 className="text-base sm:text-lg font-semibold text-black font-chillax-semibold leading-snug">
                       {experience.title}
                     </h3>
                     <p className="text-sm text-gray-600">{experience.company}</p>

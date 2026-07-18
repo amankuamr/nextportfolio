@@ -110,7 +110,7 @@ export default function Featured() {
                                 >
                                     <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-none rounded-2xl">
                                         <CardHeader className="pb-3">
-                                            <CardTitle className="text-xl font-bold text-black font-cal-sans">
+                                            <CardTitle className="text-xl font-bold text-black font-kalam-bold">
                                                 {item.title}
                                             </CardTitle>
                                             <CardDescription className="text-gray-600 leading-relaxed">
@@ -198,7 +198,7 @@ export default function Featured() {
                                         >
                                             <Card className="h-full overflow-hidden bg-white border border-gray-200 shadow-none rounded-2xl">
                                                 <CardHeader className="pb-3">
-                                                    <CardTitle className="text-xl font-bold text-black font-cal-sans">
+                                                    <CardTitle className="text-xl font-bold text-black font-kalam-bold">
                                                         {item.title}
                                                     </CardTitle>
                                                     <CardDescription className="text-gray-600 leading-relaxed">

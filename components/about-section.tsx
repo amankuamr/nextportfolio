@@ -75,7 +75,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="card-outline col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-center"
           >
-            <h3 className="text-xl font-bold mb-3 font-cal-sans">Passionate Creator</h3>
+            <h3 className="text-xl font-bold mb-3 font-chillax-semibold">Passionate Creator</h3>
             <p className="text-sm leading-relaxed">
               I&apos;m Aman Kumar, a creative developer and designer with over 3 years of experience crafting digital experiences that blend technical excellence with artistic vision. I specialize in web development, UI/UX design, and graphics design.
             </p>
@@ -92,7 +92,7 @@ export default function AboutSection() {
               <div className="card-outline bg-white border border-gray-200 rounded-2xl p-4 flex-1">
               <div className="flex items-center mb-2">
                 <MapPin className="w-4 h-4 mr-2 text-red-400" />
-                <h4 className="text-lg font-bold font-cal-sans">Location</h4>
+                <h4 className="text-lg font-bold font-chillax-semibold">Location</h4>
               </div>
               <p className="text-xs leading-relaxed">
                 India, Jharkhand, Ranchi, Tatisilwai
@@ -134,7 +134,7 @@ export default function AboutSection() {
               <SiSpotify className="w-8 h-8 text-green-500" />
             </div>
             <div className="mb-3">
-              <h4 className="text-lg font-bold font-cal-sans truncate">{currentSong.name}</h4>
+              <h4 className="text-lg font-bold font-chillax-semibold truncate">{currentSong.name}</h4>
               <p className="text-sm text-gray-300 truncate">{currentSong.artist}</p>
             </div>
             <div
@@ -218,7 +218,7 @@ export default function AboutSection() {
           >
             <div className="flex items-center mb-3">
               <Trophy className="w-5 h-5 mr-2 text-yellow-400" />
-              <h4 className="text-lg font-bold font-cal-sans">Highlights</h4>
+              <h4 className="text-lg font-bold font-chillax-semibold">Highlights</h4>
             </div>
             <ul className="text-sm space-y-1">
               <li>• Google UX Certified</li>

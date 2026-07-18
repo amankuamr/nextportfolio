@@ -55,7 +55,7 @@ export default function ProjectCard({
         </div>
 
         <CardHeader className="pb-3">
-          <CardTitle className="text-xl font-bold text-black font-cal-sans">
+          <CardTitle className="text-xl font-bold text-black font-kalam-bold">
             {title}
           </CardTitle>
           <CardDescription className="text-gray-600 leading-relaxed">
