@@ -64,12 +64,17 @@ export default function MobileHeroSection() {
           <motion.div
             animate={{ scale: [1, 1.25, 1], opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1 right-1 w-5 h-5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            className="absolute -top-3 -right-4 w-5 h-5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
           />
           <motion.div
             animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-1 left-1 w-4 h-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            className="absolute -bottom-4 -left-5 w-3.5 h-3.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0.9, 0.5] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute top-1/2 -right-7 w-2.5 h-2.5 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md"
           />
         </motion.div>
 
