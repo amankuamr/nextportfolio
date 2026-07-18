@@ -95,7 +95,7 @@ export default function RootLayout({
           <SocialMenu />
           <SectionNav />
           <MusicPlayer />
-          <main className="pt-16 lg:pt-0 min-h-screen">
+          <main className="min-h-screen">
             {children}
           </main>
         </MusicProvider>
