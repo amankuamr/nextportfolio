@@ -58,7 +58,7 @@ export default function SocialMenu() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 20, scale: 0.8 }}
               transition={{ duration: 0.3 }}
-              className="absolute -right-2 top-full mt-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col space-y-2"
+              className="absolute right-full mr-2 bottom-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col-reverse space-y-2"
             >
               {socialItems.map((item, index) => (
                 <motion.a

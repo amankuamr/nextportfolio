@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
@@ -8,8 +8,6 @@ import { Home, Palette, Code, ImageIcon, Trophy, X, Play, Pause, SkipBack, SkipF
 import { SiSpotify } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { useMusic } from "@/lib/music-context"
-
-// Morphing path data
 
 const navItems = [
   { name: "Home", href: "/", icon: Home },
@@ -19,119 +17,116 @@ const navItems = [
   { name: "Achievements", href: "/achievements", icon: Trophy },
 ]
 
+const mobileMenuVariants = {
+  closed: { opacity: 0, height: 0, y: "-100%" },
+  open: { 
+    opacity: 1, 
+    height: "75dvh", 
+    y: 0,
+    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }
+  },
+}
+
+const contentVariants = {
+  closed: { opacity: 0, y: -50, scale: 0.98 },
+  open: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { delay: 0.05, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
+  },
+}
+
+const itemVariants = {
+  closed: { opacity: 0, scale: 0.9, y: 20 },
+  open: (i: number) => ({ 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: { delay: 0.1 + i * 0.04, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }
+  }),
+}
+
+const closeButtonVariants = {
+  closed: { opacity: 0, scale: 0.8, y: 20 },
+  open: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: { delay: 0.25, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }
+  },
+}
+
 function MobileMusicPlayer() {
   const { isPlaying, currentSong, togglePlay, nextSong, prevSong, progress } = useMusic()
 
   return (
-    <motion.div
-      initial={{ scale: 0.95, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="bg-black bg-gradient-to-br from-green-900/40 via-green-800/30 to-green-700/20 border border-gray-200 rounded-2xl p-4 text-white relative"
-    >
+    <div className="bg-black bg-gradient-to-br from-green-900/40 via-green-800/30 to-green-700/20 border border-gray-200 rounded-2xl p-4 text-white">
       {/* Song Info */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.1, duration: 0.3 }}
-        className="flex items-center justify-between gap-2 mb-4"
-      >
+      <div className="flex items-center justify-between gap-2 mb-4">
         <div className="min-w-0 flex-1">
           <h3 className="text-sm font-medium truncate">{currentSong.name}</h3>
           <p className="text-xs text-gray-300 truncate">{currentSong.artist}</p>
         </div>
         <SiSpotify className="w-5 h-5 text-green-400 flex-shrink-0 ml-2" />
-      </motion.div>
+      </div>
 
       {/* Progress Bar */}
-      <motion.div
-        initial={{ opacity: 0, scaleX: 0 }}
-        animate={{ opacity: 1, scaleX: 1 }}
-        transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 30 }}
-        className="w-full h-2 bg-gray-700 rounded-full mb-4 cursor-pointer"
-        onClick={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect()
-          const clickX = e.clientX - rect.left
-          const newProgress = (clickX / rect.width) * 100
-          const audio = document.querySelector('audio')
-          if (audio) {
-            audio.currentTime = (newProgress / 100) * audio.duration
-          }
-        }}
-      >
+      <div className="w-full h-2 bg-gray-700 rounded-full mb-4 cursor-pointer" onClick={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect()
+        const clickX = e.clientX - rect.left
+        const newProgress = (clickX / rect.width) * 100
+        const audio = document.querySelector('audio')
+        if (audio) {
+          audio.currentTime = (newProgress / 100) * audio.duration
+        }
+      }}>
         <motion.div
           className="h-full bg-green-500 rounded-full"
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.1, ease: "linear" }}
         />
-      </motion.div>
+      </div>
 
       {/* Controls */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, type: "spring", stiffness: 400, damping: 30 }}
-        className="flex items-center justify-between"
-      >
-        <motion.button
+      <div className="flex items-center justify-between">
+        <button
           onClick={prevSong}
-          whileHover={{ scale: 1.15, rotate: -10, transition: { type: "spring", stiffness: 400, damping: 20 } }}
-          whileTap={{ scale: 0.9 }}
           className="p-2 rounded-full hover:bg-gray-700 transition-colors"
           aria-label="Previous"
         >
           <SkipBack className="w-5 h-5" />
-        </motion.button>
+        </button>
 
-        <motion.button
+        <button
           onClick={togglePlay}
-          whileHover={{ scale: 1.1, transition: { type: "spring", stiffness: 400, damping: 20 } }}
-          whileTap={{ scale: 0.9 }}
           className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors shadow-lg shadow-green-400/70"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
-          <AnimatePresence mode="wait">
-            {isPlaying ? (
-              <motion.div
-                key="pause"
-                initial={{ scale: 0, rotate: -90 }}
-                animate={{ scale: 1, rotate: 0 }}
-                exit={{ scale: 0, rotate: 90 }}
-                transition={{ type: "spring", stiffness: 500, damping: 25 }}
-              >
-                <Pause className="w-6 h-6" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="play"
-                initial={{ scale: 0, rotate: 90 }}
-                animate={{ scale: 1, rotate: 0 }}
-                exit={{ scale: 0, rotate: -90 }}
-                transition={{ type: "spring", stiffness: 500, damping: 25 }}
-              >
-                <Play className="w-6 h-6" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
+          {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+        </button>
 
-        <motion.button
+        <button
           onClick={nextSong}
-          whileHover={{ scale: 1.15, rotate: 10, transition: { type: "spring", stiffness: 400, damping: 20 } }}
-          whileTap={{ scale: 0.9 }}
           className="p-2 rounded-full hover:bg-gray-700 transition-colors"
           aria-label="Next"
         >
           <SkipForward className="w-5 h-5" />
-        </motion.button>
-      </motion.div>
-    </motion.div>
+        </button>
+      </div>
+    </div>
   )
 }
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isTouch, setIsTouch] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const checkTouch = () => setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    checkTouch()
+  }, [])
 
   return (
     <>
@@ -255,22 +250,17 @@ export default function Navbar() {
             <>
               {/* Android 15 Style Mobile Menu - Background animates down to 75% */}
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 z-50"
               >
-                {/* Animated Background - Slides down to 75% with spring */}
+                {/* Animated Background - Slides down to 75% with optimized tween */}
                 <motion.div
-                  initial={{ y: "-100%", height: "0%", opacity: 0 }}
-                  animate={{ y: 0, height: "75dvh", opacity: 1 }}
-                  exit={{ y: "-100%", height: "0%", opacity: 0 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 350,
-                    damping: 30,
-                    mass: 0.8
-                  }}
+                  variants={mobileMenuVariants}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
                   className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 rounded-b-3xl z-40 shadow-2xl"
                   style={{
                     height: '75dvh',
@@ -280,12 +270,12 @@ export default function Navbar() {
                   }}
                 />
 
-                {/* Content Container - no close button inside */}
+                {/* Content Container - uses variants for staggered animation */}
                 <motion.div
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50, scale: 0.98 }}
-                  transition={{ delay: 0.1, type: "spring", stiffness: 400, damping: 35 }}
+                  variants={contentVariants}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
                   className="fixed top-0 left-0 right-0 z-50 flex flex-col rounded-b-3xl overflow-hidden"
                   style={{
                     height: '75dvh',
@@ -296,24 +286,28 @@ export default function Navbar() {
                     borderBottomRightRadius: '1.5rem',
                   }}
                 >
-                  {/* Music Player Section */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                    transition={{ delay: 0.2, type: "spring", stiffness: 400, damping: 30 }}
-                    className="flex-shrink-0 px-6 pt-6 pb-4"
-                    style={{ paddingTop: 'calc(1.5rem + env(safe-area-inset-top, 0px))' }}
-                  >
+                  {/* Music Player Section - static, no animations */}
+                  <div className="flex-shrink-0 px-6 pt-6 pb-4" style={{ paddingTop: 'calc(1.5rem + env(safe-area-inset-top, 0px))' }}>
                     <MobileMusicPlayer />
-                  </motion.div>
+                  </div>
 
-                  {/* Menu Grid - 2 Columns */}
+                  {/* Menu Grid - 2 Columns with staggerChildren */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ delay: 0.15, duration: 0.25 }}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={{
+                      closed: { opacity: 0, y: 20 },
+                      open: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          staggerChildren: 0.04,
+                          delayChildren: 0.1,
+                        }
+                      },
+                      closed: { opacity: 0, y: -10 },
+                    }}
                     className="flex-1 overflow-hidden px-4 pb-6"
                     style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
                   >
@@ -323,38 +317,25 @@ export default function Navbar() {
                         return (
                           <motion.div
                             key={item.name}
-                            initial={{ opacity: 0, scale: 0.85, y: 30, rotate: -3 }}
-                            animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-                            exit={{ opacity: 0, scale: 0.85, y: -20, rotate: 3 }}
-                            transition={{
-                              delay: 0.2 + index * 0.06,
-                              type: "spring",
-                              stiffness: 450,
-                              damping: 28,
-                              mass: 0.7
-                            }}
-                            whileHover={{ scale: 1.03, y: -2, transition: { type: "spring", stiffness: 400, damping: 25 } }}
-                            whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
+                            variants={itemVariants}
+                            whileHover={isTouch ? undefined : { scale: 1.02, y: -2, transition: { duration: 0.15, ease: "easeOut" } }}
+                            whileTap={{ scale: 0.97, transition: { duration: 0.08 } }}
                           >
                             <Link
                               href={item.href}
                               className={`flex flex-col items-center justify-center space-y-1.5 px-3 py-4 text-black hover:text-blue-600 bg-white rounded-xl transition-all duration-300 hover:bg-gray-50 group min-h-0 w-full flex-1 ${
-                                isActive ? 'border-2 border-blue-600' : 'border border-gray-200'
+                                isActive 
+                                  ? 'border-2 border-blue-600' 
+                                  : 'border-2 border-gray-200'
                               }`}
                               onClick={() => setIsOpen(false)}
                             >
-                              <motion.div
-                                whileHover={{ scale: 1.15, rotate: 6, transition: { type: "spring", stiffness: 400, damping: 20 } }}
-                                className="transition-transform duration-300"
-                              >
+                              <div className="transition-transform duration-300">
                                 <item.icon className="w-5 h-5" />
-                              </motion.div>
-                              <motion.span
-                                className="text-sm font-medium text-center whitespace-nowrap relative z-10"
-                                whileHover={{ scale: 1.08, transition: { type: "spring", stiffness: 400, damping: 20 } }}
-                              >
+                              </div>
+                              <span className="text-sm font-medium text-center whitespace-nowrap relative z-10">
                                 {item.name}
-                              </motion.span>
+                              </span>
                             </Link>
                           </motion.div>
                         );
@@ -365,10 +346,10 @@ export default function Navbar() {
 
                 {/* Close Button - Below the menu in separate white circle */}
                 <motion.button
-                  initial={{ opacity: 0, scale: 0.7, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.7, y: 20 }}
-                  transition={{ delay: 0.4, type: "spring", stiffness: 500, damping: 25 }}
+                  variants={closeButtonVariants}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setIsOpen(false)}
                   className="fixed left-1/2 -translate-x-1/2 z-60 p-3 bg-white border border-gray-200 text-black hover:bg-gray-50 rounded-full shadow-xl transition-colors duration-200"
@@ -376,7 +357,7 @@ export default function Navbar() {
                   aria-label="Close menu"
                 >
                   <motion.div
-                    whileHover={{ rotate: 90, transition: { type: "spring", stiffness: 400, damping: 20 } }}
+                    whileHover={isTouch ? undefined : { rotate: 90, transition: { duration: 0.3, ease: "easeOut" } }}
                   >
                     <X className="w-5 h-5" />
                   </motion.div>
@@ -387,7 +368,7 @@ export default function Navbar() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                   className="fixed inset-0 bg-black/20 z-30"
                   onClick={() => setIsOpen(false)}
                 />
