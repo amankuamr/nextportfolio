@@ -95,7 +95,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu button */}
-      <div className="md:hidden fixed top-4 right-2 z-50">
+      <div className="md:hidden fixed top-4 right-4 z-50">
         <motion.div
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.1 }}
