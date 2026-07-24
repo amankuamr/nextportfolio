@@ -18,12 +18,12 @@ const navItems = [
 ]
 
 const mobileMenuVariants = {
-  closed: { opacity: 0, height: 0, y: "-100%" },
+  closed: { opacity: 0, height: "0", y: "-100%" },
   open: { 
     opacity: 1, 
     height: "75dvh", 
     y: 0,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }
+    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as const }
   },
 }
 
@@ -33,7 +33,7 @@ const contentVariants = {
     opacity: 1, 
     y: 0, 
     scale: 1,
-    transition: { delay: 0.05, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
+    transition: { delay: 0.05, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] as const }
   },
 }
 
@@ -43,7 +43,7 @@ const itemVariants = {
     opacity: 1, 
     scale: 1, 
     y: 0,
-    transition: { delay: 0.1 + i * 0.04, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }
+    transition: { delay: 0.1 + i * 0.04, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] as const }
   }),
 }
 
@@ -53,7 +53,7 @@ const closeButtonVariants = {
     opacity: 1, 
     scale: 1, 
     y: 0,
-    transition: { delay: 0.25, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }
+    transition: { delay: 0.25, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] as const }
   },
 }
 
@@ -306,7 +306,7 @@ export default function Navbar() {
                           delayChildren: 0.1,
                         }
                       },
-                      closed: { opacity: 0, y: -10 },
+                      exit: { opacity: 0, y: -10 },
                     }}
                     className="flex-1 overflow-hidden px-4 pb-6"
                     style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
