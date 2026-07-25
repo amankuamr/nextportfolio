@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useRef, useState, useLayoutEffect } from "react"
 import { Code, Palette, Brush } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -23,6 +24,15 @@ const features = [
 ]
 
 export default function ServicesSection() {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const [headingWidth, setHeadingWidth] = useState(0)
+
+  useLayoutEffect(() => {
+    if (headingRef.current) {
+      setHeadingWidth(headingRef.current.offsetWidth)
+    }
+  }, [])
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -33,7 +43,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
+          <h2 ref={headingRef} className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
             {"My Skills".split("").map((char, index) => (
               <motion.span
                 key={index}
@@ -44,6 +54,11 @@ export default function ServicesSection() {
               </motion.span>
             ))}
           </h2>
+          <div className="flex items-center justify-center gap-3 mb-4" style={{ width: headingWidth || 'auto' }}>
+            <div className="h-1.5 w-[15px] rounded-full bg-red-500" />
+            <div className="h-1.5 w-[15px] rounded-full bg-blue-500" />
+            <div className="h-1.5 w-[15px] rounded-full bg-black" />
+          </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and creative capabilities
           </p>

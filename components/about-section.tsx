@@ -36,7 +36,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold mb-12 text-center"
+          className="text-3xl sm:text-4xl font-bold mb-4 text-center"
           style={{ fontFamily: 'BitcountGridSingle' }}
         >
           {"About Me".split("").map((char, index) => (
@@ -49,6 +49,11 @@ export default function AboutSection() {
             </motion.span>
           ))}
         </motion.h2>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="h-1.5 w-[15px] rounded-full bg-red-500" />
+          <div className="h-1.5 w-[15px] rounded-full bg-blue-500" />
+          <div className="h-1.5 w-[15px] rounded-full bg-black" />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[200px]">
           {/* Profile Image - Large Block */}

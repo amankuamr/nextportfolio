@@ -74,6 +74,11 @@ export default function ProjectsSection() {
               </motion.span>
             ))}
           </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-1.5 w-[15px] rounded-full bg-red-500" />
+            <div className="h-1.5 w-[15px] rounded-full bg-blue-500" />
+            <div className="h-1.5 w-[15px] rounded-full bg-black" />
+          </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             A showcase of my recent work across web development, design, and creative projects
           </p>
