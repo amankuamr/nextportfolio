@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, Palette, Code, ImageIcon, Trophy, X, Play, Pause, SkipBack, SkipForward } from "lucide-react"
+import { Home, Palette, Code, ImageIcon, Trophy, X, Play, Pause, SkipBack, SkipForward, ChevronRight } from "lucide-react"
 import { SiSpotify } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { useMusic } from "@/lib/music-context"
@@ -17,43 +17,35 @@ const navItems = [
   { name: "Achievements", href: "/achievements", icon: Trophy },
 ]
 
-const mobileMenuVariants = {
-  closed: { opacity: 0, height: "0", y: "-100%" },
+const backdropVariants = {
+  closed: { opacity: 0 },
+  open: { opacity: 1, transition: { duration: 0.2 } },
+}
+
+const sidebarVariants = {
+  closed: { x: "100%", transition: { type: "spring" as const, damping: 30, stiffness: 350 } },
   open: { 
-    opacity: 1, 
-    height: "75dvh", 
-    y: 0,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as const }
+    x: 0,
+    transition: { type: "spring" as const, damping: 28, stiffness: 220 }
   },
 }
 
-const contentVariants = {
-  closed: { opacity: 0, y: -50, scale: 0.98 },
-  open: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { delay: 0.05, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] as const }
-  },
+const navContainerVariants = {
+  closed: {},
+  open: {
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.1
+    }
+  }
 }
 
 const itemVariants = {
-  closed: { opacity: 0, scale: 0.9, y: 20 },
-  open: (i: number) => ({ 
-    opacity: 1, 
-    scale: 1, 
-    y: 0,
-    transition: { delay: 0.1 + i * 0.04, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] as const }
-  }),
-}
-
-const closeButtonVariants = {
-  closed: { opacity: 0, scale: 0.8, y: 20 },
+  closed: { opacity: 0, x: 20 },
   open: { 
     opacity: 1, 
-    scale: 1, 
-    y: 0,
-    transition: { delay: 0.25, duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] as const }
+    x: 0,
+    transition: { type: "spring" as const, stiffness: 150, damping: 15 }
   },
 }
 
@@ -61,18 +53,18 @@ function MobileMusicPlayer() {
   const { isPlaying, currentSong, togglePlay, nextSong, prevSong, progress } = useMusic()
 
   return (
-    <div className="bg-black bg-gradient-to-br from-green-900/40 via-green-800/30 to-green-700/20 border border-gray-200 rounded-2xl p-4 text-white">
+    <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800/60 rounded-2xl p-4 text-white shadow-xl shadow-black/10">
       {/* Song Info */}
-      <div className="flex items-center justify-between gap-2 mb-4">
+      <div className="flex items-center justify-between gap-3 mb-3.5">
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-medium truncate">{currentSong.name}</h3>
-          <p className="text-xs text-gray-300 truncate">{currentSong.artist}</p>
+          <h3 className="text-sm font-semibold truncate tracking-wide text-zinc-100">{currentSong.name}</h3>
+          <p className="text-xs text-zinc-400 truncate mt-0.5">{currentSong.artist}</p>
         </div>
-        <SiSpotify className="w-5 h-5 text-green-400 flex-shrink-0 ml-2" />
+        <SiSpotify className="w-5 h-5 text-emerald-400 flex-shrink-0 animate-pulse" />
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full h-2 bg-gray-700 rounded-full mb-4 cursor-pointer" onClick={(e) => {
+      <div className="relative w-full h-1 bg-zinc-800 rounded-full mb-4 cursor-pointer group" onClick={(e) => {
         const rect = e.currentTarget.getBoundingClientRect()
         const clickX = e.clientX - rect.left
         const newProgress = (clickX / rect.width) * 100
@@ -81,38 +73,43 @@ function MobileMusicPlayer() {
           audio.currentTime = (newProgress / 100) * audio.duration
         }
       }}>
+        <div className="absolute inset-y-0 left-0 right-0 group-hover:scale-y-150 transition-transform origin-center" />
         <motion.div
-          className="h-full bg-green-500 rounded-full"
+          className="h-full bg-gradient-to-r from-emerald-500 to-green-400 rounded-full"
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.1, ease: "linear" }}
         />
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-between">
-        <button
+      <div className="flex items-center justify-center gap-6">
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={prevSong}
-          className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-colors"
           aria-label="Previous"
         >
-          <SkipBack className="w-5 h-5" />
-        </button>
+          <SkipBack className="w-4 h-4" />
+        </motion.button>
 
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={togglePlay}
-          className="p-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors shadow-lg shadow-green-400/70"
+          className="p-3 rounded-full bg-white text-black hover:bg-zinc-200 transition-all shadow-md shadow-emerald-500/10 flex items-center justify-center"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
-          {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
-        </button>
+          {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
+        </motion.button>
 
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={nextSong}
-          className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-colors"
           aria-label="Next"
         >
-          <SkipForward className="w-5 h-5" />
-        </button>
+          <SkipForward className="w-4 h-4" />
+        </motion.button>
       </div>
     </div>
   )
@@ -127,6 +124,17 @@ export default function Navbar() {
     const checkTouch = () => setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0)
     checkTouch()
   }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden")
+    } else {
+      document.body.classList.remove("overflow-hidden")
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden")
+    }
+  }, [isOpen])
 
   return (
     <>
@@ -206,12 +214,13 @@ export default function Navbar() {
         <motion.div
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.1 }}
+          className="relative z-50"
         >
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10 relative overflow-hidden"
+            className="bg-white/10 backdrop-blur-md border border-white/20 text-black hover:bg-white/20 rounded-full shadow-lg w-10 h-10 relative z-50 overflow-hidden"
           >
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
@@ -248,130 +257,76 @@ export default function Navbar() {
         <AnimatePresence>
           {isOpen && (
             <>
-              {/* Android 15 Style Mobile Menu - Background animates down to 75% */}
+              {/* Backdrop Overlay */}
               <motion.div
-                initial={false}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50"
+                variants={backdropVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
+                onClick={() => setIsOpen(false)}
+              />
+
+              {/* Sidebar Sheet */}
+              <motion.div
+                variants={sidebarVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                className="fixed top-0 right-0 bottom-0 h-full w-[min(85%,380px)] bg-white/90 backdrop-blur-xl border-l border-gray-200/50 shadow-2xl z-40 flex flex-col justify-between p-6 overflow-y-auto"
+                style={{
+                  paddingTop: 'calc(4.5rem + env(safe-area-inset-top, 0px))',
+                  paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))',
+                }}
               >
-                {/* Animated Background - Slides down to 75% with optimized tween */}
-                <motion.div
-                  variants={mobileMenuVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 rounded-b-3xl z-40 shadow-2xl"
-                  style={{
-                    height: '75dvh',
-                    maxHeight: 'calc(75vh - env(safe-area-inset-top, 0px))',
-                    borderBottomLeftRadius: '1.5rem',
-                    borderBottomRightRadius: '1.5rem',
-                  }}
-                />
-
-                {/* Content Container - uses variants for staggered animation */}
-                <motion.div
-                  variants={contentVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  className="fixed top-0 left-0 right-0 z-50 flex flex-col rounded-b-3xl overflow-hidden"
-                  style={{
-                    height: '75dvh',
-                    maxHeight: 'calc(75vh - env(safe-area-inset-top, 0px))',
-                    paddingLeft: 'env(safe-area-inset-left, 0px)',
-                    paddingRight: 'env(safe-area-inset-right, 0px)',
-                    borderBottomLeftRadius: '1.5rem',
-                    borderBottomRightRadius: '1.5rem',
-                  }}
-                >
-                  {/* Music Player Section - static, no animations */}
-                  <div className="flex-shrink-0 px-6 pt-6 pb-4" style={{ paddingTop: 'calc(1.5rem + env(safe-area-inset-top, 0px))' }}>
-                    <MobileMusicPlayer />
+                {/* Menu items section */}
+                <div className="space-y-6">
+                  <div className="px-4 border-b border-gray-200/60 pb-3">
+                    <h2 
+                      className="text-2xl font-bold text-black"
+                      style={{ fontFamily: 'BitcountGridSingle' }}
+                    >
+                      Menu
+                    </h2>
                   </div>
-
-                  {/* Menu Grid - 2 Columns with staggerChildren */}
-                  <motion.div
-                    initial="closed"
-                    animate="open"
-                    exit="closed"
-                    variants={{
-                      closed: { opacity: 0, y: 20 },
-                      open: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          staggerChildren: 0.04,
-                          delayChildren: 0.1,
-                        }
-                      },
-                      exit: { opacity: 0, y: -10 },
-                    }}
-                    className="flex-1 overflow-hidden px-4 pb-6"
-                    style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
+                  <motion.nav 
+                    variants={navContainerVariants}
+                    className="flex flex-col gap-2"
                   >
-                    <div className="grid grid-cols-2 gap-3 h-full">
-                      {navItems.map((item, index) => {
-                        const isActive = pathname === item.href;
-                        return (
-                          <motion.div
-                            key={item.name}
-                            variants={itemVariants}
-                            whileHover={isTouch ? undefined : { scale: 1.02, y: -2, transition: { duration: 0.15, ease: "easeOut" } }}
-                            whileTap={{ scale: 0.97, transition: { duration: 0.08 } }}
+                    {navItems.map((item) => {
+                      const isActive = pathname === item.href;
+                      return (
+                        <motion.div
+                          key={item.name}
+                          variants={itemVariants}
+                        >
+                          <Link
+                            href={item.href}
+                            className={`flex items-center justify-between px-4 py-3.5 rounded-xl transition-all duration-300 group ${
+                              isActive 
+                                ? 'bg-blue-50/70 text-blue-600 font-medium' 
+                                : 'text-gray-600 hover:bg-gray-50/80 hover:text-gray-950'
+                            }`}
+                            onClick={() => setIsOpen(false)}
                           >
-                            <Link
-                              href={item.href}
-                              className={`flex flex-col items-center justify-center space-y-1.5 px-3 py-4 text-black hover:text-blue-600 bg-white rounded-xl transition-all duration-300 hover:bg-gray-50 group min-h-0 w-full flex-1 ${
-                                isActive 
-                                  ? 'border-2 border-blue-600' 
-                                  : 'border-2 border-gray-200'
-                              }`}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <div className="transition-transform duration-300">
-                                <item.icon className="w-5 h-5" />
+                            <div className="flex items-center gap-3.5">
+                              <div className={`p-2 rounded-lg transition-colors duration-300 ${isActive ? 'bg-blue-100/80 text-blue-600' : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200/80 group-hover:text-gray-950'}`}>
+                                <item.icon className="w-4 h-4" />
                               </div>
-                              <span className="text-sm font-medium text-center whitespace-nowrap relative z-10">
-                                {item.name}
-                              </span>
-                            </Link>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                </motion.div>
+                              <span className="text-sm font-semibold tracking-wide">{item.name}</span>
+                            </div>
+                            <ChevronRight className={`w-4 h-4 transition-all duration-300 ${isActive ? 'text-blue-500 translate-x-0.5' : 'text-gray-300 group-hover:text-gray-500 group-hover:translate-x-0.5'}`} />
+                          </Link>
+                        </motion.div>
+                      );
+                    })}
+                  </motion.nav>
+                </div>
 
-                {/* Close Button - Below the menu in separate white circle */}
-                <motion.button
-                  variants={closeButtonVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setIsOpen(false)}
-                  className="fixed left-1/2 -translate-x-1/2 z-60 p-3 bg-white border border-gray-200 text-black hover:bg-gray-50 rounded-full shadow-xl transition-colors duration-200"
-                  style={{ top: 'calc(75dvh + env(safe-area-inset-bottom, 0px) + 0.75rem)' }}
-                  aria-label="Close menu"
-                >
-                  <motion.div
-                    whileHover={isTouch ? undefined : { rotate: 90, transition: { duration: 0.3, ease: "easeOut" } }}
-                  >
-                    <X className="w-5 h-5" />
-                  </motion.div>
-                </motion.button>
-
-                {/* Overlay for closing */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                  className="fixed inset-0 bg-black/20 z-30"
-                  onClick={() => setIsOpen(false)}
-                />
+                {/* Music Player Section */}
+                <div className="mt-8 flex-shrink-0">
+                  <MobileMusicPlayer />
+                </div>
               </motion.div>
             </>
           )}
