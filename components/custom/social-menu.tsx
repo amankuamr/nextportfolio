@@ -54,11 +54,11 @@ export default function SocialMenu() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, x: 20, scale: 0.8 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: 20, scale: 0.8 }}
+              initial={{ opacity: 0, x: 20, y: "-50%", scale: 0.8 }}
+              animate={{ opacity: 1, x: 0, y: "-50%", scale: 1 }}
+              exit={{ opacity: 0, x: 20, y: "-50%", scale: 0.8 }}
               transition={{ duration: 0.3 }}
-              className="absolute right-full mr-2 bottom-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col-reverse space-y-2"
+              className="absolute right-full mr-3 top-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-row-reverse gap-2 items-center"
             >
               {socialItems.map((item, index) => (
                 <motion.a
@@ -90,7 +90,7 @@ export default function SocialMenu() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex-col space-y-2"
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg p-2 flex flex-col gap-2"
         >
           {socialItems.map((item, index) => (
             <motion.a
