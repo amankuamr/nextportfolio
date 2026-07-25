@@ -265,6 +265,12 @@ export default function Navbar() {
               }}
             >
               <div className="space-y-6">
+                <div className="flex items-center gap-3 px-4 mb-3">
+                  <div className="h-1.5 w-[12%] rounded-full bg-red-500" />
+                  <div className="h-1.5 w-[12%] rounded-full bg-blue-500" />
+                  <div className="h-1.5 w-[12%] rounded-full bg-black" />
+                </div>
+
                 <div className="px-4 border-b border-gray-200/60 pb-3">
                   <h2
                     className="text-2xl font-bold text-black"
