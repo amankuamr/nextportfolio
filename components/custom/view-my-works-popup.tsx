@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Palette, Figma, Code2, X, Check } from "lucide-react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
@@ -111,11 +110,10 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     whileHover={{ x: 4, scale: isSelected ? 1.02 : 1.01 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`relative flex items-center gap-3 w-full p-3 rounded-2xl border text-left cursor-pointer shadow-sm overflow-hidden transition-colors duration-300 ${
-                      isSelected
+                    className={`relative flex items-center gap-3 w-full p-3 rounded-2xl border text-left cursor-pointer shadow-sm overflow-hidden transition-colors duration-300 ${isSelected
                         ? "border-blue-600 bg-gradient-to-r from-blue-600 to-blue-800"
                         : "border-gray-200 bg-gray-50 hover:bg-gray-100"
-                    }`}
+                      }`}
                   >
                     {/* Fill animation overlay */}
                     {isSelected && (
@@ -128,11 +126,10 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
                     )}
 
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg transition-transform duration-200 ${
-                        isSelected
+                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg transition-transform duration-200 ${isSelected
                           ? "bg-white/20"
                           : "bg-gradient-to-br from-blue-600 to-blue-800 group-hover:scale-110"
-                      }`}
+                        }`}
                     >
                       <AnimatePresence mode="wait" initial={false}>
                         {isSelected ? (
@@ -158,17 +155,15 @@ export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupPr
                     </div>
                     <div className="flex-1 min-w-0">
                       <span
-                        className={`text-sm font-medium block transition-colors duration-300 ${
-                          isSelected ? "text-white" : "text-black"
-                        }`}
+                        className={`text-sm font-medium block transition-colors duration-300 ${isSelected ? "text-white" : "text-black"
+                          }`}
                       >
                         {category.title}
                       </span>
                     </div>
                     <svg
-                      className={`w-3.5 h-3.5 flex-shrink-0 transition-all duration-200 ${
-                        isSelected ? "text-white/70" : "text-gray-400 group-hover:text-black group-hover:translate-x-0.5"
-                      }`}
+                      className={`w-3.5 h-3.5 flex-shrink-0 transition-all duration-200 ${isSelected ? "text-white/70" : "text-gray-400 group-hover:text-black group-hover:translate-x-0.5"
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
