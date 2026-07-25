@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect, useCallback, memo } from "react"
+import { useState, useEffect, useCallback, memo, useRef, useLayoutEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, useSpring, useMotionValue, AnimatePresence } from "framer-motion"
 import { Home, Palette, Code, ImageIcon, Trophy, Play, Pause, SkipBack, SkipForward, ChevronRight } from "lucide-react"
 import { SiSpotify } from "react-icons/si"
 import { Button } from "@/components/ui/button"
@@ -113,6 +113,11 @@ const MobileMusicPlayer = memo(function MobileMusicPlayer() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const navRef = useRef<HTMLDivElement>(null)
+  const itemRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const indicatorX = useSpring(0, { stiffness: 400, damping: 30, mass: 0.8 })
+  const indicatorWidth = useSpring(0, { stiffness: 400, damping: 30, mass: 0.8 })
+  const indicatorOpacity = useMotionValue(0)
 
   const close = useCallback(() => setIsOpen(false), [])
   const toggle = useCallback(() => setIsOpen(v => !v), [])
@@ -135,8 +140,23 @@ export default function Navbar() {
 
   // Close sidebar on route change
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false)
+  }, [pathname])
+
+  useLayoutEffect(() => {
+    if (!navRef.current) return
+    const activeItem = navItems.find((item) => item.href === pathname)
+    if (!activeItem) return
+    const node = itemRefs.current[activeItem.name]
+    if (!node) return
+    const navRect = navRef.current.getBoundingClientRect()
+    const itemRect = node.getBoundingClientRect()
+    const extraLeft = 12
+    const extraRight = 0
+    indicatorX.set(itemRect.left - navRect.left - extraLeft)
+    indicatorWidth.set(itemRect.width + extraLeft + extraRight)
+    indicatorOpacity.set(1)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   return (
@@ -161,41 +181,46 @@ export default function Navbar() {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-2 py-2 relative overflow-hidden min-w-[600px]">
+        <motion.div
+          ref={navRef}
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg px-2 py-2 relative overflow-hidden min-w-[600px]"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <motion.div
+            className="absolute top-2 bottom-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg pointer-events-none"
+            style={{
+              x: indicatorX,
+              width: indicatorWidth,
+              opacity: indicatorOpacity,
+            }}
+          />
           <div className="flex items-center justify-between relative z-10 px-3">
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
-                <motion.div
+                <div
                   key={item.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  ref={(el) => { itemRefs.current[item.name] = el }}
                   className="relative"
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 400, damping: 30, mass: 0.8 }}
-                      style={{ boxShadow: "0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(30, 64, 175, 0.2)" }}
-                    />
-                  )}
                   <Link
                     href={item.href}
-                    className={`flex items-center transition-all duration-300 px-3 py-2 rounded-full hover:bg-white/10 group relative min-w-[80px] justify-center ${
+                    className={`flex items-center transition-colors duration-200 px-3 py-2 rounded-full relative min-w-[80px] justify-center ${
                       isActive ? 'text-white' : 'text-black hover:text-gray-600'
                     }`}
                   >
-                    <item.icon className="w-4 h-4 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12 relative z-10" />
-                    <span className="text-sm font-medium ml-2 whitespace-nowrap relative z-10">{item.name}</span>
+                    <span className="relative z-10 flex items-center gap-2">
+                      <item.icon className="w-4 h-4" />
+                      <span className="text-sm font-medium whitespace-nowrap">{item.name}</span>
+                    </span>
                   </Link>
-                </motion.div>
+                </div>
               )
             })}
           </div>
-        </div>
+        </motion.div>
       </nav>
 
       {/* Mobile Hamburger Button */}
