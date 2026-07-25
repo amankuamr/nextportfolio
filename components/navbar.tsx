@@ -287,7 +287,7 @@ export default function Navbar() {
                       >
                         <Link
                           href={item.href}
-                          className={`flex items-center justify-between px-4 py-3.5 rounded-xl transition-colors duration-200 group ${
+                          className={`flex items-center justify-between px-4 py-3.5 rounded-full transition-colors duration-200 group ${
                             isActive
                               ? 'bg-blue-50 text-blue-600 font-medium'
                               : 'text-gray-600 hover:bg-gray-50 hover:text-gray-950'
@@ -296,11 +296,11 @@ export default function Navbar() {
                           style={{ WebkitTapHighlightColor: "transparent" } as React.CSSProperties}
                         >
                           <div className="flex items-center gap-3.5">
-                            <div className={`p-2 rounded-lg transition-colors duration-200 ${
-                              isActive
-                                ? 'bg-blue-100 text-blue-600'
-                                : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-950'
-                            }`}>
+<div className={`p-2 transition-colors duration-200 ${
+    isActive
+       ? 'bg-blue-100 text-blue-600'
+       : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-950'
+} rounded-full`}>
                               <item.icon className="w-4 h-4" />
                             </div>
                             <span className="text-sm font-semibold tracking-wide">{item.name}</span>
