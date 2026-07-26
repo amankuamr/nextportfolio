@@ -53,14 +53,20 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
           <motion.div
-            initial={{ y: 60, scale: 0.92 }}
-            whileInView={{ y: 0, scale: 1 }}
+            initial={{ y: 60, scale: 0.92, opacity: 0 }}
+            whileInView={{ y: 0, scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
             className="text-center lg:text-left space-y-8"
           >
             {/* Status / Clients */}
-            <div className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1">
+            <motion.div
+              initial={{ y: 60, scale: 0.92, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+              className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1"
+            >
               <AvatarStack
                 avatars={[
                   { name: "Olivia Sparks", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
@@ -97,12 +103,12 @@ export default function HeroSection() {
                 max={3}
               />
               <span className="text-sm font-medium text-gray-700">30+ clients satisfied</span>
-            </div>
+            </motion.div>
 
             {/* Main Title */}
             <motion.h1
-              initial={{ y: 80, scale: 0.9 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 80, scale: 0.9, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 90, damping: 18, mass: 0.9 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight"
@@ -116,8 +122,8 @@ export default function HeroSection() {
 
             {/* Subtitle */}
             <motion.p
-              initial={{ y: 60, scale: 0.92 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 60, scale: 0.92, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
               className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
@@ -129,8 +135,8 @@ export default function HeroSection() {
 
             {/* Skills Tags */}
             <motion.div
-              initial={{ y: 60, scale: 0.92 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 60, scale: 0.92, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
               className="flex flex-wrap gap-3 justify-center lg:justify-start"
@@ -147,8 +153,8 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ y: 60, scale: 0.92 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 60, scale: 0.92, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
@@ -164,8 +170,8 @@ export default function HeroSection() {
 
             {/* Social Links */}
             <motion.div
-              initial={{ y: 60, scale: 0.92 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 60, scale: 0.92, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
               className="flex gap-4 justify-center lg:justify-start pt-4"
@@ -194,8 +200,8 @@ export default function HeroSection() {
 
           {/* Right side - Profile Image */}
           <motion.div
-            initial={{ y: 100, scale: 0.8, rotate: -5 }}
-            whileInView={{ y: 0, scale: 1, rotate: 0 }}
+            initial={{ y: 100, scale: 0.8, rotate: -5, opacity: 0 }}
+            whileInView={{ y: 0, scale: 1, rotate: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 80, damping: 15, mass: 1 }}
             className="flex justify-center lg:justify-end"
