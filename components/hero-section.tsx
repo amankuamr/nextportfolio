@@ -8,62 +8,6 @@ import { useRef, useState } from "react"
 import ViewMyWorksPopup from "@/components/custom/view-my-works-popup"
 import { AvatarStack } from "@/components/shadcn-space/avatar/avatar-08"
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.3,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { y: 60, scale: 0.92, opacity: 0 },
-  visible: {
-    y: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      mass: 0.8,
-    },
-  },
-}
-
-const titleVariants = {
-  hidden: { y: 80, scale: 0.9, opacity: 0 },
-  visible: {
-    y: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 90,
-      damping: 18,
-      mass: 0.9,
-    },
-  },
-}
-
-const imageVariants = {
-  hidden: { y: 100, scale: 0.8, opacity: 0, rotate: -5 },
-  visible: {
-    y: 0,
-    scale: 1,
-    opacity: 1,
-    rotate: 0,
-    transition: {
-      type: "spring",
-      stiffness: 80,
-      damping: 15,
-      mass: 1,
-    },
-  },
-}
-
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -106,14 +50,15 @@ export default function HeroSection() {
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-8">
+          <motion.div
+            initial={{ y: 60, scale: 0.92 }}
+            whileInView={{ y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+            className="text-center lg:text-left space-y-8"
+          >
             {/* Status / Clients */}
             <div className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1">
               <AvatarStack
@@ -155,7 +100,14 @@ export default function HeroSection() {
             </div>
 
             {/* Main Title */}
-            <motion.h1 variants={titleVariants} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight" style={{ fontFamily: 'font1' }}>
+            <motion.h1
+              initial={{ y: 80, scale: 0.9 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 90, damping: 18, mass: 0.9 }}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight"
+              style={{ fontFamily: 'font1' }}
+            >
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 Aman Kumar
@@ -163,28 +115,44 @@ export default function HeroSection() {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl">
+            <motion.p
+              initial={{ y: 60, scale: 0.92 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+              className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
+            >
               A passionate <span className="font-semibold text-black">Creative Developer & Designer</span> crafting
               digital experiences that blend beautiful design with powerful functionality.
               Specializing in modern web development, UI/UX design, and creative solutions.
             </motion.p>
 
             {/* Skills Tags */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              {["React", "Next.js", "TypeScript", "UI/UX", "Figma"].map((skill, index) => (
-                <motion.span
+            <motion.div
+              initial={{ y: 60, scale: 0.92 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+              className="flex flex-wrap gap-3 justify-center lg:justify-start"
+            >
+              {["React", "Next.js", "TypeScript", "UI/UX", "Figma"].map((skill) => (
+                <span
                   key={skill}
-                  variants={itemVariants}
-                  custom={index}
                   className="px-3 py-1 bg-gray-100 text-black text-sm font-medium rounded-full border border-gray-300"
                 >
                   {skill}
-                </motion.span>
+                </span>
               ))}
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <motion.div
+              initial={{ y: 60, scale: 0.92 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+            >
               <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full" onClick={() => setIsPopupOpen(true)}>
                 View My Work
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -195,7 +163,13 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start pt-4">
+            <motion.div
+              initial={{ y: 60, scale: 0.92 }}
+              whileInView={{ y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8 }}
+              className="flex gap-4 justify-center lg:justify-start pt-4"
+            >
               {[
                 { icon: Github, href: "https://github.com/amankuamr", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/aman-kumar-8693a820b/", label: "LinkedIn" },
@@ -219,7 +193,13 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Right side - Profile Image */}
-          <motion.div variants={imageVariants} className="flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ y: 100, scale: 0.8, rotate: -5 }}
+            whileInView={{ y: 0, scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 80, damping: 15, mass: 1 }}
+            className="flex justify-center lg:justify-end"
+          >
             <div className="relative">
               {/* Background glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-gray-400/10 rounded-full blur-3xl scale-110" />
@@ -262,7 +242,7 @@ export default function HeroSection() {
               />
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
       </div>
       <ViewMyWorksPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
