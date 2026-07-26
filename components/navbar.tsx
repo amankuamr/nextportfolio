@@ -203,7 +203,7 @@ export default function Navbar() {
                 <div
                   key={item.name}
                   ref={(el) => { itemRefs.current[item.name] = el }}
-                  className="relative"
+                  className="relative select-none"
                 >
                   <Link
                     href={item.href}
