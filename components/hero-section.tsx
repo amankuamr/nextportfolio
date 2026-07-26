@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useRef, useState } from "react"
 import ViewMyWorksPopup from "@/components/custom/view-my-works-popup"
+import { AvatarStack } from "@/components/shadcn-space/avatar/avatar-08"
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null)
@@ -84,15 +85,49 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left space-y-8"
           >
-            {/* Greeting */}
+            {/* Status / Clients */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-black/5 rounded-full text-sm font-medium text-gray-700"
+              className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1"
             >
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Available for new projects
+              <AvatarStack
+                avatars={[
+                  { name: "Olivia Sparks", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
+                  { name: "Hallie Richards", src: "https://images.shadcnspace.com/assets/profiles/jessica.webp" },
+                  { name: "Howard Lloyd", src: "https://images.shadcnspace.com/assets/profiles/albert.webp" },
+                  { name: "Jenny Wilson", src: "https://images.shadcnspace.com/assets/profiles/jenny.webp" },
+                  { name: "Daniel Park", src: "https://images.shadcnspace.com/assets/profiles/user-4.jpg" },
+                  { name: "Alice Morgan", src: "https://images.shadcnspace.com/assets/profiles/user-3.jpg" },
+                  { name: "Michael Brown", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
+                  { name: "Sarah Davis", src: "https://images.shadcnspace.com/assets/profiles/jessica.webp" },
+                  { name: "James Wilson", src: "https://images.shadcnspace.com/assets/profiles/albert.webp" },
+                  { name: "Emma Miller", src: "https://images.shadcnspace.com/assets/profiles/jenny.webp" },
+                  { name: "David Garcia", src: "https://images.shadcnspace.com/assets/profiles/user-4.jpg" },
+                  { name: "Lisa Anderson", src: "https://images.shadcnspace.com/assets/profiles/user-3.jpg" },
+                  { name: "John Taylor", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
+                  { name: "Amy Thomas", src: "https://images.shadcnspace.com/assets/profiles/jessica.webp" },
+                  { name: "Robert Martinez", src: "https://images.shadcnspace.com/assets/profiles/albert.webp" },
+                  { name: "Jennifer Lee", src: "https://images.shadcnspace.com/assets/profiles/jenny.webp" },
+                  { name: "William White", src: "https://images.shadcnspace.com/assets/profiles/user-4.jpg" },
+                  { name: "Maria Harris", src: "https://images.shadcnspace.com/assets/profiles/user-3.jpg" },
+                  { name: "James Clark", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
+                  { name: "Susan Lewis", src: "https://images.shadcnspace.com/assets/profiles/jessica.webp" },
+                  { name: "Thomas Walker", src: "https://images.shadcnspace.com/assets/profiles/albert.webp" },
+                  { name: "Karen Hall", src: "https://images.shadcnspace.com/assets/profiles/jenny.webp" },
+                  { name: "Charles Allen", src: "https://images.shadcnspace.com/assets/profiles/user-4.jpg" },
+                  { name: "Nancy Young", src: "https://images.shadcnspace.com/assets/profiles/user-3.jpg" },
+                  { name: "Daniel Hernandez", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
+                  { name: "Betty King", src: "https://images.shadcnspace.com/assets/profiles/jessica.webp" },
+                  { name: "George Wright", src: "https://images.shadcnspace.com/assets/profiles/albert.webp" },
+                  { name: "Margaret Lopez", src: "https://images.shadcnspace.com/assets/profiles/jenny.webp" },
+                  { name: "Edward Hill", src: "https://images.shadcnspace.com/assets/profiles/user-4.jpg" },
+                  { name: "Sandra Green", src: "https://images.shadcnspace.com/assets/profiles/user-3.jpg" },
+                ]}
+                max={3}
+              />
+              <span className="text-sm font-medium text-gray-700">30+ clients satisfied</span>
             </motion.div>
 
             {/* Main Title */}
