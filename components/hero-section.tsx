@@ -8,6 +8,62 @@ import { useRef, useState } from "react"
 import ViewMyWorksPopup from "@/components/custom/view-my-works-popup"
 import { AvatarStack } from "@/components/shadcn-space/avatar/avatar-08"
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 60, scale: 0.92, opacity: 0 },
+  visible: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      mass: 0.8,
+    },
+  },
+}
+
+const titleVariants = {
+  hidden: { y: 80, scale: 0.9, opacity: 0 },
+  visible: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 90,
+      damping: 18,
+      mass: 0.9,
+    },
+  },
+}
+
+const imageVariants = {
+  hidden: { y: 100, scale: 0.8, opacity: 0, rotate: -5 },
+  visible: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 15,
+      mass: 1,
+    },
+  },
+}
+
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -15,18 +71,14 @@ export default function HeroSection() {
     target: ref,
     offset: ["start start", "end start"]
   })
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -150])
-  const subtitleOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-  const skillsY = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const skillsScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.8])
-  const buttonsY = useTransform(scrollYProgress, [0, 1], [0, -50])
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -300])
-  const imageScale = useTransform(scrollYProgress, [0, 0.6], [1, 0.9])
+  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -120])
 
   return (
-    <section ref={ref} className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <motion.section
+      ref={ref}
+      style={{ y: sectionY }}
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -38,60 +90,32 @@ export default function HeroSection() {
 
       {/* Floating geometric shapes */}
       <motion.div
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
+        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-20 left-10 w-16 h-16 border-2 border-black/10 rounded-lg rotate-12"
       />
       <motion.div
-        animate={{
-          y: [0, 15, 0],
-          rotate: [0, -8, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
+        animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-32 right-16 w-12 h-12 bg-black/5 rounded-full"
       />
       <motion.div
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.1, 0.2, 0.1],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
+        animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         className="absolute top-1/3 right-8 w-8 h-8 bg-black/10 rounded-full"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
           {/* Left side - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center lg:text-left space-y-8"
-          >
+          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-8">
             {/* Status / Clients */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1"
-            >
+            <div className="inline-flex items-center gap-3 bg-black/5 rounded-full pl-1 pr-4 py-1">
               <AvatarStack
                 avatars={[
                   { name: "Olivia Sparks", src: "https://images.shadcnspace.com/assets/profiles/rough.webp" },
@@ -128,16 +152,10 @@ export default function HeroSection() {
                 max={3}
               />
               <span className="text-sm font-medium text-gray-700">30+ clients satisfied</span>
-            </motion.div>
+            </div>
 
             {/* Main Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              style={{ y, opacity, fontFamily: 'font1' }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight"
-            >
+            <motion.h1 variants={titleVariants} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight" style={{ fontFamily: 'font1' }}>
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 Aman Kumar
@@ -145,32 +163,19 @@ export default function HeroSection() {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ y: subtitleY, opacity: subtitleOpacity }}
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
-            >
+            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl">
               A passionate <span className="font-semibold text-black">Creative Developer & Designer</span> crafting
               digital experiences that blend beautiful design with powerful functionality.
               Specializing in modern web development, UI/UX design, and creative solutions.
             </motion.p>
 
             {/* Skills Tags */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              style={{ y: skillsY, scale: skillsScale }}
-              className="flex flex-wrap gap-3 justify-center lg:justify-start"
-            >
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center lg:justify-start">
               {["React", "Next.js", "TypeScript", "UI/UX", "Figma"].map((skill, index) => (
                 <motion.span
                   key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+                  variants={itemVariants}
+                  custom={index}
                   className="px-3 py-1 bg-gray-100 text-black text-sm font-medium rounded-full border border-gray-300"
                 >
                   {skill}
@@ -179,13 +184,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              style={{ y: buttonsY }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
-            >
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium group rounded-full" onClick={() => setIsPopupOpen(true)}>
                 View My Work
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -196,12 +195,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              className="flex gap-4 justify-center lg:justify-start pt-4"
-            >
+            <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start pt-4">
               {[
                 { icon: Github, href: "https://github.com/amankuamr", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/aman-kumar-8693a820b/", label: "LinkedIn" },
@@ -225,13 +219,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Right side - Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            style={{ y: imageY, scale: imageScale }}
-            className="flex justify-center lg:justify-end"
-          >
+          <motion.div variants={imageVariants} className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Background glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-gray-400/10 rounded-full blur-3xl scale-110" />
@@ -256,51 +244,28 @@ export default function HeroSection() {
 
               {/* Floating gradient dots */}
               <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 1, 0.7],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
               />
 
               <motion.div
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.6, 1, 0.6],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
+                animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
               />
 
               <motion.div
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.8, 1, 0.8],
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}
+                animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 className="absolute top-1/2 -right-6 w-4 h-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
               />
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
       </div>
       <ViewMyWorksPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
-    </section>
+    </motion.section>
   )
 }
