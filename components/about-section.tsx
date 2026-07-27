@@ -6,6 +6,7 @@ import { Trophy, MapPin, Github, Instagram, Globe, FileText, Play, Pause, SkipBa
 import { SiSpotify } from "react-icons/si"
 import { BackgroundLines } from "@/components/ui/background-lines"
 import { useMusic } from "@/lib/music-context"
+import RotatingProjectCard from "@/components/rotating-project-card"
 
 
 
@@ -56,21 +57,25 @@ export default function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[200px]">
-          {/* Profile Image - Large Block */}
+          {/* Profile Image - Split Frame Desktop Only */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="card-outline col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-white border border-gray-200"
+            className="card-outline col-span-1 md:col-span-2 lg:col-span-1 row-span-2 relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200"
           >
             <Image
-              src="/profile/profile.jpeg"
+              src="/profile/anboutmeprofile.jpeg"
               alt="Aman Kumar - Creative Developer"
               fill
               className="object-cover"
+              style={{ objectPosition: 'center 15%' }}
             />
           </motion.div>
+          <div className="hidden lg:block lg:col-span-1 row-span-2 rounded-2xl border border-gray-200 overflow-hidden">
+            <RotatingProjectCard />
+          </div>
 
           {/* Intro Text */}
           <motion.div
