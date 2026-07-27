@@ -63,7 +63,7 @@ const contentVariants = {
       staggerDirection: -1,
     },
   },
-}
+} as const
 
 const itemVariants = {
   hidden: { opacity: 0, x: 24 },
@@ -73,7 +73,7 @@ const itemVariants = {
     transition: { type: "spring", stiffness: 120, damping: 17, mass: 0.8 },
   },
   exit: { opacity: 0, x: -24, transition: { duration: 0.2 } },
-}
+} as const
 
 const buttonVariants = {
   hidden: { opacity: 0, x: 30, scale: 0.9 },
@@ -84,7 +84,7 @@ const buttonVariants = {
     transition: { type: "spring", stiffness: 140, damping: 12, mass: 0.6 },
   },
   exit: { opacity: 0, x: -20, scale: 0.9, transition: { duration: 0.18 } },
-}
+} as const
 
 export default function RotatingProjectCard() {
   const [index, setIndex] = useState(0)
@@ -116,7 +116,7 @@ export default function RotatingProjectCard() {
             backgroundPosition: 'center'
           }}
         >
-          <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
