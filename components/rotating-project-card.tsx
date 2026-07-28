@@ -109,14 +109,15 @@ export default function RotatingProjectCard() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -300 }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute inset-0"
+          className="absolute inset-0 rounded-2xl overflow-hidden"
           style={{
             backgroundImage: `url(${project.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         >
-            <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-x-0 -top-16 h-1/3 bg-gradient-to-b from-black/70 via-black/40 to-transparent backdrop-blur-[2px]" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-[2px]" />
         </motion.div>
       </AnimatePresence>
 
@@ -166,9 +167,8 @@ export default function RotatingProjectCard() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`h-1 rounded-full transition-all duration-300 ${
-              i === index ? "w-4 bg-white" : "w-1.5 bg-white/40 hover:bg-white/60"
-            }`}
+            className={`h-1 rounded-full transition-all duration-300 ${i === index ? "w-4 bg-white" : "w-1.5 bg-white/40 hover:bg-white/60"
+              }`}
           />
         ))}
       </div>
