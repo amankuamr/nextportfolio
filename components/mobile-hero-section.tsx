@@ -38,18 +38,22 @@ export default function MobileHeroSection() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative mb-5"
+          className="relative mb-5 w-44 h-44 flex items-center justify-center"
         >
-          {/* Rotating gradient ring */}
+          {/* Three colored rotating lines */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-2.5 rounded-full bg-[conic-gradient(from_0deg,transparent,#2563eb,#1e40af,transparent)] opacity-70 blur-[1px]"
-          />
-          {/* Soft glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/25 to-blue-800/15 rounded-full blur-2xl scale-125" />
+            transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 pointer-events-none"
+          >
+            <svg className="w-full h-full" viewBox="0 0 200 200" fill="none">
+              <circle cx="100" cy="100" r="93" stroke="#ef4444" strokeWidth="2" strokeDasharray="50 544" />
+              <circle cx="100" cy="100" r="93" stroke="#2563eb" strokeWidth="2" strokeDasharray="50 544" transform="rotate(120 100 100)" />
+              <circle cx="100" cy="100" r="93" stroke="#000000" strokeWidth="2" strokeDasharray="50 544" transform="rotate(240 100 100)" />
+            </svg>
+          </motion.div>
 
-          <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+          <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl">
             <Image
               src="/profile/profile.jpeg"
               alt="Aman Kumar - Creative Developer & Designer"
@@ -63,18 +67,18 @@ export default function MobileHeroSection() {
           {/* Accent dots */}
           <motion.div
             animate={{ scale: [1, 1.25, 1], opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-3 -right-4 w-5 h-5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-3 -right-4 w-5 h-5 bg-blue-500 rounded-full shadow-lg"
           />
           <motion.div
             animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-4 -left-5 w-3.5 h-3.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg"
+            transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-4 -left-5 w-3.5 h-3.5 bg-blue-600 rounded-full shadow-lg"
           />
           <motion.div
             animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0.9, 0.5] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute top-1/2 -right-7 w-2.5 h-2.5 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md"
+            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute top-1/2 -right-7 w-2.5 h-2.5 bg-blue-400 rounded-full shadow-md"
           />
         </motion.div>
 
