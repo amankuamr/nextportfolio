@@ -236,15 +236,20 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
+/* Custom cursor - desktop only */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
 
-/* Custom cursor styles */
-* {
-  cursor: none !important;
-}
-
-/* Custom cursor styles */
-* {
-  cursor: none !important;
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: none !important;
+  }
 }
 
 /* Footer link left-to-right underline on hover */
@@ -267,14 +272,6 @@ body {
 
 .footer-link-underline:hover::after {
   transform: scaleX(1);
-}
-a,
-button,
-[role="button"],
-input,
-textarea,
-select {
-  cursor: none !important;
 }
 
 /* Performance optimizations for animations */

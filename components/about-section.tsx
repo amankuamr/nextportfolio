@@ -7,6 +7,7 @@ import { SiSpotify } from "react-icons/si"
 import { BackgroundLines } from "@/components/ui/background-lines"
 import { useMusic } from "@/lib/music-context"
 import RotatingProjectCard from "@/components/rotating-project-card"
+import { Marquee } from "@/components/shadcn-space/animations/marquee"
 
 
 
@@ -250,44 +251,18 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "-50px" }}
             className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bg-white border border-gray-200 rounded-2xl p-0 overflow-hidden h-full"
           >
-            <div className="flex h-full animate-marquee">
+            <Marquee className="h-full [--duration:20s] [--gap:0.5rem] p-0" pauseOnHover>
               {usefulImages.map((img, index) => (
                 <Image
-                  key={`first-${index}`}
+                  key={index}
                   src={img}
                   alt={`Useful image ${index + 1}`}
                   width={160}
                   height={200}
-                  className="flex-shrink-0 object-cover"
+                  className="flex-shrink-0 object-cover h-full"
                 />
               ))}
-              {usefulImages.map((img, index) => (
-                <Image
-                  key={`first-dup-${index}`}
-                  src={img}
-                  alt={`Useful image ${index + 1}`}
-                  width={160}
-                  height={200}
-                  className="flex-shrink-0 object-cover"
-                />
-              ))}
-            </div>
-            <style jsx>{`
-              @keyframes marquee {
-                0% {
-                  transform: translateX(0);
-                }
-                100% {
-                  transform: translateX(-50%);
-                }
-              }
-              .animate-marquee {
-                animation: marquee 20s linear infinite;
-              }
-              .animate-marquee:hover {
-                animation-play-state: paused;
-              }
-            `}</style>
+            </Marquee>
           </motion.div>
         </div>
 
