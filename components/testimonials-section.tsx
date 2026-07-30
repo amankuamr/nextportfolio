@@ -136,14 +136,14 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black" style={{ fontFamily: 'BitcountGridSingle' }}>
-            {"Professional Experience".split("").map((char, index) => (
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black text-center flex flex-wrap justify-center" style={{ fontFamily: 'BitcountGridSingle' }}>
+            {"Experience".split("").map((char, index) => (
               <motion.span
                 key={index}
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="inline-block hover:text-red-500 transition-colors duration-200"
               >
-                {char === " " ? "\u00A0" : char}
+                {char}
               </motion.span>
             ))}
           </h2>
