@@ -220,6 +220,7 @@ export default function HeroSection() {
                   src="/profile/profile.jpeg"
                   alt="Aman Kumar - Creative Developer & Designer"
                   fill
+                  sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
                   className="object-cover"
                   priority
                 />

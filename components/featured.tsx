@@ -163,6 +163,7 @@ export default function Featured() {
                                             src={item.imageSrc}
                                             alt={item.alt}
                                             fill
+                                            sizes="(min-width: 1024px) 75vw, 100vw"
                                             className="object-cover"
                                         />
                                     </div>
@@ -183,6 +184,7 @@ export default function Featured() {
                                                     src={item.imageSrc}
                                                     alt={item.alt}
                                                     fill
+                                                    sizes="(min-width: 1024px) 75vw, 100vw"
                                                     className="object-cover"
                                                 />
                                             </div>

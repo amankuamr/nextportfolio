@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { Palette, Figma, Code2, X, Check } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface ViewMyWorksPopupProps {
   isOpen: boolean
@@ -13,6 +13,21 @@ interface ViewMyWorksPopupProps {
 export default function ViewMyWorksPopup({ isOpen, onClose }: ViewMyWorksPopupProps) {
   const router = useRouter()
   const [selected, setSelected] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      document.body.style.overflow = "hidden"
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+    } else {
+      document.body.style.overflow = ""
+      document.body.style.paddingRight = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+      document.body.style.paddingRight = ""
+    }
+  }, [isOpen])
 
   const categories = [
     {

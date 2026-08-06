@@ -70,6 +70,7 @@ export default function AboutSection() {
               src="/profile/anboutmeprofile.jpeg"
               alt="Aman Kumar - Creative Developer"
               fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover"
               style={{ objectPosition: 'center 15%' }}
             />
@@ -259,7 +260,7 @@ export default function AboutSection() {
                   alt={`Useful image ${index + 1}`}
                   width={160}
                   height={200}
-                  className="flex-shrink-0 object-cover h-full"
+                  className="flex-shrink-0 object-cover"
                 />
               ))}
             </Marquee>

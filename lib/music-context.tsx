@@ -96,7 +96,9 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
     if (audio) {
       const handleTimeUpdate = () => {
         const progressPercent = (audio.currentTime / audio.duration) * 100
-        setProgress(progressPercent)
+        if (Number.isFinite(progressPercent)) {
+          setProgress(progressPercent)
+        }
       }
       const handleEnded = () => {
         nextSong()
