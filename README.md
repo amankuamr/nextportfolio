@@ -10,7 +10,6 @@
 
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" alt="License" />
-  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge" alt="PRs" />
 
 <br/>
 
@@ -256,42 +255,6 @@ The portfolio follows a **minimalist yet engaging** design approach:
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn package manager
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/amankuamr/portfolionext.git
-cd portfolionext
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Run the development server**
-```bash
-npm run dev
-```
-
-4. **Open your browser**
-Navigate to [http://localhost:3000](http://localhost:3000) to see the portfolio in action.
-
-### Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
----
-
 ## 📊 Project Stats
 
 <div align="center">
@@ -346,6 +309,6 @@ This project is **private and proprietary**. All rights reserved.
 
 <br/>
 
-**© 2025 Aman Kumar. All rights reserved.**
+**© 2024 Aman Kumar. All rights reserved.**
 
 </div>
